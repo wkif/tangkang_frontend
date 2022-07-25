@@ -8,24 +8,43 @@
                 </div> -->
 
                 <el-table :data="tableData" border style="width: 100%" height="700">
-                    <el-table-column fixed prop="username" label="用户名">
+                    <el-table-column fixed align="center" prop="username" label="用户名">
                     </el-table-column>
                     <el-table-column prop="name" label="姓名">
                     </el-table-column>
-                    <el-table-column prop="email" label="email">
-                    </el-table-column>
-                    <el-table-column prop="mobile" label="mobile">
-                    </el-table-column>
+
                     <el-table-column label="性别">
                         <template slot-scope="scope">
                             <el-tag v-if="scope.row.gender == 0">男</el-tag>
                             <el-tag v-else>女</el-tag>
                         </template>
                     </el-table-column>
+                    <el-table-column prop="birthday" label="生日">
+                    </el-table-column>
+                    <el-table-column prop="email" label="邮箱">
+                    </el-table-column>
+                    <el-table-column prop="mobile" label="电话">
+                    </el-table-column>
+                    <el-table-column prop="height" label="身高（单位：cm）">
+                    </el-table-column>
+                    <el-table-column prop="weight" label="体重（单位：kg）">
+                    </el-table-column>
+                    <el-table-column prop="waistline" label="腰围">
+                    </el-table-column>
+                    <el-table-column prop="bloodType" label="血型">
+                    </el-table-column>
+                    <el-table-column prop="userRegDate" label="注册时间">
+                    </el-table-column>
+                    <el-table-column label="实名认证">
+                        <template slot-scope="scope">
+                            <el-tag v-if="scope.row.realNameAuthentication">是</el-tag>
+                            <el-tag v-else>否</el-tag>
+                        </template>
+                    </el-table-column>
                     <el-table-column label="封禁">
                         <template slot-scope="scope">
 
-                            <el-tag type="danger" v-if="scope.row.is_active">已封禁</el-tag>
+                            <el-tag type="danger" v-if="!scope.row.is_active">已封禁</el-tag>
                             <el-tag type="success" v-else>未封禁</el-tag>
 
                         </template>
@@ -57,16 +76,22 @@
         </template>
         <el-dialog title="详细信息" :visible.sync="dialogTableVisible">
             <el-card class="box-card-user">
-                <img :src="userDetail.avatar" alt="" style="width: 100%;" class="image">
+                <img :src="userDetail.avatar" alt="" class="image">
                 <div style="padding: 14px;">
                     <span>用户名：{{ userDetail.username }}</span>
-                    <br/>
+                    <br />
                     <span>姓名：{{ userDetail.name }}</span>
-                     <br/>
+                    <br />
+                    <span>性别:<el-tag type="success" v-if="userDetail.gender">男</el-tag>
+                        <el-tag type="danger" v-else>女</el-tag>
+                    </span>
+                    <br />
+                    <span>生日:{{ userDetail.birthday }}</span>
+                    <br />
                     <span>手机号:{{ userDetail.mobile }}</span>
-                     <br/>
+                    <br />
                     <span>Email：:{{ userDetail.email }}</span>
-                     <br/>
+                    <br />
                     <div class="bottom clearfix">
                         <time class="time">注册日期：{{ userDetail.userRegDate }}</time>
                         <!-- <el-button type="text" class="button">操作按钮</el-button> -->
@@ -144,7 +169,7 @@ export default {
         },
         Delete(row) {
             console.log(row);
-            this.$confirm('确认封禁该用户吗？', '提示', {
+            this.$confirm(row.is_active ? '确认封禁该用户吗？' : '确认解禁该用户吗？', '提示', {
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
                 type: 'warning'
@@ -152,7 +177,7 @@ export default {
                 this.updateRequest(row).then(res => {
                     this.$message({
                         type: 'success',
-                        message: '封禁成功!'
+                        message: '操作成功!'
                     });
                     this.getData()
                 })
@@ -196,7 +221,7 @@ export default {
 }
 
 .image {
-    width: 100%;
+    width: 100px;
     display: block;
 }
 

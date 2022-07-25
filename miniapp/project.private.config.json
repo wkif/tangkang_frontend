@@ -1,0 +1,60 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "",
+                    "pathName": "pages/user/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/addressManage/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/addressManage/editAddress/index",
+                    "query": "add=%7B%22id%22%3A1%2C%22name%22%3A%22%E5%BC%A0%E4%B8%89%22%2C%22phone%22%3A%2213888888888%22%2C%22address%22%3A%22%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%8D%97%E4%B8%80%E8%B7%AF%22%2C%22isDefault%22%3Atrue%7D",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/about/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/informationManage/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/userAgreement/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/record/index",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

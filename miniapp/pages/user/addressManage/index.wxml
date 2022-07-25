@@ -1,0 +1,19 @@
+<van-nav-bar title="地址管理" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <view class="data" wx:if="{{addressList}}">
+        <van-cell-group inset wx:for="{{addressList}}">
+            <van-cell wx:if="{{item.isDefault}}" value="{{item.address}} \n 邮编：{{item.postalCode}}" label="电话：{{item.phone}} " bindtap='editAddress' data-addressId='{{item.id}}'  bindlongpress="handleDel" is-link>
+                <view slot="title">
+                    <view class="van-cell-text">{{item.name}}</view>
+                    <van-tag type="success">默认</van-tag>
+                </view>
+            </van-cell>
+            <van-cell wx:else title="{{item.name}}" value="{{item.address}} 邮编：{{item.postalCode}}" label="电话：{{item.phone}}" bindtap='editAddress' data-addressId='{{item.id}}'  bindlongpress="handleDel" is-link />
+        </van-cell-group>
+    </view>
+    <van-empty wx:else description="描述文字" />
+    <button class="cu-btn block line-cyan lg" bindtap='editAddress'>
+        <text class="cuIcon-upload"></text>
+        新增
+    </button>
+</view>

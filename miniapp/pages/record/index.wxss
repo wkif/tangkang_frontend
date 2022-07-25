@@ -1,0 +1,3 @@
+.app .recordSwiper {
+  height: 100vh !important;
+}

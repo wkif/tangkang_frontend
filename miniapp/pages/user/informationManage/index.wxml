@@ -1,0 +1,56 @@
+<van-nav-bar title="个人信息" left-text="返回" left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <form>
+        <view class="cu-form-group  margin-top" >
+            <view class="title">手机号码</view>
+            <input placeholder="手机号码" value="{{userInfo.mobile}}" maxlength="11" bindchange="inputPhoneNum"></input>
+            <view class="cu-capsule radius">
+                <view class="cu-tag bg-blue">+86</view>
+                <view class="cu-tag line-blue">中国大陆</view>
+            </view>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">邮件</view>
+            <input placeholder="可选" value="{{userInfo.email}}" bindchange="inputemail"></input>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">性别</view>
+            <switch class="red sm switch-sex" checked="{{userInfo.gender}}" bindchange="changeSex"></switch>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">身高</view>
+            <picker bindchange="PickerChangeheight" value="{{userInfo.height}}" range="{{heightPicker}}">
+                <view class="picker">{{userInfo.height}}</view>
+            </picker>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">体重</view>
+            <picker bindchange="PickerChangeweight" value="{{userInfo.weight}}" range="{{weightPicker}}">
+                <view class="picker">{{userInfo.weight}}</view>
+            </picker>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">腰围</view>
+            <picker bindchange="PickerChangeweight" value="{{userInfo.weight}}" range="{{weightPicker}}">
+                <view class="picker">{{userInfo.weight}}</view>
+            </picker>
+        </view>
+        <view class="cu-form-group">
+            <view class="title">血型</view>
+            <picker bindchange="PickerChangewaistline" value="{{userInfo.waistline}}" range="{{waistlinePicker}}">
+                <view class="picker">{{userInfo.waistline}}</view>
+            </picker>
+        </view>
+        <view class="cu-form-group">
+		<view class="title">出生日期</view>
+		<picker mode="date" value="{{userInfo.birthday}}" start="1949-10-01" bindchange="DateChange">
+			<view class="picker">
+				{{userInfo.birthday}}
+			</view>
+		</picker>
+	</view>
+    </form>
+    <view class="cu-bar btn-group">
+        <button class="cu-btn bg-green shadow-blur round lg" bindtap="submit">保存</button>
+    </view>
+</view>

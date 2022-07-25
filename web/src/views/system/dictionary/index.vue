@@ -67,6 +67,7 @@ export default {
       return api.GetList(query)
     },
     addRequest (row) {
+      console.log('row',row)
       d2CrudPlus.util.dict.clear()
       return api.createObj(row)
     },

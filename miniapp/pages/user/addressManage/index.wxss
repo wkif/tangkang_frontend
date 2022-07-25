@@ -1,0 +1,10 @@
+.app {
+  margin-top: 12vh;
+}
+.app .block {
+  position: fixed;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-top: 10vw;
+  bottom: 2vh;
+}

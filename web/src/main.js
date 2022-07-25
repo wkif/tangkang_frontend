@@ -34,10 +34,17 @@ import 'vxe-table/lib/style.css'
 // md5加密
 import md5 from 'js-md5'
 
+
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+
+
 // 核心插件
 Vue.use(d2Admin)
 Vue.use(VXETable)
 Vue.use(ElementUI);
+Vue.use(mavonEditor)
+
 Vue.prototype.$md5 = md5
 
 new Vue({

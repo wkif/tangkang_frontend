@@ -1,0 +1,67 @@
+<view class="app">
+    <view class="topView">
+        <view class="circle1 "></view>
+        <view class="circle2 animate-bounce-up"></view>
+        <view class="infoView" wx:if="{{loginFlag}}">
+            <van-transition name="slide-left">
+                <van-row>
+                    <van-col span="4">
+                        <div class="head-img">
+                            <image class="avatar" src="{{userInfo.avatar}}"></image>
+                        </div>
+                    </van-col>
+                    <van-col span="10" offset="4">
+                        <view class="name">{{userInfo.username}}</view>
+                        <view class="desc">{{userInfo.userStatement}}</view>
+                    </van-col>
+                </van-row>
+            </van-transition>
+        </view>
+        <view class="loginView" wx:else>
+            <view class="loginBtn" bind:tap='doLogin'>登录</view>
+            <!-- <van-button class="loginBtn" >登录</van-button> -->
+        </view>
+    </view>
+    <view class="cardView">
+        <view class="card">
+            <view class="header">个性服务</view>
+            <view class="content">
+                <van-row>
+                    <van-col span="12">
+                        <view class="iconBox" bindtap='gotoInfor'>
+                            <van-icon name="friends-o" size="35px" color="#5cbc46" />
+                            信息管理
+                        </view>
+                    </van-col>
+                    <van-col span="12">
+                        <view class="iconBox">
+                            <van-icon name="gold-coin-o" size="35px" color="#5cbc46" />
+                            积分
+                        </view>
+                    </van-col>
+                </van-row>
+            </view>
+        </view>
+    </view>
+    <!-- <view>{{inviteCode}}</view> -->
+    <view class="mainView">
+        <van-cell-group inset wx:for="{{cellList}}" wx:for-item="item">
+            <van-cell title="{{item.title}}" is-link icon="{{item.icon}}" label="{{item.label}}" bindtap="gotoCell" data-path="{{item.path}}" />
+        </van-cell-group>
+        <button class='contactButton' open-type="contact">联系客服</button>
+        <button class='logoutButton' wx:if="{{loginFlag}}" bindtap="loginOut">退出登录</button>
+        <view class="adView">
+            <van-row class="adRow">
+                <van-col span="4">
+                    <image class="adImg animate-bounce-up" src="../../assets/img/present.png"></image>
+                </van-col>
+                <van-col span="10" offset="4">
+                    <button class="addText" open-type='share'>邀好友 赚积分</button>
+                    <view class="count" wx:if="{{userInfo.numberofPersonsInvited}}">
+                        已经邀请 {{userInfo.numberofPersonsInvited}}1 人
+                    </view>
+                </van-col>
+            </van-row>
+        </view>
+    </view>
+</view>

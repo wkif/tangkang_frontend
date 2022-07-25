@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-<!--  用来兼容乾坤前端微服务  -->
+    <!--  用来兼容乾坤前端微服务  -->
     <div id="qiankun"></div>
   </div>
 </template>
@@ -13,11 +13,11 @@ export default {
   watch: {
     '$i18n.locale': 'i18nHandle'
   },
-  created () {
+  created() {
     this.i18nHandle(this.$i18n.locale)
   },
   methods: {
-    i18nHandle (val, oldVal) {
+    i18nHandle(val, oldVal) {
       util.cookies.set('lang', val)
       document.querySelector('html').setAttribute('lang', val)
     }
@@ -28,4 +28,12 @@ export default {
 <style lang="scss">
 @import "~@/assets/style/public-class.scss";
 @import "~@/assets/style/yxt-public.scss";
+
+.v-note-edit {
+  height: 820px !important;
+}
+
+.v-note-show {
+  height: 820px !important;
+}
 </style>

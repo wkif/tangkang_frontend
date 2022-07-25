@@ -1,0 +1,25 @@
+<van-nav-bar title="地址详情" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <van-cell-group>
+        <van-field model:value="{{ name }}" required clearable label="姓名" placeholder="请输入姓名" bind:click-icon="onClickIcon" />
+        <van-field model:value="{{ phone }}" required clearable label="手机" placeholder="请输入手机号码" bind:click-icon="onClickIcon" />
+        <van-field model:value="{{address }}" required clearable label="详细地址" placeholder="请输入详细地址" bind:click-icon="onClickIcon" />
+        <van-field model:value="{{postalCode }}" required clearable label="邮政编码" placeholder="请输入邮政编码" bind:click-icon="onClickIcon" />
+    </van-cell-group>
+    <view class="cu-form-group">
+        <view class="title">地址</view>
+        <picker mode="region" bindchange="RegionChange" value="{{baseAddress}}" custom-item="{{customItem}}">
+            <view class="picker">{{baseAddress[0]}}，{{baseAddress[1]}}，{{baseAddress[2]}}</view>
+        </picker>
+    </view>
+    设置为默认地址：
+    <van-switch checked="{{isDefault}}" bind:change="onChange" />
+    <view class="buttonView">
+        <button class="cu-btn bg-green shadow-blur round lg" wx:if="{{!editFlag}}" bindtap="onClick">
+            保存
+        </button>
+        <button class="cu-btn bg-green shadow-blur round lg" wx:else bindtap="submitEdit">保存</button>
+        <!-- <van-button type="primary" wx:if="{{!editFlag}}" bind:click="onClick">保存</van-button>
+        <van-button type="primary" wx:else bind:click="submitEdit">保存</van-button> -->
+    </view>
+</view>

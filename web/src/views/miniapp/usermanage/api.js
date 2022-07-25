@@ -1,5 +1,5 @@
 import { request } from '@/api/service'
-export const urlPrefix = '/api/system/miniappuser/'
+export const urlPrefix = '/api/system/wxappuser/'
 
 export function GetList(query) {
   return request({
@@ -20,6 +20,11 @@ export function GetList(query) {
 export function UpdateObj(obj) {
   console.log(obj)
   obj.is_active = !obj.is_active
+  if (obj.is_active) {
+    obj.is_active = 1
+  } else {
+    obj.is_active = 0
+  }
   return request({
     url: urlPrefix + obj.id + '/',
     method: 'put',

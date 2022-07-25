@@ -1,0 +1,10 @@
+<van-nav-bar title="用户协议" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <view class="content-info">
+        <towxml nodes="{{article}}" />
+        <view class="content-info-title">
+            <text>创建时间：{{createTime}}\n</text>
+            <text>更新时间：{{updateTime}}\n</text>
+        </view>
+    </view>
+</view>

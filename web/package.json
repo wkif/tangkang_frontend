@@ -12,6 +12,7 @@
     "test": "vue-cli-service build --mode test"
   },
   "dependencies": {
+    "@great-dream/dvadmin-upgrade-center": "^1.0.0",
     "@great-dream/template": "^1.0.2",
     "@vue/composition-api": "^1.0.4",
     "axios": "^0.19.0",
@@ -35,6 +36,7 @@
     "js-md5": "^0.7.3",
     "lodash": "^4.17.15",
     "lowdb": "^1.0.0",
+    "mavon-editor": "^2.10.4",
     "nprogress": "^0.2.0",
     "qiankun": "^2.7.2",
     "screenfull": "^5.0.2",

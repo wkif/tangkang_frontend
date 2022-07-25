@@ -74,7 +74,7 @@
               </el-tab-pane>
             </el-tabs>
           </el-card>
-          <el-button
+          <!-- <el-button
             class="page-login--quick"
             size="default"
             type="success"
@@ -82,7 +82,7 @@
             v-if="$env === 'development'"
           >
             快速选择用户登录（限dev环境）
-          </el-button>
+          </el-button> -->
           <!-- footer -->
           <div class="footer">
             <p class="page-login--content-footer-locales">

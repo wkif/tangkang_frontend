@@ -1,0 +1,17 @@
+{
+  "name": "miniapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kif <kif101001000@163.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.10.3",
+    "axios": "^0.27.2",
+    "axios-miniprogram-adapter": "^0.3.2",
+    "miniprogram-sm-crypto": "^0.3.10"
+  }
+}

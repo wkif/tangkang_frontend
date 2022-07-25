@@ -1,0 +1,14 @@
+.app {
+  margin-top: 22vh;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.app .van-switch {
+  margin-top: 20px;
+}
+.app .buttonView {
+  margin-top: 60px;
+  float: left;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
