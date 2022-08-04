@@ -21,30 +21,45 @@ Page({
     },
     PickerChangeheight(e) {
         // console.log(e);
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(`身高已经更改为${this.data.heightPicker[e.detail.value]}厘米`)
+        }
         this.setData({
             'userInfo.height': this.data.heightPicker[e.detail.value]
         })
     },
     PickerChangeweight(e) {
         // console.log(e);
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(`体重已经更改为${this.data.weightPicker[e.detail.value]}公斤`)
+        }
         this.setData({
             'userInfo.weight': this.data.weightPicker[e.detail.value]
         })
     },
     PickerChangebloodType(e) {
         // console.log(e);
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(`血型已经更改为${this.data.bloodTypePicker[e.detail.value]}`)
+        }
         this.setData({
             'userInfo.bloodType': this.data.bloodTypePicker[e.detail.value]
         })
     },
     PickerChangewaistline(e) {
         // console.log(e);
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(`腰围已经更改为${this.data.waistlinePicker[e.detail.value]}厘米`)
+        }
         this.setData({
             'userInfo.waistline': this.data.waistlinePicker[e.detail.value]
         })
     },
     changeSex(e) {
         console.log('e', e.detail.value)
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(`性别已经更改为${e.detail.value ? '女' : '男'}`)
+        }
         if (e.detail.value) {
             this.setData({
                 'userInfo.gender': 1
@@ -56,6 +71,9 @@ Page({
         }
     },
     DateChange(e) {
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(`出生日期已经更改为${e.detail.value}`)
+        }
         this.setData({
             'userInfo.birthday': e.detail.value
         })
@@ -148,6 +166,9 @@ Page({
                         icon: 'success',
                         duration: 2000
                     })
+                    if (app.globalData.speedFlag) {
+                        app.$Text2Speech(`提交成功`)
+                    }
                     wx.navigateBack({
                         delta: 1
                     })

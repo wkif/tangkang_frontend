@@ -5,7 +5,7 @@
             <view slot="action" bind:tap="onClick">搜索</view>
         </van-search>
     </view> -->
-    <van-notice-bar scrollable mode="closeable" speed="100" text="{{topnotice.title}}" />
+    <van-notice-bar scrollable mode="closeable" speed="100" wx:if="{{topnotice.length}}" text="{{topnotice.title}}" />
     <view class="swiperView">
         <swiper class="card-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
             <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
@@ -29,7 +29,7 @@
             </van-col>
             <van-col span="10" offset="4">
                 <van-tag class="lastTag" type="warning">最近血糖值数据：</van-tag>
-                <view class="last" wx:if="{{lastBloodSugarData}}">
+                <view class="last" bindtap="gotoRe" wx:if="{{lastBloodSugarData}}">
                     <view class="data">
                         <!-- 血糖值： -->
                         <text class="last-text bloodSugarLevel text-red" wx:if="{{lastBloodSugarData.bloodSugarLevel>6 || lastBloodSugarData.bloodSugarLevel<3.9}}">
@@ -45,14 +45,14 @@
                         <view class="cu-tag line-blue">{{lastBloodSugarData.bloodSugarTime}}</view>
                     </view>
                 </view>
-                <view class="noData" wx:else>
+                <view class="noData" bindtap="gotoRe" wx:else>
                     <view class="noData-text">暂无今日数据，快来记录吧</view>
                 </view>
             </van-col>
         </van-row>
     </view>
     <view class="cu-list grid col-3 {{gridBorder?'':'no-border'}}">
-        <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<6}}">
+        <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<6}}" bindtap="gotoCuItem" data-path="{{item.path}}">
             <view class="cuIcon-{{item.icon}} text-{{item.color}}">
                
             </view>

@@ -2,7 +2,8 @@
 <view class="app">
     <view class="data" wx:if="{{addressList}}">
         <van-cell-group inset wx:for="{{addressList}}">
-            <van-cell wx:if="{{item.isDefault}}" value="{{item.address}} \n 邮编：{{item.postalCode}}" label="电话：{{item.phone}} " bindtap='editAddress' data-addressId='{{item.id}}'  bindlongpress="handleDel" is-link>
+            <van-cell wx:if="{{item.isDefault}}" value="{{item.address}} \n 邮编：{{item.postalCode}}" label="电话：{{item.phone}} " bindtap='editAddress' 
+            data-addressId='{{item.id}}'  bindlongpress="handleDel" is-link>
                 <view slot="title">
                     <view class="van-cell-text">{{item.name}}</view>
                     <van-tag type="success">默认</van-tag>

@@ -1,10 +1,10 @@
 <view class="app bg-olive">
     <swiper class="card-swiper square-dot recordSwiper" indicator-dots="true" circular="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
         <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
-            <view class="swiper-item">
-                <image src="{{item.url}}" mode="aspectFill">
-                    text
-                </image>
+            <view class="swiper-item" bindtap="navto" data-path="{{item.path}}">
+                <image src="{{item.url}}" mode="aspectFill"></image>
+                <view class="title">{{item.name}}</view>
+                <text class="desc">{{item.desc}}</text>
             </view>
         </swiper-item>
     </swiper>

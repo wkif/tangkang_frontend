@@ -1,4 +1,6 @@
 // pages/record/index.js
+const app = getApp();
+
 Page({
 
     /**
@@ -9,13 +11,31 @@ Page({
             id: 0,
             type: 'image',
             url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202207242302946.png',
-            path: ''
+            path: '/pages/record/dailyRecord/index',
+            name: '血糖值日记录',
+            desc: '记录每天的血糖值',
         }, {
             id: 1,
             type: 'image',
             url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202207242303075.png',
-            path: ''
+            path: '/pages/record/irregularTimingRecording/index',
+            name: '不定期记录',
+            desc: '记录糖化血红蛋白等数据'
         }],
+    },
+    navto(e) {
+        let path = e.currentTarget.dataset.path
+        if (app.globalData.loginFlag) {
+            wx.navigateTo({
+                url: path,
+            })
+        }
+        else {
+            wx.showToast({
+                title: '请先登录',
+                icon: 'none'
+            })
+        }
     },
 
     /**

@@ -11,7 +11,19 @@
         "pages/user/about/index",
         "pages/user/informationManage/index",
         "pages/user/userAgreement/index",
-        "pages/home/announcement/index"
+        "pages/home/announcement/index",
+        "pages/record/dailyRecord/index",
+        "pages/record/irregularTimingRecording/index",
+        "pages/record/dailyRecord/add/index",
+        "pages/user/setting/index",
+        "pages/record/irregularTimingRecording/add/index",
+        "pages/home/setGoals/index",
+        "pages/home/foodDatabase/index",
+        "pages/home/dietRecords/index",
+        "pages/home/dietRecords/add/index",
+        "pages/user/about/versionLog/index",
+        "pages/nodata/index",
+        "pages/user/integral/index"
     ],
     "window": {
         "navigationStyle": "custom"
@@ -25,12 +37,6 @@
                 "iconPath": "./assets/icon/home.png",
                 "selectedIconPath": "/assets/icon/home-active.png",
                 "text": "首页"
-            },
-            {
-                "pagePath": "pages/information/index",
-                "iconPath": "/assets/icon/in.png",
-                "selectedIconPath": "/assets/icon/in-active.png",
-                "text": "资讯"
             },
             {
                 "pagePath": "pages/record/index",
@@ -61,5 +67,11 @@
         "van-notify": "@vant/weapp/notify/index"
     },
     "sitemapLocation": "sitemap.json",
-    "lazyCodeLoading": "requiredComponents"
+    "lazyCodeLoading": "requiredComponents",
+    "plugins": {
+        "WechatSI": {
+            "version": "0.3.5",
+            "provider": "wx069ba97219f66d99"
+        }
+    }
 }

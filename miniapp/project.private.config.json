@@ -53,6 +53,84 @@
                     "pathName": "pages/record/index",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/record/dailyRecord/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/record/dailyRecord/add/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/setting/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/shop/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/record/irregularTimingRecording/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/record/irregularTimingRecording/add/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/home/setGoals/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/home/foodDatabase/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/home/dietRecords/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "饮食记录",
+                    "pathName": "pages/home/dietRecords/add/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/about/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "日志",
+                    "pathName": "pages/user/about/versionLog/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "积分",
+                    "pathName": "pages/user/integral/index",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

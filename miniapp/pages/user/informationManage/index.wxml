@@ -31,14 +31,14 @@
         </view>
         <view class="cu-form-group">
             <view class="title">腰围</view>
-            <picker bindchange="PickerChangeweight" value="{{userInfo.weight}}" range="{{weightPicker}}">
-                <view class="picker">{{userInfo.weight}}</view>
+            <picker bindchange="PickerChangewaistline" value="{{userInfo.waistline}}" range="{{waistlinePicker}}">
+                <view class="picker">{{userInfo.waistline}}</view>
             </picker>
         </view>
         <view class="cu-form-group">
             <view class="title">血型</view>
-            <picker bindchange="PickerChangewaistline" value="{{userInfo.waistline}}" range="{{waistlinePicker}}">
-                <view class="picker">{{userInfo.waistline}}</view>
+            <picker bindchange="PickerChangebloodType" value="{{userInfo.bloodType}}" range="{{bloodTypePicker}}">
+                <view class="picker">{{userInfo.bloodType}}</view>
             </picker>
         </view>
         <view class="cu-form-group">

@@ -1,0 +1,77 @@
+<van-nav-bar title="饮食记录" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <view class="Data" wx:if="{{Data.length}}">
+        <view class="dateSelect">
+            <van-dropdown-menu active-color="#1989fa">
+                <van-dropdown-item value="{{ tabIndex }}" options="{{ dateList }}" bind:change="tabSelect" data-id="{{tabIndex}}" />
+                <!-- <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" /> -->
+            </van-dropdown-menu>
+        </view>
+        <view class="cardView">
+            <view class="deleteView" bindtap="delete">
+                <text class="cuIcon-delete lg text-red"></text>
+            </view>
+            <view class="padding-xl radius shadow shadow-lg bg-white margin-top">
+                <van-icon name="flower-o" />
+                <text>卡路里：{{d.foodCalory}}千卡\n</text>
+                <van-icon name="flower-o" />
+                <text>蛋白质：{{d.foodProtein}} \n</text>
+                <van-icon name="flower-o" />
+                <text>脂肪：{{d.foodFat}}   \n</text>
+                <van-icon name="flower-o" />
+                <text>热量：{{d.heat}}\n</text>
+                <van-icon name="flower-o" />
+                <text>碳水化合物：{{d.foodCarbohydrate}}\n</text>
+                <van-icon name="flower-o" />
+                <text>维生素A：{{d.foodVitaminA}}\n</text>
+                <van-icon name="flower-o" />
+                <text>维生素C：{{d.foodVitaminC}}\n</text>
+                <van-icon name="flower-o" />
+                <text>维生素E：{{d.foodVitaminE}}\n</text>
+                <van-icon name="flower-o" />
+                <text>维生素D：{{d.foodVitaminD}}\n</text>
+                <van-divider contentPosition="left">明细</van-divider>
+                <view class="foodList">
+                    <van-collapse value="{{ activeNames }}" bind:change="onChange">
+                        <van-collapse-item wx:for="{{d.food}}" name="{{item.id}}">
+                            <view slot="title">
+                                {{item.food.foodName}}
+                                <van-tag plain type="primary">{{item.food.foodType}}</van-tag>
+                                <van-tag plain type="success">X {{item.number}}</van-tag>
+                            </view>
+                            <van-icon name="flower-o" />
+                            <text>卡路里：{{item.food.foodCalory}}千卡\n</text>
+                            <van-icon name="flower-o" />
+                            <text>蛋白质：{{item.food.foodProtein}} \n</text>
+                            <van-icon name="flower-o" />
+                            <text>脂肪：{{item.food.foodFat}}   \n</text>
+                            <van-icon name="flower-o" />
+                            <text>热量：{{item.food.heat}}\n</text>
+                            <van-icon name="flower-o" />
+                            <text>碳水化合物：{{item.food.foodCarbohydrate}}\n</text>
+                            <van-icon name="flower-o" />
+                            <text>维生素A：{{item.food.foodVitaminA}}\n</text>
+                            <van-icon name="flower-o" />
+                            <text>维生素C：{{item.food.foodVitaminC}}\n</text>
+                            <van-icon name="flower-o" />
+                            <text>维生素E：{{item.food.foodVitaminE}}\n</text>
+                            <van-icon name="flower-o" />
+                            <text>维生素D：{{item.food.foodVitaminD}}\n</text>
+                        </van-collapse-item>
+                    </van-collapse>
+                </view>
+                <view class="timeBox">
+                    <van-icon name="clock-o" />
+                    {{d.time}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-empty image="error" wx:else description="描述文字" />
+    <view class="addButtonView">
+        <button class="cu-btn block line-greeen lg" bindtap="addButton">
+            <text class="cuIcon-edit"></text>
+            <text>记录刚刚吃的！</text>
+        </button>
+    </view>
+</view>

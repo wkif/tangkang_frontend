@@ -126,6 +126,35 @@ export const crudOptions = (vm) => {
                 }
             },
             {
+                title: '单位',
+                key: 'unit',
+
+                search: {
+                    disabled: false,
+                    component: {
+                        props: {
+                            clearable: true
+                        }
+                    }
+                },
+
+                type: 'input',
+                form: {
+                    rules: [ // 表单校验规则
+                        { required: true, message: '单位必填项' }
+                    ],
+                    component: {
+                        props: {
+                            clearable: true
+                        },
+                        placeholder: '请输入单位'
+                    },
+                    itemProps: {
+                        class: { yxtInput: true }
+                    }
+                }
+            },
+            {
                 title: '卡路里',
                 key: 'foodCalory',
                 sortable: true,

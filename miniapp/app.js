@@ -4,6 +4,8 @@ App({
   // 引入`towxml3.0`解析方法
   towxml: require('/towxml/index'),
   $api: require('./utils/api').API,
+  $Text2Speech: require('./utils/util').Text2Speech,
+  $formatTime: require('./utils/util').formatTime,
   onLaunch: function (options) {
     // 获取系统信息
     const systemInfo = wx.getSystemInfoSync();
@@ -19,6 +21,16 @@ App({
     this.globalData.navBarHeight = this.globalData.menuTopSpace * 2 + menuButtonInfo.height + systemInfo.statusBarHeight;
     // 状态栏高
     this.globalData.statusBarHeight = systemInfo.statusBarHeight;
+    if (this.globalData.speedFlag) {
+      this.$api.getspeed({
+        userId: wx.getStorageSync('userInfo').id
+      }).then(res => {
+        console.log('speedFlagres', res)
+        this.globalData.speedFlag = res.data
+      })
+    }
+
+
   },
   globalData: {
     appName: '糖康有道',
@@ -29,6 +41,7 @@ App({
     statusBarHeight: 0,
     userInfo: null,
     loginFlag: false,
+    speedFlag: false,
   },
   //设置tabbar的选中 添加一个全局方法
   setTabBarIndex(index) {
@@ -84,6 +97,7 @@ App({
     )
 
   },
+
 
 
 })

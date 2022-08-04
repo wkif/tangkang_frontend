@@ -1,0 +1,40 @@
+<van-nav-bar title="记录" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+  <van-cell-group inset>
+    <van-cell title="时间" value="{{timevalue }}" bind:tap="showTimePopup" />
+    <!-- <van-cell wx:for="{{food}}" title="{{item.food.foodName}}" value="{{item.number}}" label="描述信息" border="{{ false }}" /> -->
+  </van-cell-group>
+  <van-card wx:for="{{food}}" num="{{item.number}}" tag="{{item.food.foodType}}" desc="营养价值：卡路里：{{item.food.foodCalory}}；蛋白质：{{item.food.foodProtein}}脂肪：{{item.food.foodFat}}；碳水：{{item.food.foodCarbohydrate}}；热量：{{item.food.heat}}；维生素A：{{item.food.foodVitaminA}}；维生素C：{{item.food.foodVitaminC}}；维生素D：{{item.food.foodVitaminD}}；维生素E：{{item.food.foodVitaminE}}；" title="{{item.food.foodName}} 单位：{{item.food.unit}}" thumb="{{ item.food.img }}" bindlongpress="handleDel" data-index="{{index}}">
+    <view slot="footer">
+      <van-button size="mini" bindtap="sub" data-index="{{index}}">-</van-button>
+      <van-button size="mini" bindtap="add" data-index="{{index}}">+</van-button>
+    </view>
+  </van-card>
+  <view class="addButtonView">
+    <button class="cu-btn block line-greeen lg margin-top" bindtap="showPopup">
+      <text class="cuIcon-edit">新增</text>
+    </button>
+    <button class="cu-btn block line-greeen lg margin-top" bindtap="submit">
+      <text class="cuIcon-upload">提交</text>
+    </button>
+  </view>
+</view>
+<van-action-sheet show="{{ timeShow }}">
+  <view>
+    <van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:cancel="onCancelTime" bind:confirm="onConfirmTime" />
+  </view>
+</van-action-sheet>
+<van-popup show="{{ show }}" position="bottom" bind:close="onClose">
+  <view class="Foodlist">
+    <van-checkbox-group value="{{ result }}" bind:change="onChange">
+      <!-- <van-checkbox name="{{index}}" icon-size="25px" wx:for="{{foodList}}">{{item.foodName}}</van-checkbox> -->
+      <van-cell-group>
+        <van-cell wx:for="{{ foodList }}" wx:key="index" title=" {{ item.foodName }}"
+        
+        value-class="value-class" clickable data-index="{{ index }}" bind:click="toggle">
+          <van-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ index }}" />
+        </van-cell>
+      </van-cell-group>
+    </van-checkbox-group>
+  </view>
+</van-popup>

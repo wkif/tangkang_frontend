@@ -21,9 +21,14 @@ Page({
                 label: '管理您的收货地址'
             },
             {
+                title: '设置',
+                path: '/pages/user/setting/index',
+                icon: 'setting-o',
+                label: '个性化设置'
+            },
+            {
                 title: '关于我们',
                 path: '/pages/user/about/index',
-
                 icon: 'info-o',
                 label: '了解我们的项目'
             },
@@ -84,7 +89,7 @@ Page({
                                 info: userInfo,
                                 inviteCode: that.data.inviteCode
                             }).then(res => {
-                                console.log('123131', res)
+                                // console.log('123131', res)
                                 if (res.status == 200) {
                                     wx.setStorageSync('token', res.token)
                                     wx.setStorageSync('userInfo', res.data)
@@ -93,6 +98,7 @@ Page({
                                         userInfo: res.data
                                     })
                                     app.globalData.loginFlag = true
+                                    app.globalData.speedFlag = res.data.speed
                                 } else {
                                     wx.showToast({
                                         title: res.msg,
@@ -135,6 +141,20 @@ Page({
             })
         }
 
+    },
+    gotointegral() {
+        if (!this.data.loginFlag) {
+            wx.showToast({
+                title: '请先登录',
+                icon: 'none',
+                duration: 2000//持续的时间
+            })
+            this.doLogin()
+        } else {
+            wx.navigateTo({
+                url: '/pages/user/integral/index',
+            })
+        }
     },
     onShareAppMessage: function () {
         if (this.data.userInfo) {

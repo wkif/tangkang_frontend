@@ -1,0 +1,38 @@
+<van-nav-bar title="不定期记录" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <view class="dateSelect">
+        <!-- <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+            <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{dateList}}" wx:key bindtap="tabSelect" data-id="{{item.id}}">
+                {{item.date}}
+            </view>
+        </scroll-view> -->
+        <van-dropdown-menu active-color="#1989fa">
+            <van-dropdown-item value="{{ tabIndex }}" options="{{ dateList }}" bind:change="tabSelect" data-id="{{tabIndex}}" />
+            <!-- <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" /> -->
+        </van-dropdown-menu>
+    </view>
+    <view class="card padding-xl radius shadow shadow-lg bg-white margin-top">
+        <view class="dataBox">
+            <text class="cuIcon-like lg text-gray"></text>
+            <text>糖化血红蛋白：</text>
+            <text>{{Data.glycosylatedHemoglobin}}\n\n\n</text>
+            <text class="cuIcon-titles lg text-gray"></text>
+            <text>微量白蛋白：</text>
+            <text>{{Data.microalbuminuria}}\n\n\n</text>
+            <text class="cuIcon-footprint lg text-gray"></text>
+            <text>足跟静脉搏动：</text>
+            <text>{{Data.dorsalisPedisArtery}}\n\n\n</text>
+        </view>
+        <view class="deleteView" bindtap="delete">
+            <text class="cuIcon-delete lg text-red"></text>
+        </view>
+        <view class="timeBox">
+            <text class="cuIcon-time lg text-gray"></text>
+            <view class="cu-tag line-green">{{Data.periodicalTime}}</view>
+            <!-- <text>{{Data.periodicalTime}}\n\n\n</text> -->
+        </view>
+    </view>
+    <view class="buttonView">
+        <button class="cu-btn bg-green shadow-blur round lg" bindtap="addRec">新增记录</button>
+    </view>
+</view>

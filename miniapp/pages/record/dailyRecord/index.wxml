@@ -1,0 +1,82 @@
+<van-nav-bar title="日记录" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <!-- <view class=" padding-xl radius shadow bg-white box">
+        <ec-canvas id="mychart" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+        <view class="title">
+            <text class="text-gray">{{title[dateType]}}</text>
+            <van-switch checked="{{ checked }}" bind:change="onChange" size="24px" />
+        </view>
+    </view>
+    <view class="cardBox">
+        <view class="dateSelect">
+            <van-dropdown-menu active-color="#1989fa">
+                <van-dropdown-item value="{{ tabIndex }}" options="{{ dateList }}" bind:change="tabSelect" data-id="{{tabIndex}}" />
+            </van-dropdown-menu>
+        </view>
+        <view class="card padding-xl radius shadow shadow-lg bg-white margin-top">
+            <view class="dataBox">k</view>
+            <view class="deleteView" bindtap="delete">
+                <text class="cuIcon-delete lg text-red"></text>
+            </view>
+            <view class="timeBox">
+                <text class="cuIcon-time lg text-gray"></text>
+                <view class="cu-tag line-green">{{Date}}</view>
+                
+            </view>
+        </view>
+    </view> -->
+    <scroll-view scroll-x class="bg-green nav text-center">
+        <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="0">
+            <text class="cuIcon-camerafill"></text>
+            统计图
+        </view>
+        <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+            <text class="cuIcon-upstagefill"></text>
+            详情
+        </view>
+    </scroll-view>
+    <view class="mainView">
+        <view class="chartView" wx:if="{{TabCur==0}}">
+            <view class=" padding-xl radius shadow bg-white box">
+                <ec-canvas id="mychart" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+                <view class="title">
+                    <text class="text-gray">{{title[dateType]}}</text>
+                    <van-switch checked="{{ checked }}" bind:change="onChange" size="24px" />
+                </view>
+            </view>
+        </view>
+        <view class="cardView" wx:else>
+            <view class="cardBox">
+                <view class="dateSelect">
+                    <van-dropdown-menu active-color="#1989fa">
+                        <van-dropdown-item value="{{ tabIndex }}" options="{{ dateList }}" bind:change="datetabSelect" data-id="{{tabIndex}}" />
+                    </van-dropdown-menu>
+                </view>
+                <view class="card padding-xl radius shadow shadow-lg bg-white margin-top">
+                    <view class="dataBox">
+                        <text class="cuIcon-like lg text-gray"></text>
+                        <text>血糖值：</text>
+                        <text>{{Data.bloodSugarLevel}}\n\n\n</text>
+                        <text class="cuIcon-titles lg text-gray"></text>
+                        <text>记录类型：</text>
+                        <text>{{Data.bloodSugarType}}\n\n\n</text>
+                    </view>
+                    <view class="deleteView" bindtap="delete">
+                        <text class="cuIcon-delete lg text-red"></text>
+                    </view>
+                    <view class="timeBox">
+                        <text class="cuIcon-time lg text-gray"></text>
+                        <view class="cu-tag line-green">{{Data.bloodSugarTime}}</view>
+                    </view>
+                    <view class="qualifiedImg">
+                        <image wx:if="{{Data.status==1}}" src="../../../assets/img/qualified.png" />
+                        <image wx:else src="../../../assets/img/unqualified.png" />
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="buttonView">
+        <button class="cu-btn bg-green shadow-blur round lg" bindtap="addRec">新增记录</button>
+    </view>
+</view>

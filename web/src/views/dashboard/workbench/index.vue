@@ -6,23 +6,23 @@
 
       </el-avatar>
       <div class="title">
-        <h1>早安, DVAdmin, 开始您一天的工作吧！</h1>
+        <h1>{{timeState}}</h1>
         <span> 今日晴，20℃ - 32℃！ </span>
       </div>
     </div>
 
     <el-row :gutter="20">
-      <el-col :span="12">
+      <!-- <el-col :span="12">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
             <span>友情链接</span>
 
             <el-button style="float: right; padding: 3px 0" type="text">
-              <el-link href="https://bbs.django-vue-admin.com" target="_blank" type="primary">更多</el-link>
+              <el-link href="https://www.kifroom.icu" target="_blank" type="primary">更多</el-link>
             </el-button>
           </div>
           <el-row>
-              <el-col :span="8" v-for="({name,imageUrl,slogan,link},index) in projects" :key="index">
+            <el-col :span="8" v-for="({ name, imageUrl, slogan, link }, index) in projects" :key="index">
               <el-card shadow="hover" style="padding: 0">
                 <div class="project-detail">
                   <div>
@@ -35,24 +35,26 @@
                 </div>
 
               </el-card>
-              </el-col>
+            </el-col>
           </el-row>
         </el-card>
 
-      </el-col>
+      </el-col> -->
 
       <el-col :span="12">
         <div class="grid-content bg-purple">
 
-          <el-card class="box-card" >
+          <el-card class="box-card">
             <div slot="header" class="clearfix">
               <span>快捷导航</span>
             </div>
             <el-row>
-              <el-col :span="8" v-for="({name,icon,route,color},index) of navigators" :key="index" style="padding: 0">
+              <el-col :span="8" v-for="({ name, icon, route, color }, index) of navigators" :key="index"
+                style="padding: 0">
                 <el-card shadow="hover">
-                  <div  style="display: flex;align-items: center;flex-direction: column;cursor: pointer" @click="()=>{gotoRoute(route)}">
-                    <d2-icon-svg :name="icon" style="width: 25px;height: 25px;" :style="{fill:color}"/>
+                  <div style="display: flex;align-items: center;flex-direction: column;cursor: pointer"
+                    @click="() => { gotoRoute(route) }">
+                    <d2-icon-svg :name="icon" style="width: 25px;height: 25px;" :style="{ fill: color }" />
                     <div style="text-align: center;font-size: 12px;margin-top: 20px" v-text="name"></div>
                   </div>
                 </el-card>
@@ -60,9 +62,9 @@
             </el-row>
           </el-card>
 
-          <el-card class="box-card"  style="margin-top: 25px">
+          <el-card class="box-card" style="margin-top: 25px">
             <div class="work">
-              <d2-icon-svg name="work" style="margin-left: 50%;transform: translateX(-50%);height: 216px"/>
+              <d2-icon-svg name="work" style="margin-left: 50%;transform: translateX(-50%);height: 216px" />
             </div>
           </el-card>
         </div>
@@ -91,7 +93,7 @@ use([
 ])
 export default {
   name: 'workbench',
-  data () {
+  data() {
     return {
       projects: [
         {
@@ -210,104 +212,141 @@ export default {
           { 日期: '1月5日', 销售额: 3123 },
           { 日期: '1月6日', 销售额: 7123 }
         ]
-      }
+      },
+      timeState: '',
+      user:''
     }
   },
   methods: {
-    gotoRoute (route) {
+    gotoRoute(route) {
       this.$router.push(route)
+    },
+    getTimeState() {
+      // 获取当前时间
+      let timeNow = new Date();
+      // 获取当前小时
+      let hours = timeNow.getHours();
+      // 设置默认文字
+      let text = ``;
+      // 判断当前时间段
+      if (hours >= 0 && hours <= 10) {
+        text = `早上好`;
+      } else if (hours > 10 && hours <= 14) {
+        text = `中午好`;
+      } else if (hours > 14 && hours <= 18) {
+        text = `下午好`;
+      } else if (hours > 18 && hours <= 24) {
+        text = `晚上好`;
+      }
+      console.log(`hours >>>>>`, hours);
+      console.log(`text >>>>`, text);
+      // 返回当前时间段对应的状态
+      return text;
     }
+  },
+  created() {
+    this.timeState = this.getTimeState();
   }
 }
 </script>
 
 <style scoped lang="scss">
+$userAvatarLength: 72px;
 
-  $userAvatarLength: 72px;
+.page-header {
+  box-sizing: border-box;
+  padding: 16px;
 
-  .page-header{
-    box-sizing: border-box;
-    padding: 16px;
-    .user-avatar{
-        width: $userAvatarLength;
-        height: $userAvatarLength;
-        line-height: $userAvatarLength;
-      display: inline-block;
-    }
-
-    .title{
-      display: inline-block;
-      padding: 0 0 0 15px;
-      position: relative;
-      top: -5px;
-
-      h1{
-        font-size: 1.125rem;
-        font-weight: 500;
-        line-height: 1.75rem;
-      }
-      span{
-        font-size: 14px;
-        color: rgba(0,0,0,.45);
-      }
-    }
-
+  .user-avatar {
+    width: $userAvatarLength;
+    height: $userAvatarLength;
+    line-height: $userAvatarLength;
+    display: inline-block;
   }
 
-  .project-detail{
-    color: rgba(0,0,0,.45);
-    height: 65px;
-     img {
-       width: 25px;
-       height: 25px;
-     }
-    .name{
-      margin-left: 1rem;
-      font-size: 1rem;
-      line-height: 2rem;
-      height: 2rem;
-      display: inline-block;
-      color: rgba(0,0,0,.85);
-      position: relative;
-      top: -5px;
+  .title {
+    display: inline-block;
+    padding: 0 0 0 15px;
+    position: relative;
+    top: -5px;
+
+    h1 {
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.75rem;
     }
-    .slogan{
-      font-size: 12px;
-      padding: 5px 0;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-    }
-    .team{
+
+    span {
       font-size: 14px;
+      color: rgba(0, 0, 0, .45);
     }
   }
 
-  .activity{
-    padding: 0;
-    .activity-avatar{
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-    }
-    .activity-detail{
-      padding: 10px;
-      line-height: 15px;
-      font-size: 14px;
-      color: rgba(0,0,0,.85);
-    }
-  }
-  .chart {
-    height: 408px;
+}
+
+.project-detail {
+  color: rgba(0, 0, 0, .45);
+  height: 65px;
+
+  img {
+    width: 25px;
+    height: 25px;
   }
 
-  .el-divider--horizontal{
-    margin: 4px 0;
-    background: 0 0;
-    border-top: 1px solid #e8eaec;
+  .name {
+    margin-left: 1rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    height: 2rem;
+    display: inline-block;
+    color: rgba(0, 0, 0, .85);
+    position: relative;
+    top: -5px;
+  }
 
+  .slogan {
+    font-size: 12px;
+    padding: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  .el-card, .el-message {
-    border-radius: 0;
+
+  .team {
+    font-size: 14px;
   }
+}
+
+.activity {
+  padding: 0;
+
+  .activity-avatar {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .activity-detail {
+    padding: 10px;
+    line-height: 15px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .85);
+  }
+}
+
+.chart {
+  height: 408px;
+}
+
+.el-divider--horizontal {
+  margin: 4px 0;
+  background: 0 0;
+  border-top: 1px solid #e8eaec;
+
+}
+
+.el-card,
+.el-message {
+  border-radius: 0;
+}
 </style>

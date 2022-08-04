@@ -1,0 +1,47 @@
+<van-nav-bar title="食品营养价值表" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <van-search value="{{ searchValue }}" bind:search="search" input-align="center" placeholder="请输入搜索关键词" />
+    <view class="tabView">
+        <van-tabs active="{{ active }}" bind:change="onChange">
+            <van-tab wx:for="{{tabList}}" title="{{item}}">
+                <view class="foodView">
+                    <view class="foodList" wx:if="{{data.length}}">
+                        <view class="foodItem" wx:for="{{data}}" bind:click="onClick">
+                            <van-transition name="slide-down">
+                                <view class="foodCard padding-xl radius shadow-warp bg-white margin-top">
+                                    <view class="foodImg">
+                                        <image src="{{item.img}}" mode="widthFix" />
+                                        <text>{{item.foodName}}</text>
+                                        <van-tag type="primary">{{item.foodType}}</van-tag>
+                                         <van-tag type="success">{{item.unit}}</van-tag>
+                                    </view>
+                                    <view class="foodDesc">
+                                        <van-row gutter="20">
+                                            <van-col span="12">
+                                                <view>卡路里： {{item.foodCalory}}</view>
+                                                <view>蛋白质： {{item.foodProtein}}</view>
+                                                <view>脂肪： {{item.foodFat}}</view>
+                                                <view>
+                                                    热量： {{item.heat}}
+                                                    <!-- <text>{{item.heat}} </text> -->
+                                                </view>
+                                                <view>碳水： {{item.foodCarbohydrate}}</view>
+                                            </van-col>
+                                            <van-col span="12">
+                                                <view>维生素C：{{item.foodVitaminC}}</view>
+                                                <view>维生素E：{{item.foodVitaminE}}</view>
+                                                <view>维生素D：{{item.foodVitaminD}}</view>
+                                                <view>维生素A：{{item.foodVitaminA}}</view>
+                                            </van-col>
+                                        </van-row>
+                                    </view>
+                                </view>
+                            </van-transition>
+                        </view>
+                    </view>
+                    <van-empty wx:else image="search" description="暂无数据" />
+                </view>
+            </van-tab>
+        </van-tabs>
+    </view>
+</view>

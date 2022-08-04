@@ -34,7 +34,7 @@
                         </view>
                     </van-col>
                     <van-col span="12">
-                        <view class="iconBox">
+                        <view class="iconBox" bindtap="gotointegral">
                             <van-icon name="gold-coin-o" size="35px" color="#5cbc46" />
                             积分
                         </view>

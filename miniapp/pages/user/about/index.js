@@ -12,7 +12,11 @@ Page({
             delta: 1
         })
     },
-
+    gotoVersionLog(){
+        wx.navigateTo({
+            url: '/pages/user/about/versionLog/index',
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

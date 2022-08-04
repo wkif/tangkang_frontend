@@ -1,0 +1,4 @@
+<van-nav-bar title="目标计划" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    
+</view>

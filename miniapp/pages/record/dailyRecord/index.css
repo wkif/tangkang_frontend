@@ -1,0 +1,45 @@
+.app {
+  margin-top: 12vh;
+}
+.app .box {
+  height: 70vh;
+}
+.app .box .title {
+  text-align: center;
+  margin-bottom: 8px;
+  transform: translateY(-30px);
+}
+.app .cardBox .card {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+.app .cardBox .card .timeBox {
+  float: right;
+  transform: translateY(-10px);
+}
+.app .cardBox .card .deleteView {
+  float: right;
+  transform: translate(10px, -680%);
+}
+.app .cardBox .card .qualifiedImg {
+  width: 80px;
+  height: 80px;
+  float: right;
+  transform: translate(200%, -120%);
+}
+.app .cardBox .card .qualifiedImg image {
+  width: 100%;
+  height: 100%;
+}
+.app .cardBox .card .lg {
+  margin-right: 10px;
+}
+.app .buttonView {
+  margin-top: 10px;
+}
+.app .buttonView button {
+  margin-left: 50%;
+  width: 40vw;
+  transform: translateX(-50%);
+}

@@ -5,7 +5,8 @@ const FORM = 'FORM';
 const DELETE = 'DELETE';
 
 // const baseURL = 'http://127.0.0.1:8000/api';
-const baseURL = 'http://426x8r6735.zicp.vip/api';
+// const baseURL = 'http://426x8r6735.zicp.vip/api';
+const baseURL = 'https://tkapi.kifroom.icu/api';
 
 function request(method, url, data) {
     return new Promise(function (resolve, reject) {
@@ -45,7 +46,9 @@ const API = {
 
     wxLogin: (data) => request(POST, `/miniapp/login/`, data),
     verifyToken: (data) => request(POST, `/token/verify/`, data),
-
+    // 语音播报
+    changespeed: (data) => request(POST, `/miniapp/changespeed/`, data),
+    getspeed: (data) => request(POST, `/miniapp/getspeed/`, data),
     // 获取用户协议
     getUserAgreement: () => request(GET, `/miniapp/getUserAgreement/`),
     // 地址管理
@@ -65,6 +68,21 @@ const API = {
     getLastBloodSugarDataByUserId: (data) => request(POST, `/miniapp/getLastBloodSugarDataByUserId/`, data),
     addBloodSugarData: (data) => request(POST, `/miniapp/addBloodSugarData/`, data),
     deleteBloodSugarData: (data) => request(POST, `/miniapp/deleteBloodSugarData/`, data),
+    // 不定期记录
+    getperiodicalLoggingData: (data) => request(POST, `/miniapp/getperiodicalLoggingDataByUserId/`, data),
+    addPeriodicalLoggingData: (data) => request(POST, `/miniapp/addPeriodicalLoggingData/`, data),
+    deletePeriodicalLoggingData: (data) => request(POST, `/miniapp/deletePeriodicalLoggingData/`, data),
+    // 食品数据库
+    getfoodDatabaseByname: (data) => request(POST, `/miniapp/getfoodDatabaseByname/`, data),
+    getfoodDatabase: () => request(GET, `/miniapp/getfoodDatabase/`),
+    getDietRecordsByUserId: (data) => request(POST, `/miniapp/getDietRecords/`, data),
+    deleteDietRecords: (data) => request(POST, `/miniapp/deleteDietRecords/`, data),
+    addDietRecords: (data) => request(POST, `/miniapp/addDietRecords/`, data),
+    // 积分
+
+    getIntegralHistory: (data) => request(POST, `/miniapp/getIntegralHistory/`, data),
+    getUserIntegral: (data) => request(POST, `/miniapp/getUserIntegral/`, data),
+
 };
 module.exports = {
     API

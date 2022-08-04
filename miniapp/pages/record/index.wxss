@@ -1,3 +1,19 @@
 .app .recordSwiper {
   height: 100vh !important;
 }
+.app .recordSwiper image {
+  position: absolute;
+  /*设为绝对定位*/
+  opacity: 0.9;
+  /*设置透明度*/
+}
+.app .recordSwiper .title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 200%;
+  margin-left: 20%;
+}
+.app .recordSwiper .desc {
+  margin-left: 20%;
+  text-align: center;
+}

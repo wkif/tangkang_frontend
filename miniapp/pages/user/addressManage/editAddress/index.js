@@ -56,6 +56,9 @@ Page({
         this.setData({ isDefault: detail });
     },
     RegionChange: function (e) {
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(e.detail.value.join(''))
+        }
         this.setData({
             baseAddress: e.detail.value
         })

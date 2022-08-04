@@ -1,0 +1,16 @@
+<van-nav-bar title="日志" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <view class="cu-timeline">
+        <view class="cu-item text-green" wx:for="{{logList}}">
+            <view class="bg-gradual-green content shadow">
+                <view class="cu-capsule radius">
+                    <view class="cu-tag bg-white text-green">v{{item.version}}</view>
+                    <view class="cu-tag line-white">{{item.time}}</view>
+                </view>
+                <view class="margin-top-sm text-content" wx:for="{{item.content}}" wx:for-item="con">
+                    <view>{{index+1}}.{{con}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
