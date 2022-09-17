@@ -14,6 +14,7 @@ Page({
         isDefault: true,
         postalCode: '',
         editFlag: false,
+        marginTopview: app.globalData.navBarHeight
 
     },
 

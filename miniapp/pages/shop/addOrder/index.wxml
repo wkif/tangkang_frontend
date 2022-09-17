@@ -1,0 +1,26 @@
+<van-nav-bar title="订单" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <view class="main">
+        <view class="padding-xl radius shadow bg-white">
+            <van-cell-group inset>
+                <van-cell value="{{address.address}} \n 邮编：{{address.postalCode}}" label="电话：{{address.phone}} " is-link>
+                    <view slot="title">
+                        <view class="van-cell-text">{{address.name}}</view>
+                    </view>
+                </van-cell>
+            </van-cell-group>
+        </view>
+        <view class="padding-xl radius shadow bg-white">
+            <van-card num="{{total_count}}" tag="{{goodDetail.brand}}" price="{{goodDetail.price}}" desc="{{goodDetail.details}}" title="{{goodDetail.name}}" thumb="{{ goodDetail.image }}">
+                <view slot="footer">
+                    <van-button size="mini" bindtap="reduce">-</van-button>
+                    <van-button size="mini" bindtap="add">+</van-button>
+                </view>
+            </van-card>
+        </view>
+    </view>
+    <view class="bottomView">
+        <van-submit-bar price="{{ total_price }}" 
+        button-text="提交订单" bind:submit="onSubmit" />
+    </view>
+</view>

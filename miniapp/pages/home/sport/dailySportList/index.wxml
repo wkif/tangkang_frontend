@@ -1,0 +1,79 @@
+<van-nav-bar title="排行榜" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app" style="margin-top:{{marginTopview}}px;">
+    <view class="topThree">
+        <view class="topThreeitem" hover-class="none" hover-stop-propagation="false">
+            <view class="cu-avatar round lg margin-left" style="background-image:url({{dailySportList[1].user.avatar}});">
+                <view class="cu-tag badge {{index%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+            </view>
+            <div class="kif">
+                <!-- The content -->
+                <text>第二</text>
+                <!-- The left side -->
+                <div class="container__side container__side--left"></div>
+                <!-- The left triangle displayed below the content -->
+                <div class="container__triangle container__triangle--left"></div>
+                <!-- The right triangle displayed below the content -->
+                <div class="container__triangle container__triangle--right"></div>
+                <!-- The right side -->
+                <div class="container__side container__side--right"></div>
+            </div>
+        </view>
+        <view class="topThreeitem first" hover-class="none" hover-stop-propagation="false">
+            <view class="cu-avatar round xl margin-left " style="background-image:url({{dailySportList[0].user.avatar}});">
+                <view class="cu-tag badge {{index%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+            </view>
+            <div class="kif">
+                <!-- The content -->
+                <text>第一</text>
+                <!-- The left side -->
+                <div class="container__side container__side--left"></div>
+                <!-- The left triangle displayed below the content -->
+                <div class="container__triangle container__triangle--left"></div>
+                <!-- The right triangle displayed below the content -->
+                <div class="container__triangle container__triangle--right"></div>
+                <!-- The right side -->
+                <div class="container__side container__side--right"></div>
+            </div>
+        </view>
+        <view class="topThreeitem" hover-class="none" hover-stop-propagation="false">
+            <view class="cu-avatar round lg margin-left" style="background-image:url({{dailySportList[2].user.avatar}});">
+                <view class="cu-tag badge {{index%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+            </view>
+            <div class="kif">
+                <!-- The content -->
+                <text>第三</text>
+                <!-- The left side -->
+                <div class="container__side container__side--left"></div>
+                <!-- The left triangle displayed below the content -->
+                <div class="container__triangle container__triangle--left"></div>
+                <!-- The right triangle displayed below the content -->
+                <div class="container__triangle container__triangle--right"></div>
+                <!-- The right side -->
+                <div class="container__side container__side--right"></div>
+            </div>
+        </view>
+    </view>
+    <view class="list">
+        <van-cell-group>
+            <van-cell wx:for="{{dailySportList}}" wx:if="{{index>=3}}">
+                <view slot="title">
+                    <view class="van-cell-text">
+                        <view class="cu-avatar round" style="background-image:url({{item.user.avatar}});"></view>
+                        {{item.user.username}}
+                    </view>
+                    <van-tag type="danger">{{item.sportstype}}</van-tag>
+                </view>
+                <view>
+                    <view class="van-cell-text">
+                        <van-icon name="fire" />
+                        {{item.heat}}
+                    </view>
+                    <van-tag type="danger">
+                        <van-icon name="clock" />
+                         {{item.startTime}}
+                    </van-tag>
+                </view>
+            </van-cell>
+        </van-cell-group>
+    </view>
+</view>

@@ -47,7 +47,7 @@
         "useCompilerPlugins": false
     },
     "compileType": "miniprogram",
-    "libVersion": "2.25.0",
+    "libVersion": "2.12.3",
     "appid": "wxabdc52ee61f3560f",
     "projectname": "tangkangyoudao",
     "debugOptions": {

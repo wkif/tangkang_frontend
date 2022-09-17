@@ -1,0 +1,59 @@
+<van-nav-bar title="订单管理" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app">
+    <view class="tabView">
+        <scroll-view scroll-x class="bg-white nav">
+            <view class="flex text-center">
+                <view class="cu-item flex-sub {{index==TabCur?'text-themeColor cur':''}}" wx:for="{{tabList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+                    {{item}}
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="orderList">
+        <view wx:for="{{currentList}}" class="padding-xl radius shadow-warp bg-white margin-top">
+            <view class="order" hover-class="none" hover-stop-propagation="false">
+                <view class="title">
+                    <view class="name">{{item.good.name}}</view>
+                    <view class="status">
+                        <van-tag plain type="success">{{item.order_status}}</van-tag>
+                    </view>
+                </view>
+                <view class="goodInfo">
+                    <view class="goodImg">
+                        <image class="img" src="{{item.good.image}}" mode="widthFix" />
+                    </view>
+                    <view class="goodIn">
+                        <view class="detail">{{item.good.detail}}</view>
+                        <view class="num">x{{item.total_count}}</view>
+                        <view class="price">￥{{item.total_price}}</view>
+                    </view>
+                </view>
+                <van-divider />
+                <view class="orderInfo">
+                    <view class="addressInfo">
+                        <view class="name">{{item.address.name}}</view>
+                        <view class="phone">{{item.address.phone}}</view>
+                    </view>
+                    <view class="address">{{item.address.address}}</view>
+                    <view class="orderNum">订单号：{{item.order_id}}</view>
+                    <view class="orderTime">下单时间：{{item.update_datetime}}</view>
+                    <view class="trade_no" wx:if="{{TabCur>=2}}">快递单号：{{item.trade_no}}</view>
+                </view>
+                <view class="buttonView">
+                    <view class="button" wx:if="{{TabCur==0}}" bindtap="payOrder" data-id="{{item.id}}">
+                        <button class="cu-btn bg-themeColor">付款</button>
+                    </view>
+                    <view class="button" wx:if="{{TabCur==0}}" bindtap="cancelOrder" data-id="{{item.id}}">
+                        <button class="cu-btn bg-red">取消订单</button>
+                    </view>
+                    <view class="button" wx:if="{{TabCur==2}}" bindtap="confirmOrder" data-id="{{item.id}}">
+                        <button class="cu-btn bg-themeColor">确认收货</button>
+                    </view>
+                    <view class="button" wx:if="{{TabCur>=2 && TabCur!=5}}" bindtap="express" data-trade_no="{{item.trade_no}}">
+                        <button class="cu-btn bg-grey">查看物流</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

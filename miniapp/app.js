@@ -6,6 +6,7 @@ App({
   $api: require('./utils/api').API,
   $Text2Speech: require('./utils/util').Text2Speech,
   $formatTime: require('./utils/util').formatTime,
+  $shallowEqual: require('./utils/util').shallowEqual,
   onLaunch: function (options) {
     // 获取系统信息
     const systemInfo = wx.getSystemInfoSync();
@@ -29,6 +30,7 @@ App({
         this.globalData.speedFlag = res.data
       })
     }
+    this.getTabList()
 
 
   },
@@ -42,6 +44,7 @@ App({
     userInfo: null,
     loginFlag: false,
     speedFlag: false,
+    tabList: []
   },
   //设置tabbar的选中 添加一个全局方法
   setTabBarIndex(index) {
@@ -97,6 +100,22 @@ App({
     )
 
   },
+  getTabList() {
+    this.$api.getTabList().then(res => {
+      // console.log('restan!!!', res)
+      if (res.status == 200) {
+        if (!this.$shallowEqual(res.data, JSON.parse(wx.getStorageSync('tabList')))) {
+          // this.globalData.tabList = res.data
+          wx.setStorageSync('tabList', JSON.stringify(res.data))
+          console.log('更新')
+        } else {
+          console.log('不用更新')
+        }
+
+      }
+      // console.log('this.globalData.tabList', this.globalData.tabList)
+    })
+  }
 
 
 

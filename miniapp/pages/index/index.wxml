@@ -1,3 +1,30 @@
-<view class="" hover-class="none" hover-stop-propagation="false">
-  <van-button type="primary"  bind:tap='doLogin'>主要按钮</van-button>
+<home wx:if="{{PageCur=='home'}}"></home>
+<record wx:if="{{PageCur=='record'}}"></record>
+<shop wx:if="{{PageCur=='shop'}}"></shop>
+<user wx:if="{{PageCur=='user'}}"></user>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="home">
+    <view class='cuIcon-cu-image'>
+      <image src="../../assets/icon/home{{PageCur=='home'?'-active':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='home'?'text-green':'text-gray'}}">首页</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="record">
+    <view class='cuIcon-cu-image'>
+      <image src="../../assets/icon/add{{PageCur=='record'?'-active':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='record'?'text-green':'text-gray'}}">记录</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="shop">
+    <view class='cuIcon-cu-image'>
+      <image src="../../assets/icon/shop{{PageCur=='shop'?'-active':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='shop'?'text-green':'text-gray'}}">商城</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="user">
+    <view class='cuIcon-cu-image'>
+      <image src="../../assets/icon/user{{PageCur=='user'?'-active':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='user'?'text-green':'text-gray'}}">我的</view>
+  </view>
 </view>

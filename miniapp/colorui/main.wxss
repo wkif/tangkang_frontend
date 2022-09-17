@@ -13,6 +13,7 @@ page {
 	/* Color 可以自定义相关配色 */
 	/* var属性兼容性 --> https://www.caniuse.com/#feat=css-variables */
 	/* 标准色 */
+	--themeColor: #aed6db;
 	--red: #e54d42;
 	--orange: #f37b1d;
 	--yellow: #fbbd08;
@@ -2537,11 +2538,13 @@ button.icon.lg {
 .cu-modal.drawer-modal.show .cu-dialog {
 	transform: translateX(0%);
 }
-.cu-modal .cu-dialog>.cu-bar:first-child .action{
-  min-width: 100rpx;
-  margin-right: 0;
-  min-height: 100rpx;
+
+.cu-modal .cu-dialog>.cu-bar:first-child .action {
+	min-width: 100rpx;
+	margin-right: 0;
+	min-height: 100rpx;
 }
+
 /* ==================
          轮播
  ==================== */
@@ -2617,14 +2620,14 @@ swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active {
 }
 
 .card-swiper {
-	height: 420rpx !important;
+	height: 260rpx !important;
 }
 
 .card-swiper swiper-item {
 	width: 610rpx !important;
 	left: 70rpx;
 	box-sizing: border-box;
-	padding: 40rpx 0rpx 70rpx;
+	/* padding: 40rpx 0rpx 70rpx; */
 	overflow: initial;
 }
 
@@ -2999,7 +3002,7 @@ scroll-view.cu-steps .cu-item {
 .grid.col-2.grid-square>view:nth-child(2n),
 .grid.col-3.grid-square>view:nth-child(3n),
 .grid.col-4.grid-square>view:nth-child(4n),
-.grid.col-5.grid-square>view:nth-child(5n){
+.grid.col-5.grid-square>view:nth-child(5n) {
 	margin-right: 0;
 }
 
@@ -3430,6 +3433,11 @@ scroll-view.cu-steps .cu-item {
 .line-white::after,
 .lines-white::after {
 	border-color: var(--white);
+}
+
+.bg-themeColor {
+	background-color: var(--themeColor);
+	color: var(--white);
 }
 
 .bg-red {
@@ -3878,6 +3886,9 @@ scroll-view.cu-steps .cu-item {
 .line-green,
 .lines-green {
 	color: var(--green);
+}
+.text-themeColor{
+	color: var(--themeColor);
 }
 
 .text-cyan,

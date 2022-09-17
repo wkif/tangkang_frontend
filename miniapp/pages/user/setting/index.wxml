@@ -1,5 +1,5 @@
 <van-nav-bar title="设置" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
-<view class="app">
+<view class="app" style="margin-top:{{marginTopview}}px;">
     <van-cell-group inset>
         <van-cell title="语音播报" value="{{speedFlag?'开':'关'}}" bind:click="changeSpeed" />
         <!-- <van-cell title="单元格" value="内容" label="描述信息" /> -->

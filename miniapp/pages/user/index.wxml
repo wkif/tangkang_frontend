@@ -10,7 +10,7 @@
                             <image class="avatar" src="{{userInfo.avatar}}"></image>
                         </div>
                     </van-col>
-                    <van-col span="10" offset="4">
+                    <van-col span="10" offset="2">
                         <view class="name">{{userInfo.username}}</view>
                         <view class="desc">{{userInfo.userStatement}}</view>
                     </van-col>
@@ -27,18 +27,21 @@
             <view class="header">个性服务</view>
             <view class="content">
                 <van-row>
-                    <van-col span="12">
-                        <view class="iconBox" bindtap='gotoInfor'>
-                            <van-icon name="friends-o" size="35px" color="#5cbc46" />
-                            信息管理
+                    <van-col span="{{24/iconBox.length}}" wx:for="{{iconBox}}">
+                        <view class="iconBox" bindtap='gotoInfor' data-path="{{item.path}}">
+                            <!-- <van-icon name="{{item.icon}}" size="35px" color="#aed6db" /> -->
+                            <view class="svg_icon">
+                                <image class="svg_icon-inner" src="{{item.icon}}" />
+                            </view>
+                            <text>{{item.name}}</text>
                         </view>
                     </van-col>
-                    <van-col span="12">
+                    <!-- <van-col span="6">
                         <view class="iconBox" bindtap="gotointegral">
                             <van-icon name="gold-coin-o" size="35px" color="#5cbc46" />
-                            积分
+                            <text>积分</text>
                         </view>
-                    </van-col>
+                    </van-col> -->
                 </van-row>
             </view>
         </view>

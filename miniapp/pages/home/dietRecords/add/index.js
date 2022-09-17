@@ -74,6 +74,7 @@ Page({
     // foodList
     show: true,
     result: [],
+    marginTopview: app.globalData.navBarHeight
   },
   onClickLeft() {
     wx.navigateBack({

@@ -29,7 +29,7 @@ Page({
         DPAShow: false,
         DPAColumns: [],
 
-
+        marginTopview: app.globalData.navBarHeight
 
 
 

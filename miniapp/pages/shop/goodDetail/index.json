@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-tag": "@vant/weapp/tag/index",
+    "van-rate": "@vant/weapp/rate/index"
+  }
+}

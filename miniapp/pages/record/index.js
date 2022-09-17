@@ -10,14 +10,15 @@ Page({
         swiperList: [{
             id: 0,
             type: 'image',
-            url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202207242302946.png',
+            // url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202207242302946.png',
+            url:'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111324811.png',
             path: '/pages/record/dailyRecord/index',
             name: '血糖值日记录',
             desc: '记录每天的血糖值',
         }, {
             id: 1,
             type: 'image',
-            url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202207242303075.png',
+            url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111325936.png',
             path: '/pages/record/irregularTimingRecording/index',
             name: '不定期记录',
             desc: '记录糖化血红蛋白等数据'

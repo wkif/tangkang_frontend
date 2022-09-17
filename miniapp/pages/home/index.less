@@ -1,15 +1,38 @@
 .app {
+
+    margin-bottom: 80px;
+
+    .saerchView {
+        .resList {
+            margin-top: 70rpx;
+        }
+    }
+
     .currentDataView {
         margin-left: 10px;
         margin-right: 10px;
         padding: 10px;
+        background-color: #aed6db;
+        background-image: linear-gradient(180deg, #F7CE68 0%, #aed6db 1%, #ffffff 100%);
+
+        .iconImg {
+            width: 100px;
+            float: right;
+            transform: translateY(-40px);
+            // height: 100px;
+        }
 
         .lastTag {
             margin-bottom: 10px;
         }
 
         .dateView {
-            padding-top: 3vh;
+            padding-top: 10vh;
+
+            .svg_icon {
+                margin-left: 50%;
+                transform: translateX(-50%);
+            }
 
             .month {
                 font-size: 20px;
@@ -19,13 +42,12 @@
 
             .day {
                 font-size: 40px;
-
                 color: orange;
             }
         }
 
         .last {
-            transform: translateY(-30%);
+            transform: translateY(-15%);
 
             .data {
                 display: flex;
@@ -55,6 +77,42 @@
     .cu-list {
         margin-left: 10px;
         margin-right: 10px;
+
+        .svg_icon {
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .newsList {
+        .article {
+            .title {}
+
+            .content {
+                display: flex;
+                justify-content: space-between;
+
+                .text-content {
+                    display: -webkit-box;
+
+                    word-break: break-all;
+
+                    text-overflow: ellipsis;
+
+                    overflow: hidden;
+
+                    -webkit-box-orient: vertical;
+
+                    -webkit-line-clamp: 3;
+                    /*设置超出3行进行隐藏*/
+
+                }
+            }
+        }
+
+
+
+
     }
 
 

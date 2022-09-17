@@ -13,6 +13,7 @@ Page({
         bloodTypePicker: ['A', 'B', 'AB', 'O', 'Rh阳性', 'Rh阴性', '其他'],
         index: 0,
         endDate: '',
+        marginTopview: app.globalData.navBarHeight
     },
     onClickLeft() {
         wx.navigateBack({

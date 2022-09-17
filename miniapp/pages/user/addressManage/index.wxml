@@ -1,5 +1,5 @@
 <van-nav-bar title="地址管理" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
-<view class="app">
+<view class="app" style="margin-top:{{marginTopview}}px;">
     <view class="data" wx:if="{{addressList}}">
         <van-cell-group inset wx:for="{{addressList}}">
             <van-cell wx:if="{{item.isDefault}}" value="{{item.address}} \n 邮编：{{item.postalCode}}" label="电话：{{item.phone}} " bindtap='editAddress' 

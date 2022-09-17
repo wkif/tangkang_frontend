@@ -1,5 +1,5 @@
 <van-nav-bar title="日记录" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
-<view class="app">
+<view class="app" style="margin-top:{{marginTopview}}px;">
     <!-- <view class=" padding-xl radius shadow bg-white box">
         <ec-canvas id="mychart" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
         <view class="title">
@@ -25,7 +25,7 @@
             </view>
         </view>
     </view> -->
-    <scroll-view scroll-x class="bg-green nav text-center">
+    <scroll-view scroll-x class="bg-themeColor nav text-center">
         <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="0">
             <text class="cuIcon-camerafill"></text>
             统计图
@@ -48,7 +48,7 @@
         <view class="cardView" wx:else>
             <view class="cardBox">
                 <view class="dateSelect">
-                    <van-dropdown-menu active-color="#1989fa">
+                    <van-dropdown-menu active-color="#aed6db">
                         <van-dropdown-item value="{{ tabIndex }}" options="{{ dateList }}" bind:change="datetabSelect" data-id="{{tabIndex}}" />
                     </van-dropdown-menu>
                 </view>
@@ -77,6 +77,6 @@
         </view>
     </view>
     <view class="buttonView">
-        <button class="cu-btn bg-green shadow-blur round lg" bindtap="addRec">新增记录</button>
+        <button class="cu-btn bg-themeColor shadow-blur round lg" bindtap="addRec">新增记录</button>
     </view>
 </view>

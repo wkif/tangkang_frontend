@@ -1,0 +1,32 @@
+<van-nav-bar title="运动打卡" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app" style="margin-top:{{marginTopview}}px;">
+    <scroll-view scroll-y="true" style="height: 80vh" class="historyList" wx:if="{{sportsList}}">
+        <view wx:for="{{sportsList}}" class="historyitem" style="background-image: url('{{backimgList[item.sportstype.id-1]}}');background-repeat: no-repeat;background-size: cover;background-position: center;">
+            <view class="left" hover-class="none" hover-stop-propagation="false">
+                <view class="typename">
+                    <van-tag color="#FBAB7E" size="large">
+                        <van-icon name="info-o" />
+                        {{item.sportstype.name}}
+                    </van-tag>
+                </view>
+                <view class="heat">
+                    <van-tag type="danger">
+                        <van-icon name="fire-o" />
+                        {{item.heat}}
+                    </van-tag>
+                </view>
+            </view>
+            <view class="time">
+                <van-tag type="primary">
+                    <van-icon name="clock-o" />
+                    {{item.time}}
+                </van-tag>
+            </view>
+        </view>
+    </scroll-view>
+    <van-empty description="暂无数据" wx:else />
+    <view class="buttomView">
+        <van-button class="addButton" block bindtap="addSportsRecords">新增记录</van-button>
+        <van-button class="todayButton" block bindtap="dailySportList">今日排行榜</van-button>
+    </view>
+</view>

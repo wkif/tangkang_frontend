@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "towxml":"../../../towxml/towxml",
+    "van-sticky": "@vant/weapp/sticky/index"
+  }
+}

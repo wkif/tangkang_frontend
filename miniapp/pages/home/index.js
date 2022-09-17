@@ -1,8 +1,5 @@
 // pages/home/index.js
 const app = getApp()
-
-
-
 Page({
 
     /**
@@ -10,27 +7,7 @@ Page({
      */
     data: {
         cardCur: 0,
-        swiperList: [{
-            id: 0,
-            type: 'image',
-            url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202205302251490.png'
-        }, {
-            id: 1,
-            type: 'image',
-            url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202204241829561.jpg',
-        }, {
-            id: 2,
-            type: 'video',
-            url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202207241821890.mp4'
-        }, {
-            id: 3,
-            type: 'image',
-            url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202204241829907.jpg'
-        }, {
-            id: 4,
-            type: 'image',
-            url: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202204192117290.jpg'
-        }],
+        swiperList: [],
         searchValue: '',
         topnotice: {},
 
@@ -40,37 +17,69 @@ Page({
         },
         lastBloodSugarData: '',
         iconList: [{
-            icon: 'cardboardfill',
+            icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209102314081.svg',
             color: 'red',
             name: '积分',
             path: '/pages/user/integral/index'
         }, {
-            icon: 'recordfill',
+            icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209102316888.svg',
             color: 'orange',
             name: '饮食记录',
             path: '/pages/home/dietRecords/index'
         }, {
-            icon: 'upstagefill',
+            icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209102316024.svg',
             color: 'cyan',
-            name: '健康打卡',
-            path: '/pages/nodata/index'
+            name: '运动打卡',
+            path: '/pages/home/sport/index'
         }, {
-            icon: 'picfill',
+            icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209102317637.svg',
             color: 'yellow',
             name: '食物数据库',
             path: '/pages/home/foodDatabase/index'
         }, {
-            icon: 'noticefill',
+            icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209102318049.svg',
             color: 'olive',
             name: '制定目标',
             path: '/pages/home/setGoals/index'
         }, {
-            icon: 'upstagefill',
+            icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209102318327.svg',
             color: 'cyan',
             name: '关联家人',
             path: '/pages/nodata/index'
         }],
+        newsList: [],
+        searchHotValList: [
 
+        ],
+        searchHotValIndex: 0,
+        searchHotVal: '',
+        searchResList: [
+            {
+                id: 1,
+                title: 'kif'
+            },
+            {
+                id: 2,
+                title: 'kif'
+            }
+            , {
+                id: 3,
+                title: 'kif'
+            }
+        ],
+        show: false,
+
+    },
+    randomNum() {
+        const num = Math.floor(Math.random() * (this.data.searchHotValList.length - 0 + 1)) + 0
+        return num
+    },
+    changesearchHoeValIndex() {
+        setInterval(() => {
+            this.setData({
+                searchHotVal: this.data.searchHotValList[this.randomNum()]
+            })
+        }, 3000)
     },
     onChange(e) {
         this.setData({
@@ -79,9 +88,53 @@ Page({
     },
     onSearch() {
         console.log('搜索' + this.data.searchValue);
+        let data = {}
+        if (!this.data.searchValue) {
+            data.newsname = this.data.searchHotVal.name
+        } else {
+            data.newsname = this.data.searchValue
+        }
+        this.searchNews(data)
     },
-    onClick() {
-        console.log('搜索' + this.data.searchValue);
+    // onClick() {
+    //     console.log('搜索' + this.data.searchValue);
+    //     let data = {}
+    //     if (!this.data.searchValue) {
+    //         data.newsname = this.data.searchHotVal.name
+    //     } else {
+    //         data.newsname = this.data.searchValue
+    //     }
+    //     this.searchNews(data)
+    // },
+    searchNews(data) {
+        app.$api.searchNews(data).then(res => {
+            console.log('searchNews', res)
+            if (res.status == 200) {
+                this.setData({
+                    show: true,
+                    searchResList: res.data,
+                });
+            } else {
+                wx.showToast({
+                    title: res.data,
+                    icon: 'none',
+
+                })
+            }
+        })
+    },
+    onClickHide() {
+        this.setData({ show: false });
+    },
+    getHotSearch() {
+        app.$api.getHotSearch().then(res => {
+            console.log('getHotSearch', res)
+            if (res.status == 200) {
+                this.setData({
+                    searchHotValList: res.data,
+                });
+            }
+        })
     },
     getTopnotice() {
         app.$api.getTopNotice().then(res => {
@@ -184,6 +237,47 @@ Page({
             })
         }
     },
+    getTopNews() {
+        app.$api.getTopNews().then(res => {
+            console.log('getTopNewsres', res)
+            if (res.status == 200) {
+                this.setData({
+                    swiperList: res.data
+                })
+            }
+        }
+        )
+    },
+    getNewsList() {
+        app.$api.getNewsList().then(res => {
+            console.log('res', res)
+
+            if (res.status == 200) {
+                // let data = res.data.map(item => {
+                //     console.log('item',item)
+                //     item.content= item.content.replace(/<[^>]+>/g, "")
+                // })
+                this.setData({
+                    newsList: res.data
+                })
+            }
+        }
+        )
+    },
+    gotoNewsDetail(e) {
+        if (app.globalData.loginFlag) {
+            wx.navigateTo({
+                url: '/pages/home/newsDetail/index?id=' + e.currentTarget.dataset.id,
+            })
+        }
+        else {
+            wx.showToast({
+                title: '请先登录',
+                icon: 'none',
+                duration: 2000
+            })
+        }
+    },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -200,7 +294,9 @@ Page({
                 this.getLastBloodSugarData()
             })
         }
-
+        this.getTopNews()
+        this.getNewsList()
+        this.getHotSearch()
     },
 
     /**
@@ -218,6 +314,7 @@ Page({
             this.getTopnotice()
             this.getLastBloodSugarData()
         }
+        this.changesearchHoeValIndex()
     },
 
     /**

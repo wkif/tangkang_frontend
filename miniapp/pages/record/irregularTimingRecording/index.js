@@ -10,7 +10,8 @@ Page({
         dateList: [],
         tabIndex: 0,
         dataList: [],
-        Data: {}
+        Data: {},
+        marginTopview: app.globalData.navBarHeight
     },
     onClickLeft() {
         wx.navigateBack({

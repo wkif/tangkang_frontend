@@ -34,7 +34,60 @@ const Text2Speech = function (text) {
     }
   })
 }
+const toDecimal2 = (x) => {
+  var f = parseFloat(x);
+  if (isNaN(f)) {
+    return false;
+  }
+  var f = Math.round(x * 100) / 100;
+  var s = f.toString();
+  var rs = s.indexOf('.');
+  if (rs < 0) {
+    rs = s.length;
+    s += '.';
+  }
+  while (s.length <= rs + 2) {
+    s += '0';
+  }
+  return s;
+}
+const regFenToYuan = (fen) => {
+  var num = fen;
+  num = fen * 0.01;
+  num += '';
+  var reg = num.indexOf('.') > -1 ? /(\d{1,3})(?=(?:\d{3})+\.)/g : /(\d{1,3})(?=(?:\d{3})+$)/g;
+  num = num.replace(reg, '$1');
+  num = toDecimal2(num)
+  return num
+};
+const shallowEqual = function (object1, object2) {
+  console.log('object1', object1)
+  console.log('object2', object2)
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
+
+  if (keys1.length !== keys2.length) {
+    return false;
+  }
+
+  for (let index = 0; index < keys1.length; index++) {
+    const val1 = object1[keys1[index]];
+    const val2 = object2[keys2[index]];
+    const areObjects = isObject(val1) && isObject(val2);
+    if (areObjects && !shallowEqual(val1, val2) ||
+      !areObjects && val1 !== val2) {
+      return false;
+    }
+  }
+
+  return true;
+}
+function isObject(object) {
+  return object != null && typeof object === 'object';
+}
 module.exports = {
   formatTime,
-  Text2Speech
+  Text2Speech,
+  regFenToYuan,
+  shallowEqual
 }

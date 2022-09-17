@@ -8,7 +8,8 @@ Page({
     data: {
         addressList: [
 
-        ]
+        ],
+        marginTopview: app.globalData.navBarHeight
     },
 
     /**

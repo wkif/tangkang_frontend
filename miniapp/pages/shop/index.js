@@ -14,11 +14,40 @@ Page({
         MainCur: 0,
         VerticalNavTop: 0,
         list: [],
-        load: true
+        load: true,
+        topList: [],
+    },
+    async getGoodsData() {
+        let res = await app.$api.getShopList()
+        console.log('res', res)
+        if (res.status == 200) {
+            let list = res.data
+            this.setData({
+                list: list,
+                listCur: list[0]
+            })
+        }
+    },
+    async getTopGoods() {
+        let res = await app.$api.getTopGoods()
+        console.log('res', res)
+        if (res.status == 200) {
+            let list = res.data
+            this.setData({
+                topList: list,
+
+            })
+        }
     },
     onClickLeft() {
         wx.navigateBack({
             delta: 1
+        })
+    },
+    gotoGoodDetail(e) {
+        console.log('e',e)
+        wx.navigateTo({
+            url: `/pages/shop/goodDetail/index?goodId=${e.currentTarget.dataset.id}`
         })
     },
     onLoad() {
@@ -26,16 +55,18 @@ Page({
             title: '加载中...',
             mask: true
         });
-        let list = [{}];
-        for (let i = 0; i < 26; i++) {
-            list[i] = {};
-            list[i].name = String.fromCharCode(65 + i);
-            list[i].id = i;
-        }
-        this.setData({
-            list: list,
-            listCur: list[0]
-        })
+        this.getGoodsData()
+        this.getTopGoods()
+        // let list = [{}];
+        // for (let i = 0; i < 26; i++) {
+        //     list[i] = {};
+        //     list[i].name = String.fromCharCode(65 + i);
+        //     list[i].id = i;
+        // }
+        // this.setData({
+        //     list: list,
+        //     listCur: list[0]
+        // })
     },
     onReady() {
         wx.hideLoading()

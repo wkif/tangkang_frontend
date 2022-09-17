@@ -4,15 +4,14 @@ const PUT = 'PUT';
 const FORM = 'FORM';
 const DELETE = 'DELETE';
 
-// const baseURL = 'http://127.0.0.1:8000/api';
+const baseURL = 'http://127.0.0.1:8000/api';
 // const baseURL = 'http://426x8r6735.zicp.vip/api';
-const baseURL = 'https://tkapi.kifroom.icu/api';
+// const baseURL = 'https://tkapi.kifroom.icu/api';
 
 function request(method, url, data) {
     return new Promise(function (resolve, reject) {
         let header = {
             'content-type': 'application/json',
-
         };
         if (wx.getStorageSync('token')) {
             header.Authorization = "JWT " + wx.getStorageSync('token');
@@ -46,6 +45,7 @@ const API = {
 
     wxLogin: (data) => request(POST, `/miniapp/login/`, data),
     verifyToken: (data) => request(POST, `/token/verify/`, data),
+    getTabList: () => request(GET, `/miniapp/getTabList/`),
     // 语音播报
     changespeed: (data) => request(POST, `/miniapp/changespeed/`, data),
     getspeed: (data) => request(POST, `/miniapp/getspeed/`, data),
@@ -82,6 +82,33 @@ const API = {
 
     getIntegralHistory: (data) => request(POST, `/miniapp/getIntegralHistory/`, data),
     getUserIntegral: (data) => request(POST, `/miniapp/getUserIntegral/`, data),
+
+    // 商店
+    getShopList: () => request(GET, `/miniapp/getShopList/`),
+    getTopGoods: () => request(GET, `/miniapp/getTopGoods/`),
+    getGoodDetail: (data) => request(POST, `/miniapp/getGoodDetail/`, data),
+    addOrder: (data) => request(POST, `/miniapp/addOrder/`, data),
+    getMyOrderList: (data) => request(POST, `/miniapp/getMyOrderList/`, data),
+    payOrder: (data) => request(POST, `/miniapp/payment/`, data),
+    confirmOrder: (data) => request(POST, `/miniapp/confirmOrder/`, data),
+    cancelOrder: (data) => request(POST, `/miniapp/cancelOrder/`, data),
+
+    // 资讯
+    getTopNews: () => request(GET, `/miniapp/getTopNews/`),
+    getNewsList: () => request(GET, `/miniapp/getNewsList/`),
+    getNewsDetail: (data) => request(POST, `/miniapp/getNewsDetail/`, data),
+    getNewsComment: (data) => request(POST, `/miniapp/getNewsComment/`, data),
+    addCommit: (data) => request(POST, `/miniapp/addCommit/`, data),
+    deleteCommit: (data) => request(POST, `/miniapp/deleteCommit/`, data),
+    getHotSearch: () => request(GET, `/miniapp/getHotSearch/`),
+    searchNews: (data) => request(POST, `/miniapp/searchNews/`, data),
+    // 运动记录
+    addSportsRecords: (data) => request(POST, `/miniapp/addSportsRecords/`, data),
+    getSportsRecordsByid: (data) => request(POST, `/miniapp/getSportsRecordsByid/`, data),
+    deleteSportsRecordsByid: (data) => request(POST, `/miniapp/deleteSportsRecordsByid/`, data),
+    dailySportList: () => request(GET, `/miniapp/dailySportList/`),
+    getsportsType: () => request(GET, `/miniapp/getsportsType/`),
+
 
 };
 module.exports = {

@@ -1,0 +1,27 @@
+<van-nav-bar title="新增" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app" style="margin-top:{{marginTopview}}px;">
+    <view class="form">
+        <van-cell-group inset>
+            <van-cell title="运动" value="{{sportsType[formdata.sportstypeid-1].name}}" bindtap="showPopup" data-flag="0" />
+            <van-cell title="运动开始时间" value="{{formdata.startTime}}" bindtap="showPopup" data-flag="1" />
+            <van-cell title="运动结束时间" value="{{formdata.endTime}}" bindtap="showPopup" data-flag="2" />
+        </van-cell-group>
+    </view>
+    <van-popup show="{{ show }}" bind:close="onClose" position="bottom" round custom-style="height: 50%;">
+        <van-picker wx:if="{{flag==0}}" columns="{{ columns }}" bind:change="onChange" />
+        <!-- <van-datetime-picker wx:if="{{flag==1}}" value="{{ formdata.startTime }}" 
+        min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" data-flag="1" 
+        bind:confirm="onClose" bind:cancel="onClose" />
+        <van-datetime-picker wx:if="{{flag==2}}" value="{{ formdata.endTime }}" 
+        min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" 
+        data-flag="2" bind:confirm="onClose" bind:cancel="onClose" /> -->
+        <van-datetime-picker type="datetime" wx:if="{{flag==1}}" value="{{currentDate}}" min-date="{{minDate}}" max-date="{{maxDate}}" bind:confirm="enterTime" data-flag="1" bind:cancel="cancelTime" />
+        <van-datetime-picker type="datetime" wx:if="{{flag==2}}" value="{{currentDate}}" min-date="{{minDate}}" max-date="{{maxDate}}" bind:confirm="enterTime" data-flag="2" bind:cancel="cancelTime" />
+    </van-popup>
+    <!-- <van-popup show="{{ show }}" bind:close="onClose">
+        <van-picker  columns="{{ columns }}" bind:change="onChange" />
+    </van-popup> -->
+    <view class="submitButton">
+        <van-button type="primary" block bindtap="addSportsRecords">提交</van-button>
+    </view>
+</view>

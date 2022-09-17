@@ -1,0 +1,95 @@
+.app {
+    .topThree {
+        height: 20vh;
+        width: 100%;
+        // background-color: #f5f5f5;
+        background-color: #f1f1f1;
+        background-image: linear-gradient(0deg, #f1f1f1 0%, #fbc376 100%);
+
+        padding-top: 80rpx;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .topThreeitem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .kif {
+                /* Center the content */
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+
+                /* Background color */
+                background-color: #ec0f1d;
+
+                /* Size */
+                // height: 32px;
+
+                /* Use to position the corners */
+                position: relative;
+            }
+
+            .container__side {
+                bottom: -8px;
+                position: absolute;
+
+                /* Displayed under the container */
+                z-index: -1;
+
+                /* Background */
+                border: 16px solid #ec0f1d;
+               
+            }
+
+            .container__side--left {
+                /* Position */
+                left: -24px;
+                border-left-color: transparent;
+            }
+
+            .container__side--right {
+                /* Position */
+                right: -24px;
+                border-right-color: transparent;
+            }
+
+            .container__triangle {
+                position: absolute;
+                top: 100%;
+
+                border: 8px solid transparent;
+                border-bottom-width: 0;
+                border-top-color: #ec0f1d;
+            }
+
+            .container__triangle--left {
+                border-right-width: 0;
+                left: 0;
+            }
+
+            .container__triangle--right {
+                border-left-width: 0;
+                right: 0;
+            }
+
+            text {
+                font-size: medium;
+            }
+        }
+
+        .first {
+            transform: translateY(-100rpx);
+        }
+
+    }
+
+    .list {
+        margin-left: 20rpx;
+        margin-right: 20rpx;
+    }
+}

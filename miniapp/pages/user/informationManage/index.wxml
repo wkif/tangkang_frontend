@@ -1,5 +1,5 @@
 <van-nav-bar title="个人信息" left-text="返回" left-arrow bind:click-left="onClickLeft" />
-<view class="app">
+<view class="app" style="margin-top:{{marginTopview}}px;">
     <form>
         <view class="cu-form-group  margin-top" >
             <view class="title">手机号码</view>

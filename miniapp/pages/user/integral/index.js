@@ -9,7 +9,8 @@ Page({
     data: {
         historyList: [],
         jfImg: '../../../assets/img/jf.png',
-        integralNum: 0
+        integralNum: 0,
+        marginTopview: app.globalData.navBarHeight
     },
     onClickLeft() {
         wx.navigateBack({

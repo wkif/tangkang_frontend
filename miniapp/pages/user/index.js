@@ -12,6 +12,28 @@ Page({
         },
         InviteFriendsNum: 13,
         loginFlag: false,
+        iconBox: [
+            {
+                icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111311675.svg',
+                name: '信息管理',
+                path: '/pages/user/informationManage/index'
+            },
+            {
+                icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111312241.svg',
+                name: '积分',
+                path: '/pages/user/integral/index'
+            },
+            {
+                icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111312946.svg',
+                name: '订单',
+                path: '/pages/shop/orderManage/index'
+            },
+            // {
+            //     icon: 'logistics',
+            //     name: '物流',
+            //     path: '/pages/nodata/index'
+            // }
+        ],
         cellList: [
             {
                 title: '地址管理',
@@ -39,7 +61,8 @@ Page({
                 label: '请仔细阅读本《用户协议》'
             }
         ],
-        inviteCode: '12'
+        inviteCode: '12',
+        marginTopview: app.globalData.navBarHeight
     },
 
     /**
@@ -127,7 +150,8 @@ Page({
         })
         app.globalData.loginFlag = false
     },
-    gotoInfor() {
+    gotoInfor(e) {
+        console.log('e', e.currentTarget.dataset.path)
         if (!this.data.loginFlag) {
             wx.showToast({
                 title: '请先登录',
@@ -137,25 +161,25 @@ Page({
             this.doLogin()
         } else {
             wx.navigateTo({
-                url: '/pages/user/informationManage/index',
+                url: e.currentTarget.dataset.path,
             })
         }
 
     },
-    gotointegral() {
-        if (!this.data.loginFlag) {
-            wx.showToast({
-                title: '请先登录',
-                icon: 'none',
-                duration: 2000//持续的时间
-            })
-            this.doLogin()
-        } else {
-            wx.navigateTo({
-                url: '/pages/user/integral/index',
-            })
-        }
-    },
+    // gotointegral() {
+    //     if (!this.data.loginFlag) {
+    //         wx.showToast({
+    //             title: '请先登录',
+    //             icon: 'none',
+    //             duration: 2000//持续的时间
+    //         })
+    //         this.doLogin()
+    //     } else {
+    //         wx.navigateTo({
+    //             url: '/pages/user/integral/index',
+    //         })
+    //     }
+    // },
     onShareAppMessage: function () {
         if (this.data.userInfo) {
             return {

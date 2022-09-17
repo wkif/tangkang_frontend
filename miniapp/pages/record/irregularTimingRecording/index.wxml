@@ -1,5 +1,5 @@
 <van-nav-bar title="不定期记录" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
-<view class="app">
+<view class="app" style="margin-top:{{marginTopview}}px;">
     <view class="dateSelect">
         <!-- <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
             <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{dateList}}" wx:key bindtap="tabSelect" data-id="{{item.id}}">
@@ -33,6 +33,6 @@
         </view>
     </view>
     <view class="buttonView">
-        <button class="cu-btn bg-green shadow-blur round lg" bindtap="addRec">新增记录</button>
+        <button class="cu-btn bg-themeColor shadow-blur round lg" bindtap="addRec">新增记录</button>
     </view>
 </view>

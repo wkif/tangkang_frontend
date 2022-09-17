@@ -22,6 +22,7 @@ Page({
         minDate: new Date(new Date() - 365 * 24 * 60 * 60 * 1000).getTime(),
         maxDate: new Date().getTime(),
         currentDate: new Date().getTime(),
+        marginTopview: app.globalData.navBarHeight
 
 
 

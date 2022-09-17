@@ -1,13 +1,30 @@
+.app {
+  margin-bottom: 80px;
+}
+.app .saerchView .resList {
+  margin-top: 70rpx;
+}
 .app .currentDataView {
   margin-left: 10px;
   margin-right: 10px;
   padding: 10px;
+  background-color: #aed6db;
+  background-image: linear-gradient(180deg, #F7CE68 0%, #aed6db 1%, #ffffff 100%);
+}
+.app .currentDataView .iconImg {
+  width: 100px;
+  float: right;
+  transform: translateY(-40px);
 }
 .app .currentDataView .lastTag {
   margin-bottom: 10px;
 }
 .app .currentDataView .dateView {
-  padding-top: 3vh;
+  padding-top: 10vh;
+}
+.app .currentDataView .dateView .svg_icon {
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 .app .currentDataView .dateView .month {
   font-size: 20px;
@@ -19,7 +36,7 @@
   color: orange;
 }
 .app .currentDataView .last {
-  transform: translateY(-30%);
+  transform: translateY(-15%);
 }
 .app .currentDataView .last .data {
   display: flex;
@@ -41,6 +58,23 @@
 .app .cu-list {
   margin-left: 10px;
   margin-right: 10px;
+}
+.app .cu-list .svg_icon {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.app .newsList .article .content {
+  display: flex;
+  justify-content: space-between;
+}
+.app .newsList .article .content .text-content {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  /*设置超出3行进行隐藏*/
 }
 .app text-red {
   color: red;

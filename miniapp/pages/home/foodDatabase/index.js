@@ -11,7 +11,8 @@ Page({
         tabList: [],
         searchValue: '',
         active: 0,
-        data: []
+        data: [],
+        marginTopview: app.globalData.navBarHeight
     },
     onClickLeft() {
         wx.navigateBack({

@@ -1,12 +1,12 @@
 <van-nav-bar title="新增日记录" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
-<view class="app">
+<view class="app" style="margin-top:{{marginTopview}}px;">
     <van-cell-group>
         <van-field value="{{ bloodSugarTypeValue }}" required clearable label="记录类型" placeholder="请选择类型" border="{{ false }}" bind:tap="selectType" />
         <van-field value="{{ bloodSugarValue }}" required clearable label="血糖值" placeholder="请选择血糖值" border="{{ false }}" bind:tap="selectValue" />
         <van-field value="{{ bloodSugarTime }}" required clearable label="时间" placeholder="请选择记录时间" border="{{ false }}" bind:tap="selectTime" />
     </van-cell-group>
     <view class="buttonView">
-        <button class="cu-btn bg-green shadow-blur round lg" bindtap="addRec">新增记录</button>
+        <button class="cu-btn bg-themeColor shadow-blur round lg" bindtap="addRec">新增记录</button>
     </view>
     <van-action-sheet show="{{ selectTypeShow }}">
         <view>

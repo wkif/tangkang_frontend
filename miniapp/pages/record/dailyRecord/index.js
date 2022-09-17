@@ -30,7 +30,8 @@ Page({
 
         tabIndex: 0,
 
-        scrollLeft: 0
+        scrollLeft: 0,
+        marginTopview: app.globalData.navBarHeight
     },
     onChange() {
         this.data.dateType == 0 ? this.setData({

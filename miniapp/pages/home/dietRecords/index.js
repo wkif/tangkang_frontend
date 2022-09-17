@@ -12,6 +12,7 @@ Page({
         tabIndex: 0,
         d: {},
         activeNames: ['1'],
+        marginTopview: app.globalData.navBarHeight
     },
     onChange(event) {
         this.setData({

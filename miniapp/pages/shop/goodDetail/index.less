@@ -1,0 +1,96 @@
+.app {
+    margin-top: 11vh;
+    min-height: 100%;
+    // position: relative;
+
+    .main {
+        width: 100%;
+        position: absolute;
+        top: 11vh;
+        bottom: 90px;
+        overflow-y: auto;
+
+        // padding-bottom: 120px;
+        .topImg {
+            width: 100%;
+
+            image {
+                width: 100%;
+                // border-radius: 0px 0px 20px 20px;
+                // height: 40vh;
+            }
+        }
+
+        .goodDetail {
+            // margin-left: 20px;
+            // margin-right: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .price {
+                font-size: 20px;
+                color: #ff8b37;
+                font-weight: bold;
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+
+            .info {
+                font-size: 14px;
+                color: #666666;
+                margin-top: 10px;
+                margin-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                .name {
+                    font-size: 16px;
+                    color: #333333;
+                    font-weight: bold;
+                }
+
+                .caption {
+                    float: right;
+                }
+
+                .desc {
+                    margin-top: 20px;
+                }
+
+                .brand {
+                    float: right;
+                    transform: translate(0, -500%);
+                }
+            }
+        }
+
+        .imgList {
+            margin-left: 10px;
+            margin-right: 10px;
+
+            image {
+                width: 100%;
+            }
+        }
+
+        .commitList {
+            .cu-list {
+                .cu-item {
+                    .text-conten {
+                        word-wrap: break-word;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottomView {
+
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+}

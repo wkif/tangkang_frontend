@@ -9,6 +9,7 @@ Page({
      */
     data: {
         speedFlag: false,
+        marginTopview: app.globalData.navBarHeight
     },
     onClickLeft() {
         wx.navigateBack({
