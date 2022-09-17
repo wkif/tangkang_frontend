@@ -6,13 +6,13 @@
 
       </el-avatar>
       <div class="title">
-        <h1>{{timeState}}</h1>
+        <h1>{{ timeState }}</h1>
         <span> 今日晴，20℃ - 32℃！ </span>
       </div>
     </div>
 
-    <el-row :gutter="20">
-      <!-- <el-col :span="12">
+    <!-- <el-row :gutter="20">
+      <el-col :span="12">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
             <span>友情链接</span>
@@ -39,7 +39,8 @@
           </el-row>
         </el-card>
 
-      </el-col> -->
+      </el-col>
+     
 
       <el-col :span="12">
         <div class="grid-content bg-purple">
@@ -69,30 +70,39 @@
           </el-card>
         </div>
       </el-col>
-    </el-row>
-
+    </el-row> -->
+    <v-chart class="chart" :option="option" />
   </d2-container>
 </template>
 
 <script>
+import { request } from '@/api/service' //改成这个请求真实后端
+export const urlPrefix1 = '/api/system/getDailyOrder/'
 import { use } from 'echarts/core'
 import { CanvasRenderer } from 'echarts/renderers'
-import { PieChart } from 'echarts/charts'
+import { PieChart, LineChart } from 'echarts/charts'
 import {
   TitleComponent,
   TooltipComponent,
-  LegendComponent
-} from 'echarts/components'
+  LegendComponent,
+  GridComponent
 
+} from 'echarts/components'
+import VChart, { THEME_KEY } from 'vue-echarts';
 use([
   CanvasRenderer,
   PieChart,
   TitleComponent,
   TooltipComponent,
-  LegendComponent
+  LegendComponent,
+  GridComponent,
+  LineChart
 ])
 export default {
   name: 'workbench',
+  components: {
+    VChart,
+  },
   data() {
     return {
       projects: [
@@ -202,20 +212,22 @@ export default {
           color: 'rgb(0, 216, 255);'
         }
       ],
-      chartData: {
-        columns: ['日期', '销售额'],
-        rows: [
-          { 日期: '1月1日', 销售额: 123 },
-          { 日期: '1月2日', 销售额: 1223 },
-          { 日期: '1月3日', 销售额: 2123 },
-          { 日期: '1月4日', 销售额: 4123 },
-          { 日期: '1月5日', 销售额: 3123 },
-          { 日期: '1月6日', 销售额: 7123 }
-        ]
-      },
+      // chartData: {
+      //   columns: ['日期', '销售额'],
+      //   rows: [
+      //     { 日期: '1月1日', 销售额: 123 },
+      //     { 日期: '1月2日', 销售额: 1223 },
+      //     { 日期: '1月3日', 销售额: 2123 },
+      //     { 日期: '1月4日', 销售额: 4123 },
+      //     { 日期: '1月5日', 销售额: 3123 },
+      //     { 日期: '1月6日', 销售额: 7123 }
+      //   ]
+      // },
       timeState: '',
-      user:''
+      user: '',
+      option: {}
     }
+
   },
   methods: {
     gotoRoute(route) {
@@ -242,11 +254,63 @@ export default {
       console.log(`text >>>>`, text);
       // 返回当前时间段对应的状态
       return text;
+    },
+    async getData() {
+
+      let res = await request({
+        url: urlPrefix1,
+        method: 'get'
+      })
+      console.log('res', res.data)
+      let option = {
+        title: {
+          text: '日订单统计',
+          show: true,
+
+        },
+        grid: {
+          show: true,
+        },
+        xAxis: {
+          type: 'category',
+          data: res.data.xAxis,
+          name: '日期',
+        },
+        yAxis: {
+          type: 'value',
+          name: '订单数量',
+        },
+        series: [
+          {
+            data: res.data.series,
+            type: 'line'
+          }
+        ],
+        tooltip: {
+          trigger: 'axis',
+          show: true,
+        },
+        toolbox: {
+          show: true,
+          feature: {
+            dataZoom: {
+              yAxisIndex: 'none'
+            },
+            dataView: { readOnly: false },
+            magicType: { type: ['line', 'bar'] },
+            restore: {},
+            saveAsImage: {}
+          }
+        } 
+      };
+      this.option = option;
     }
   },
   created() {
     this.timeState = this.getTimeState();
-  }
+    this.getData()
+  },
+
 }
 </script>
 

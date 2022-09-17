@@ -119,6 +119,7 @@ export const crudOptions = (vm) => {
           value: 'value',
           getData: (url, dict) => {
             return request({ url: url }).then(ret => {
+              console.log('ret',ret)
               const res = Object.keys(ret.paths)
               const data = []
               for (const item of res) {
@@ -127,6 +128,7 @@ export const crudOptions = (vm) => {
                 obj.value = item
                 data.push(obj)
               }
+              console.log('data',data)
               return data
             })
           }

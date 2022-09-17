@@ -8,8 +8,9 @@ export default {
     },
     align: 'center',
     // 提交时,处理数据
-    valueResolve (row, col) {
+    valueResolve(row, col) {
       const value = row[col.key]
+      console.log('value111', value)
       if (value != null) {
         if (value.length >= 0) {
           if (value instanceof Array) {
@@ -23,16 +24,21 @@ export default {
       }
     },
     // 接收时,处理数据
-    valueBuilder (row, col) {
+    valueBuilder(row, col) {
       const value = row[col.key]
+      console.log('value', value)
       if (value != null && value) {
         row[col.key] = value.split(',')
         // 进行组装地址，纠正地址
         row[col.key].map((val, index) => {
           if (val.startsWith('/')) {
+            console.log('a')
             row[col.key][index] = util.baseURL() + val.slice(1)
           } else {
-            row[col.key][index] = !val.startsWith('http') ? util.baseURL() + val : val
+            console.log('b')
+            console.log('val', val)
+            // row[col.key][index] = !val.startsWith('http') ? util.baseURL() + val : val
+            row[col.key][index] = val
           }
         })
       }
@@ -46,7 +52,7 @@ export default {
     },
     align: 'center',
     // 提交时,处理数据
-    valueResolve (row, col) {
+    valueResolve(row, col) {
       const value = row[col.key]
       if (value != null) {
         if (value.length >= 0) {
@@ -61,7 +67,7 @@ export default {
       }
     },
     // 接收时,处理数据
-    valueBuilder (row, col) {
+    valueBuilder(row, col) {
       const value = row[col.key]
       if (value != null && value) {
         row[col.key] = value.split(',')
@@ -80,7 +86,7 @@ export default {
     form: { component: { name: 'd2p-file-uploader', props: { elProps: { listType: 'text' } } } },
     component: { name: 'd2p-files-format' },
     // 提交时,处理数据
-    valueResolve (row, col) {
+    valueResolve(row, col) {
       const value = row[col.key]
       if (value != null) {
         if (value.length >= 0) {
@@ -95,7 +101,7 @@ export default {
       }
     },
     // 接收时,处理数据
-    valueBuilder (row, col) {
+    valueBuilder(row, col) {
       const value = row[col.key]
       if (value != null && value) {
         row[col.key] = value.split(',')
@@ -118,7 +124,7 @@ export default {
       component: { props: { height: 100, width: 100 } }
     },
     // 提交时,处理数据
-    valueResolve (row, col) {
+    valueResolve(row, col) {
       const value = row[col.key]
       if (value != null) {
         if (value.length >= 0) {
@@ -133,7 +139,7 @@ export default {
       }
     },
     // 接收时,处理数据
-    valueBuilder (row, col) {
+    valueBuilder(row, col) {
       const value = row[col.key]
       if (value != null && value) {
         row[col.key] = value.split(',')
