@@ -1,0 +1,60 @@
+.app .currentDataView {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+.app .currentDataView .lastTag {
+    margin-bottom: 10px;
+}
+.app .currentDataView .dateView {
+    padding-top: 3vh;
+}
+.app .currentDataView .dateView .month {
+    font-size: 20px;
+    margin-left: 40px;
+    transform: translateY(-100%);
+}
+.app .currentDataView .dateView .day {
+    font-size: 40px;
+    color: orange;
+}
+.app .currentDataView .last {
+    transform: translateY(-30%);
+}
+.app .currentDataView .last .data {
+    display: flex;
+    justify-content: end;
+}
+.app .currentDataView .last .data .bloodSugarLevel {
+    font-size: 30px;
+    font-family: 'Arial', 'Microsoft YaHei', '黑体', '宋体', sans-serif;
+}
+.app .currentDataView .last .data .unit {
+    padding-top: 40%;
+}
+.app .currentDataView .last .tagView {
+    display: flex;
+}
+.app .currentDataView .noData {
+    padding-top: 5vh;
+}
+.app .cu-list {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.app .newsList .article .content {
+    display: flex;
+    justify-content: space-between;
+}
+.app .newsList .article .content .text-content {
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    /*设置超出3行进行隐藏*/
+}
+.app text-red {
+    color: red;
+}

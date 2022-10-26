@@ -1,0 +1,5 @@
+@import '../common/index.css';
+.van-checkbox-group--horizontal {
+    display: flex;
+    flex-wrap: wrap;
+}

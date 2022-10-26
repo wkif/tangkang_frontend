@@ -179,6 +179,12 @@
                     "pathName": "pages/home/sport/addSportsRecords/index",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/userinfo/index",
+                    "query": "username=kif",
+                    "scene": null
                 }
             ]
         }

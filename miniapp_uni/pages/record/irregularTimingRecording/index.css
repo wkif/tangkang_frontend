@@ -1,0 +1,27 @@
+.app {
+    margin-top: 12vh;
+}
+.app .card {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+.app .card .timeBox {
+    float: right;
+    transform: translateY(-10px);
+}
+.app .card .deleteView {
+    float: right;
+    transform: translate(10px, -980%);
+}
+.app .card .lg {
+    margin-right: 10px;
+}
+.app .buttonView {
+    margin-top: 10px;
+}
+.app .buttonView button {
+    margin-left: 50%;
+    width: 40vw;
+    transform: translateX(-50%);
+}

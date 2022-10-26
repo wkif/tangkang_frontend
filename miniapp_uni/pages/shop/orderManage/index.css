@@ -1,0 +1,48 @@
+.app {
+    margin-top: 11vh;
+}
+.app .orderList .order .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.app .orderList .order .title .name {
+    font-size: 16px;
+    color: #333333;
+}
+.app .orderList .order .goodInfo {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.app .orderList .order .goodInfo .goodImg {
+    flex: 2;
+}
+.app .orderList .order .goodInfo .goodImg .img {
+    width: 100%;
+    border-radius: 10px;
+}
+.app .orderList .order .goodInfo .goodIn {
+    padding-left: 20px;
+    flex: 3;
+}
+.app .orderList .order .goodInfo .goodIn .detail {
+    margin-bottom: 20px;
+}
+.app .orderList .order .goodInfo .goodIn .price {
+    font-size: 16px;
+    color: #ff8b37;
+    font-weight: bold;
+}
+.app .orderList .order .orderInfo .addressInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 30px;
+}
+.app .orderList .order .buttonView {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}

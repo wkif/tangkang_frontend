@@ -2,8 +2,8 @@
     <view class="topView">
         <view class="circle1 "></view>
         <view class="circle2 animate-bounce-up"></view>
-        <view class="infoView" wx:if="{{loginFlag}}">
-            <van-transition name="slide-left">
+        <view class="infoView" wx:if="{{loginFlag}}" bindtap="gotouserInfo">
+            <van-transition name="slide-left" >
                 <van-row>
                     <van-col span="4">
                         <div class="head-img">

@@ -1,0 +1,1360 @@
+miniprogram-to-uniapp v2 转换日志
+
+工具版本：v2.0.24
+转换模式：HBuilder X
+是否合并css：否
+项目 'miniapp' 开始转换...
+sourceFolder = F:\File_my\Project\TangKang\frontend\miniapp
+搜索到2258个文件，耗时：110ms
+
+[Tip]文件(ec-canvas/echarts.js)体积大于 204.8 kb ，跳过处理
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+不处理node_modules目录
+
+[Tip]这个页面的结构非标准结构，尝试修复一下，如有问题，请先调整后，再转换。 file:miniprogram_npm/@vant/weapp/common/component
+
+[Tip]这里引用的全是网络字体，可能在app上面有兼容问题（如字体图标显示不出来，运行后没问题就不用管）  fileKey: miniprogram_npm/@vant/weapp/icon/index
+
+[Tip] 检测到组件picker的mode为 region ，在App和H5里未实现，已使用组件region-picker进行替换。
+                    虽然已替换，但仍需注意picker在<form/>组件里面的取值问题(可能在formSubmit拿不address，需手动调整)。
+                    详情请参阅相关文档, file: pages/user/addressManage/editAddress/index
+[Error] requirePlugin方法仅在微信小程序里支持，请转换后手动调整代码       file: utils/util
+找不到这个组件: pages/home/dietRecords/add/@vant/weapp/popup/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/picker/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/home/dietRecords/add/@vant/weapp/popup/index
+找不到这个组件: pages/user/integral/@vant/weapp/tag/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/picker/index
+找不到这个组件: pages/home/dietRecords/add/@vant/weapp/popup/index
+找不到这个组件: pages/home/dietRecords/add/@vant/weapp/popup/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/home/foodDatabase/@vant/weapp/transition/index
+找不到这个组件: pages/home/foodDatabase/@vant/weapp/transition/index
+找不到这个组件: pages/home/foodDatabase/@vant/weapp/transition/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/home/dietRecords/add/@vant/weapp/popup/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/home/newsDetail/@vant/weapp/sticky/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/home/foodDatabase/@vant/weapp/transition/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell-group/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: pages/shop/@vant/weapp/card/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/action-sheet/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/datetime-picker/index
+找不到这个组件: pages/home/dietRecords/add/@vant/weapp/popup/index
+找不到这个组件: pages/home/dietRecords/add/@vant/weapp/checkbox-group/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell-group/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: pages/home/dietRecords/add/@vant/weapp/checkbox/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/record/irregularTimingRecording/@vant/weapp/dropdown-menu/index
+找不到这个组件: pages/record/irregularTimingRecording/@vant/weapp/dropdown-item/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/@vant/weapp/divider/index
+找不到这个组件: pages/home/dietRecords/@vant/weapp/collapse/index
+找不到这个组件: pages/home/dietRecords/@vant/weapp/collapse-item/index
+找不到这个组件: pages/user/integral/@vant/weapp/tag/index
+找不到这个组件: pages/user/integral/@vant/weapp/tag/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/integral/@vant/weapp/empty/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/shop/@vant/weapp/search/index
+找不到这个组件: pages/home/foodDatabase/@vant/weapp/tabs/index
+找不到这个组件: pages/home/foodDatabase/@vant/weapp/tab/index
+找不到这个组件: pages/home/foodDatabase/@vant/weapp/transition/index
+找不到这个组件: pages/user/integral/@vant/weapp/tag/index
+找不到这个组件: pages/user/integral/@vant/weapp/tag/index
+找不到这个组件: pages/user/@vant/weapp/row/index
+找不到这个组件: pages/user/@vant/weapp/col/index
+找不到这个组件: pages/user/@vant/weapp/col/index
+找不到这个组件: pages/user/integral/@vant/weapp/empty/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/home/@vant/weapp/notice-bar/index
+找不到这个组件: pages/user/@vant/weapp/row/index
+找不到这个组件: pages/user/@vant/weapp/col/index
+找不到这个组件: pages/user/@vant/weapp/col/index
+找不到这个组件: pages/user/integral/@vant/weapp/tag/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/integral/@vant/weapp/empty/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell-group/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/action-sheet/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/picker/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/action-sheet/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/picker/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/action-sheet/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/datetime-picker/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/addressManage/editAddress/@vant/weapp/switch/index
+找不到这个组件: pages/record/irregularTimingRecording/@vant/weapp/dropdown-menu/index
+找不到这个组件: pages/record/irregularTimingRecording/@vant/weapp/dropdown-item/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell-group/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/action-sheet/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/picker/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/action-sheet/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/picker/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/action-sheet/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/picker/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/action-sheet/index
+找不到这个组件: pages/record/irregularTimingRecording/add/@vant/weapp/datetime-picker/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/record/irregularTimingRecording/@vant/weapp/dropdown-menu/index
+找不到这个组件: pages/record/irregularTimingRecording/@vant/weapp/dropdown-item/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell-group/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: pages/shop/@vant/weapp/card/index
+找不到这个组件: pages/shop/addOrder/@vant/weapp/submit-bar/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/integral/@vant/weapp/tag/index
+找不到这个组件: pages/shop/goodDetail/@vant/weapp/rate/index
+找不到这个组件: pages/shop/@vant/weapp/search/index
+找不到这个组件: pages/shop/@vant/weapp/card/index
+找不到这个组件: pages/user/integral/@vant/weapp/empty/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/integral/@vant/weapp/tag/index
+找不到这个组件: pages/user/@vant/weapp/divider/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell-group/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/user/informationManage/@vant/weapp/field/index
+找不到这个组件: pages/user/addressManage/editAddress/@vant/weapp/switch/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell-group/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: pages/user/integral/@vant/weapp/tag/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: pages/user/integral/@vant/weapp/empty/index
+找不到这个组件: pages/home/foodDatabase/@vant/weapp/transition/index
+找不到这个组件: pages/user/@vant/weapp/row/index
+找不到这个组件: pages/user/@vant/weapp/col/index
+找不到这个组件: pages/user/@vant/weapp/col/index
+找不到这个组件: pages/user/@vant/weapp/row/index
+找不到这个组件: pages/user/@vant/weapp/col/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell-group/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: pages/user/@vant/weapp/row/index
+找不到这个组件: pages/user/@vant/weapp/col/index
+找不到这个组件: pages/user/@vant/weapp/col/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/integral/@vant/weapp/tag/index
+找不到这个组件: pages/user/integral/@vant/weapp/icon/index
+找不到这个组件: @vant/weapp/nav-bar/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell-group/index
+找不到这个组件: pages/user/setting/@vant/weapp/cell/index
+找不到这个组件: @vant/weapp/nav-bar/index
+write pages.json success!
+write manifest.json success!
+write main.js success!
+
+
+统计信息：
+
+vue文件数量: 110
+支付api数量: 0
+登录api数量: 2
+
+恭喜你，转换完成！
+用时: 109.931s
+工具版本：v2.0.24
+在该小程序项目的同级目录可以看到_uni结尾的项目，即是转换好的uniapp项目，相关日志在该目录里。
+
+！！！ 当前项目引用了npm模块，请转换完后，在命令行里运行“npm install”命令安装npm模块 ！！！
+
+使用说明：
+    1.因各种原因，本工具并非100%完美转换！有问题实属正常！
+    2.如遇运行报错，请添加QQ群(780359397、361784059、603659851)带图反馈或https://github.com/zhangdaren/miniprogram-to-uniapp提交Issue！
+    3.更多信息请查阅转换后目录里的 README.md 和 transform.log
+
+
+

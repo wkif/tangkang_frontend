@@ -28,10 +28,10 @@ Page({
         let res = await app.$api.getSportsRecordsByid(data)
         console.log('res', res)
         if (res.status == 200) {
-            let a = res.data[0]
-            for (let i = 0; i < 10; i++) {
-                res.data.push(a)
-            }
+            // let a = res.data[0]
+            // for (let i = 0; i < 10; i++) {
+            //     res.data.push(a)
+            // }
             this.setData({
                 sportsList: res.data
             })

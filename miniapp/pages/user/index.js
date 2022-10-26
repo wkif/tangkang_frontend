@@ -166,6 +166,12 @@ Page({
         }
 
     },
+    gotouserInfo() {
+        wx.navigateTo({
+            url: "/pages/user/userinfo/index?username="+wx.getStorageSync('userInfo').username,
+
+        })
+    },
     // gotointegral() {
     //     if (!this.data.loginFlag) {
     //         wx.showToast({

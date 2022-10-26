@@ -1,4 +1,21 @@
 <van-nav-bar title="目标计划" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app">
-    
+    <van-divider contentPosition="center">血糖目标</van-divider>
+    <van-cell-group inset>
+        <van-cell wx:for="{{bloodSugar_targetValue_list.targetValue}}" title="{{item.name}}" value="{{item.value}} mmol/L" label="{{bloodSugar_targetValue_list.updateTime}}" bindtap="bloodSugarEdit" data-index="{{index}}" />
+    </van-cell-group>
+    <van-divider contentPosition="center">运动目标</van-divider>
+    <van-cell-group inset>
+        <van-cell title="热量消耗" value="{{SportTargetValue.heat}}" label="{{SportTargetValue.updateDate}}" />
+    </van-cell-group>
+    <van-divider contentPosition="center">饮食目标</van-divider>
+    <van-cell-group inset>
+        <van-cell title="热量限制" value="{{FoodTargetValue.heat}}" label="{{FoodTargetValue.updateDate}}" />
+    </van-cell-group>
+    <view class="buttonView" wx:if="{{isEdit}}">
+        <van-button type="primary" block>保存</van-button>
+    </view>
+    <van-popup show="{{ show }}" round position="bottom" custom-style="height: 20%;" bind:close="onClose">
+        内容
+    </van-popup>
 </view>

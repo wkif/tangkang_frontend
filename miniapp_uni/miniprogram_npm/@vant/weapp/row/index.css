@@ -1,0 +1,6 @@
+@import '../common/index.css';
+.van-row:after {
+    clear: both;
+    content: '';
+    display: table;
+}

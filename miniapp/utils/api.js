@@ -109,6 +109,15 @@ const API = {
     dailySportList: () => request(GET, `/miniapp/dailySportList/`),
     getsportsType: () => request(GET, `/miniapp/getsportsType/`),
 
+    // 目标计划addBloodGlucoseTargetValue
+    addBloodGlucoseTargetValue: (data) => request(POST, `/miniapp/addBloodGlucoseTargetValue/`, data),
+    getBloodGlucoseTargetValue: (data) => request(POST, `/miniapp/getBloodGlucoseTargetValue/`, data),
+    addSportTargetValue: (data) => request(POST, `/miniapp/addSportTargetValue/`, data),
+    getSportTargetValue: (data) => request(POST, `/miniapp/getSportTargetValue/`, data),
+    addFoodTargetValue: (data) => request(POST, `/miniapp/addFoodTargetValue/`, data),
+    getFoodTargetValue: (data) => request(POST, `/miniapp/getFoodTargetValue/`, data),
+
+
 
 };
 module.exports = {

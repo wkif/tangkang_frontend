@@ -1,0 +1,22 @@
+.app {
+    margin-top: 11vh;
+}
+.app .tabView .foodView .foodList .foodCard {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.app .tabView .foodView .foodList .foodCard .foodImg {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.app .tabView .foodView .foodList .foodCard .foodImg image {
+    width: 30vw;
+}
+.app .tabView .foodView .foodList .foodCard .foodDesc {
+    padding-left: 10px;
+    padding-top: 20px;
+    margin: 0 auto;
+}

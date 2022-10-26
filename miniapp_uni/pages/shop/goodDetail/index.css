@@ -1,0 +1,69 @@
+.app {
+    margin-top: 11vh;
+    min-height: 100%;
+}
+.app .main {
+    width: 100%;
+    position: absolute;
+    top: 11vh;
+    bottom: 90px;
+    overflow-y: auto;
+}
+.app .main .topImg {
+    width: 100%;
+}
+.app .main .topImg image {
+    width: 100%;
+}
+.app .main .goodDetail {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.app .main .goodDetail .price {
+    font-size: 20px;
+    color: #ff8b37;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.app .main .goodDetail .info {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.app .main .goodDetail .info .name {
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+}
+.app .main .goodDetail .info .caption {
+    float: right;
+}
+.app .main .goodDetail .info .desc {
+    margin-top: 20px;
+}
+.app .main .goodDetail .info .brand {
+    float: right;
+    transform: translate(0, -500%);
+}
+.app .main .imgList {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.app .main .imgList image {
+    width: 100%;
+}
+.app .main .commitList .cu-list .cu-item .text-conten {
+    word-wrap: break-word;
+}
+.app .bottomView {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

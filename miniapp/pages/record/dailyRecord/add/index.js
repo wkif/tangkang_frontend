@@ -27,6 +27,9 @@ Page({
 
 
     },
+    noBomBox(Event) {
+        document.activeElement.blur();
+    },
     onClickLeft() {
         wx.navigateBack({
             delta: 1
