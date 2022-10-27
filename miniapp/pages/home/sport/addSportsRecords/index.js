@@ -104,6 +104,14 @@ Page({
         let res = await app.$api.getsportsType()
         console.log('res', res)
         if (res.status == 200) {
+            if(!res.data.length){
+                wx.showToast({
+                    title: '无类型请联系客服',
+                    duration: 2000,
+                    icon: 'error',
+    
+                })
+            }
             let d = res.data.map(item => {
                 return item.name
             })

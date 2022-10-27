@@ -4,9 +4,24 @@ const PUT = 'PUT';
 const FORM = 'FORM';
 const DELETE = 'DELETE';
 
-const baseURL = 'http://127.0.0.1:8000/api';
-// const baseURL = 'http://426x8r6735.zicp.vip/api';
-// const baseURL = 'https://tkapi.kifroom.icu/api';
+
+let baseURL = ''
+
+
+const env = 1
+// 1表示本地穿透
+// 0表示正式
+// 其余表示本地
+
+if (env == 0) {
+    baseURL = 'https://tkapi.kifroom.icu/api'
+} else if (env == 1) {
+    baseURL = 'http://426x8r6735.zicp.vip/api';
+} else {
+    baseURL = 'http://127.0.0.1:8000/api';
+}
+
+
 
 function request(method, url, data) {
     return new Promise(function (resolve, reject) {
@@ -22,14 +37,12 @@ function request(method, url, data) {
             data: method === POST ? JSON.stringify(data) : data,
             header: header,
             success(res) {
-                console.log(res);
                 //请求成功返回数据
                 resolve(res.data);
             },
             fail(err) {
                 //请求失败
                 reject(err)
-                console.log(err);
             }
         })
     })
@@ -102,12 +115,15 @@ const API = {
     deleteCommit: (data) => request(POST, `/miniapp/deleteCommit/`, data),
     getHotSearch: () => request(GET, `/miniapp/getHotSearch/`),
     searchNews: (data) => request(POST, `/miniapp/searchNews/`, data),
+    LikeOfNews: (data) => request(POST, `/miniapp/LikeOfNews/`, data),
+    getStatusOfLike: (data) => request(POST, `/miniapp/getStatusOfLike/`, data),
     // 运动记录
     addSportsRecords: (data) => request(POST, `/miniapp/addSportsRecords/`, data),
     getSportsRecordsByid: (data) => request(POST, `/miniapp/getSportsRecordsByid/`, data),
     deleteSportsRecordsByid: (data) => request(POST, `/miniapp/deleteSportsRecordsByid/`, data),
     dailySportList: () => request(GET, `/miniapp/dailySportList/`),
     getsportsType: () => request(GET, `/miniapp/getsportsType/`),
+
 
     // 目标计划addBloodGlucoseTargetValue
     addBloodGlucoseTargetValue: (data) => request(POST, `/miniapp/addBloodGlucoseTargetValue/`, data),

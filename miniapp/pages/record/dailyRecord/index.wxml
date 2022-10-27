@@ -69,8 +69,8 @@
                         <view class="cu-tag line-green">{{Data.bloodSugarTime}}</view>
                     </view>
                     <view class="qualifiedImg">
-                        <image wx:if="{{Data.status==1}}" src="../../../assets/img/qualified.png" />
-                        <image wx:else src="../../../assets/img/unqualified.png" />
+                        <image wx:if="{{Data.status==1}}" src="../../../assets/img/qualified.svg" />
+                        <image wx:else src="../../../assets/img/unqualified.svg" />
                     </view>
                 </view>
             </view>

@@ -1,7 +1,7 @@
 <van-nav-bar title="{{newsData.title}}" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
-<view class="app"  style="margin-top:{{marginTopview}}px;">
+<view class="app" style="margin-top:{{marginTopview}}px;">
     <view class="content-info">
-        <scroll-view scroll-y scroll-top="{{scrollTop}}" scroll-with-animation="true" style="height: 100vh;" scroll-into-view="{{toViewid}}">
+        <scroll-view scroll-y bindscroll="bindscrollfx" scroll-top="{{scrollTop}}" scroll-with-animation="true" style="height: 100vh;" scroll-into-view="{{toViewid}}">
             <view class="coverImg">
                 <image src="{{newsData.cover}}" mode="widthFix" />
             </view>
@@ -11,11 +11,16 @@
                 <text>{{newsData.updateTime}}\n</text>
             </view>
             <towxml nodes="{{article}}" />
-            <view class="tool">
-                <view class="tool-item" bindtap="goTop">
+            <view class="actionView">
+                <van-icon name="good-job" wx:if="{{isLike}}" size="20px" bind:click="LikeOfNews" />
+                <van-icon name="good-job-o" wx:else size="20px" bind:click="LikeOfNews" />
+                <van-icon name="share-o" size="20px" bind:click="onSharClick" />
+            </view>
+            <view class="tool ">
+                <view class="tool-item {{goTopFlag ? '':'hide'}}" bindtap="goTop">
                     <image src="../../../assets/icon/go_to_top.png" />
                 </view>
-                <view class="tool-item" bindtap="goCommit">
+                <view class="tool-item {{goCommitFlag ? '':'hide'}}" bindtap="goCommit">
                     <image src="../../../assets/icon/commit.png" />
                     <!-- <text>评论</text> -->
                 </view>
@@ -25,7 +30,7 @@
                     <view class="cu-bar input">
                         <view class="cu-avatar round" style="background-image:url({{userInfo.avatar}});"></view>
                         <input bindinput="input" value="{{inputValue}}" class="solid-bottom" maxlength="300" cursor-spacing="10"></input>
-                        <button class="cu-btn bg-green shadow-blur" bindtap="submit">发送</button>
+                        <button class="cu-btn  shadow-blur" bindtap="submit">发送</button>
                     </view>
                 </view>
                 <view class="cu-list menu-avatar comment solids-top">
@@ -49,5 +54,6 @@
                 </view>
             </view>
         </scroll-view>
+        <van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="ononShareSelect" bind:close="ononShareClose" />
     </view>
 </view>

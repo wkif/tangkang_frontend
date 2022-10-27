@@ -1,5 +1,5 @@
 .app {
-  margin-top: 12vh;
+  padding-bottom: 2rem;
 }
 .app .buttonView {
   margin-top: 1rem;

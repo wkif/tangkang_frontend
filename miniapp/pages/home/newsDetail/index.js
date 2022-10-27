@@ -15,7 +15,65 @@ Page({
         toViewid: '',
         userInfo: wx.getStorageSync('userInfo'),
         inputValue: '',
-        marginTopview: app.globalData.navBarHeight
+        marginTopview: app.globalData.navBarHeight,
+        showShare: false,
+        options: [
+            { name: '微信', icon: 'wechat', openType: 'share' },
+            { name: '微博', icon: 'weibo' },
+            { name: '复制链接', icon: 'link' },
+            { name: '分享海报', icon: 'poster' },
+            { name: '二维码', icon: 'qrcode' },
+        ],
+        isLike: false,
+        goTopFlag: true,
+        goCommitFlag: true
+
+    },
+    //判断上下滚动方向）（deltaY小于0时，向下，向上则反之）
+    bindscrollfx: function (e) {
+        var that = this;
+        var scrollfx = e.detail.deltaY;
+        if (scrollfx < 0) {
+            that.setData({
+                goTopFlag: false,
+                goCommitFlag: true //向下滚动
+            })
+        } else {
+            that.setData({
+                goTopFlag: true,
+                goCommitFlag: false
+            })
+        }
+    },
+    // handletouchmove(event) {
+    //     let currentY = event.changedTouches[0].clientY
+    //     if (currentY <= this.data.startY) {
+    //         this.setData({
+    //             toolFlag: false
+    //         })
+    //         console.log("下滑")
+    //     } else {
+    //         this.setData({
+    //             toolFlag: true
+    //         })
+    //         console.log("上滑")
+    //     }
+    // },
+    // //滑动开始事件
+    // handletouchstart: function (event) {
+    //     this.data.startY = event.changedTouches[0].clientY
+    // },
+    onSharClick(event) {
+        this.setData({ showShare: true });
+    },
+
+    ononShareClose() {
+        this.setData({ showShare: false });
+    },
+
+    ononShareSelect(event) {
+        Toast(event.detail.name);
+        this.ononShareClose();
     },
     onClickLeft() {
         wx.navigateBack({
@@ -64,7 +122,7 @@ Page({
             newsId: this.data.newsData.id,
             content: this.data.inputValue
         }
-        console.log('data',data)
+        console.log('data', data)
         let res = await app.$api.addCommit(data)
         if (res.status == 200) {
             this.setData({
@@ -107,6 +165,28 @@ Page({
             }
         })
     },
+    async getStatusOfLike() {
+        let data = {
+            userId: this.data.userInfo.id,
+            newsId: this.data.newsData.id
+        }
+        let res = await app.$api.getStatusOfLike(data)
+        console.log(res)
+        if (res.status == 200) {
+            this.setData({
+                isLike: res.data
+            })
+        }
+    },
+    async LikeOfNews() {
+        let data = {
+            userId: this.data.userInfo.id,
+            newsId: this.data.newsData.id
+        }
+        let res = await app.$api.LikeOfNews(data)
+        console.log(res)
+        this.getStatusOfLike()
+    },
 
     /**
      * 生命周期函数--监听页面加载
@@ -130,10 +210,12 @@ Page({
             }
             let res = await app.$api.getNewsDetail(data)
             console.log('res', res)
+
             this.setData({
                 newsData: res.data.news,
                 // commitList: res.data.commitList
             })
+            this.getStatusOfLike()
             let result = app.towxml(res.data.news.content, 'markdown', {
                 base: 'www.xxx.com',
                 theme: 'light',
@@ -150,8 +232,27 @@ Page({
             this.getNewsComment()
             // 关闭加载
             wx.hideLoading();
+            if (app.globalData.speedFlag) {
+                this.Text2Speech(this.data.newsData.content)
+            }
         })()
+
     },
+    Text2Speech(str) {
+        str = app.$delHtmlTag(str)
+        let arr = []
+        let count = str.length / 300
+        for (let i = 0; i < count; i++) {
+            let item = (str.slice((i) * 300, (i + 1) * 300))
+            
+            setTimeout(()=>{app.$Text2Speech(item)},i*75620)
+        }
+        console.log(count, arr)
+        // let res = app.$Text2Speech('kif')
+        // console.log('res',res)
+       
+    },
+
 
     /**
      * 生命周期函数--监听页面初次渲染完成

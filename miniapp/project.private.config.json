@@ -1,192 +1,195 @@
 {
-    "setting": {},
-    "condition": {
-        "plugin": {
-            "list": []
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "",
+          "pathName": "pages/user/index",
+          "query": "",
+          "scene": null
         },
-        "game": {
-            "list": []
+        {
+          "name": "",
+          "pathName": "pages/user/addressManage/index",
+          "query": "",
+          "scene": null
         },
-        "gamePlugin": {
-            "list": []
+        {
+          "name": "",
+          "pathName": "pages/user/addressManage/editAddress/index",
+          "query": "add=%7B%22id%22%3A1%2C%22name%22%3A%22%E5%BC%A0%E4%B8%89%22%2C%22phone%22%3A%2213888888888%22%2C%22address%22%3A%22%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%8D%97%E4%B8%80%E8%B7%AF%22%2C%22isDefault%22%3Atrue%7D",
+          "scene": null
         },
-        "miniprogram": {
-            "list": [
-                {
-                    "name": "",
-                    "pathName": "pages/user/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/user/addressManage/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/user/addressManage/editAddress/index",
-                    "query": "add=%7B%22id%22%3A1%2C%22name%22%3A%22%E5%BC%A0%E4%B8%89%22%2C%22phone%22%3A%2213888888888%22%2C%22address%22%3A%22%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E7%A7%91%E6%8A%80%E5%8D%97%E4%B8%80%E8%B7%AF%22%2C%22isDefault%22%3Atrue%7D",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/user/about/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/user/informationManage/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/user/userAgreement/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/record/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/record/dailyRecord/add/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/user/setting/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/shop/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/record/irregularTimingRecording/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/record/irregularTimingRecording/add/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/home/setGoals/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/home/foodDatabase/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/home/dietRecords/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "饮食记录",
-                    "pathName": "pages/home/dietRecords/add/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/user/about/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "日志",
-                    "pathName": "pages/user/about/versionLog/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "积分",
-                    "pathName": "pages/user/integral/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/shop/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/shop/goodDetail/index",
-                    "query": "goodId=1",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/shop/addOrder/index",
-                    "query": "goodId=1",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/shop/orderManage/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/home/newsDetail/index",
-                    "query": "id=1",
-                    "scene": null
-                },
-                {
-                    "name": "日记录",
-                    "pathName": "pages/record/dailyRecord/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "sport",
-                    "pathName": "pages/home/sport/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "paihangbang",
-                    "pathName": "pages/home/sport/dailySportList/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "addSportsRecords",
-                    "pathName": "pages/home/sport/addSportsRecords/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/user/userinfo/index",
-                    "query": "username=kif",
-                    "scene": null
-                }
-            ]
+        {
+          "name": "",
+          "pathName": "pages/user/about/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/informationManage/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/userAgreement/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/record/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/record/dailyRecord/add/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/setting/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/shop/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/record/irregularTimingRecording/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/record/irregularTimingRecording/add/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/setGoals/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/foodDatabase/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/dietRecords/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "饮食记录",
+          "pathName": "pages/home/dietRecords/add/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/about/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "日志",
+          "pathName": "pages/user/about/versionLog/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "积分",
+          "pathName": "pages/user/integral/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/shop/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/shop/goodDetail/index",
+          "query": "goodId=1",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/shop/addOrder/index",
+          "query": "goodId=1",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/shop/orderManage/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/newsDetail/index",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "name": "日记录",
+          "pathName": "pages/record/dailyRecord/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "sport",
+          "pathName": "pages/home/sport/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "paihangbang",
+          "pathName": "pages/home/sport/dailySportList/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "addSportsRecords",
+          "pathName": "pages/home/sport/addSportsRecords/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/userinfo/index",
+          "query": "username=kif",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/newsDetail/index",
+          "query": "id=3",
+          "launchMode": "default",
+          "scene": null
         }
+      ]
     }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "miniapp",
+  "libVersion": "2.12.3"
 }

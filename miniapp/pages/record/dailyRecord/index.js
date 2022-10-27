@@ -200,7 +200,6 @@ Page({
             switch (cardData[i].bloodSugarType) {
                 case 0:
                     cardData[i].bloodSugarType = '空腹血糖'
-
                     break;
                 case 1:
                     cardData[i].bloodSugarType = '早餐后2小时血糖'

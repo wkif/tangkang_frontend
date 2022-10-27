@@ -19,13 +19,12 @@ var plugin = requirePlugin("WechatSI")
 let manager = plugin.getRecordRecognitionManager()
 var bgam = wx.createInnerAudioContext();
 
-const Text2Speech = function (text) {
+const Text2Speech = function (text,isDelay=false) {
   plugin.textToSpeech({
     lang: "zh_CN",
     tts: true,
     content: text,
     success: function (res) {
-      console.log("succ tts", res.filename)
       bgam.src = res.filename
       bgam.play()
     },
@@ -61,15 +60,11 @@ const regFenToYuan = (fen) => {
   return num
 };
 const shallowEqual = function (object1, object2) {
-  console.log('object1', object1)
-  console.log('object2', object2)
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
-
   if (keys1.length !== keys2.length) {
     return false;
   }
-
   for (let index = 0; index < keys1.length; index++) {
     const val1 = object1[keys1[index]];
     const val2 = object2[keys2[index]];
@@ -85,9 +80,22 @@ const shallowEqual = function (object1, object2) {
 function isObject(object) {
   return object != null && typeof object === 'object';
 }
+
+
+const delHtmlTag = function (str) {
+  str = trim(str)
+  return str.replace(/<[^>]+>/g, "");
+}
+
+//去掉所有的空格
+function trim(str) {
+  return str.replace(/(^\s*)|(\s*$)/g, "");
+}
+
 module.exports = {
   formatTime,
   Text2Speech,
   regFenToYuan,
-  shallowEqual
+  shallowEqual,
+  delHtmlTag
 }

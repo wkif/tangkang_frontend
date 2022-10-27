@@ -56,7 +56,7 @@
         <view class="adView">
             <van-row class="adRow">
                 <van-col span="4">
-                    <image class="adImg animate-bounce-up" src="../../assets/img/present.png"></image>
+                    <image class="adImg animate-bounce-up" src="../../assets/img/present.svg"></image>
                 </van-col>
                 <van-col span="10" offset="4">
                     <button class="addText" open-type='share'>邀好友 赚积分</button>

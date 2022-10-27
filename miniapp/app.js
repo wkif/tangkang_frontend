@@ -7,6 +7,7 @@ App({
   $Text2Speech: require('./utils/util').Text2Speech,
   $formatTime: require('./utils/util').formatTime,
   $shallowEqual: require('./utils/util').shallowEqual,
+  $delHtmlTag: require('./utils/util').delHtmlTag,
   onLaunch: function (options) {
     // 获取系统信息
     const systemInfo = wx.getSystemInfoSync();
@@ -19,17 +20,19 @@ App({
     // 胶囊高
     this.globalData.menuHeight = menuButtonInfo.height;
     // 导航栏高度 = 状态栏到胶囊的间距（胶囊上边界坐标 - 状态栏高度） * 2 + 胶囊高度 + 状态栏高度
-    this.globalData.navBarHeight = this.globalData.menuTopSpace * 2 + menuButtonInfo.height + systemInfo.statusBarHeight;
+    this.globalData.navBarHeight = this.globalData.menuTopSpace * 2 + menuButtonInfo.height + systemInfo.statusBarHeight+10;
     // 状态栏高
+    let tabList = [{ "name": "首页", "selectedIconPath": "/assets/icon/home-active.png", "iconPath": "/assets/icon/home.png", "pagePath": "/pages/home/index" }, { "name": "记录", "selectedIconPath": "/assets/icon/add-active.png", "iconPath": "/assets/icon/add.png", "pagePath": "/pages/record/index" }, { "name": "商城", "selectedIconPath": "/assets/icon/shop-active.png", "iconPath": "/assets/icon/shop.png", "pagePath": "/pages/shop/index" }, { "name": "我的", "selectedIconPath": "/assets/icon/user-active.png", "iconPath": "/assets/icon/user.png", "pagePath": "/pages/user/index" }]
+    wx.setStorageSync('tabList', tabList)
     this.globalData.statusBarHeight = systemInfo.statusBarHeight;
-    if (this.globalData.speedFlag) {
-      this.$api.getspeed({
-        userId: wx.getStorageSync('userInfo').id
-      }).then(res => {
-        console.log('speedFlagres', res)
-        this.globalData.speedFlag = res.data
-      })
-    }
+
+    this.$api.getspeed({
+      userId: wx.getStorageSync('userInfo').id
+    }).then(res => {
+      console.log('speedFlagres', res)
+      this.globalData.speedFlag = res.data
+    })
+
     this.getTabList()
 
 
@@ -104,9 +107,9 @@ App({
     this.$api.getTabList().then(res => {
       // console.log('restan!!!', res)
       if (res.status == 200) {
-        if (!this.$shallowEqual(res.data, JSON.parse(wx.getStorageSync('tabList')))) {
+        if (!this.$shallowEqual(res.data, (wx.getStorageSync('tabList')))) {
           // this.globalData.tabList = res.data
-          wx.setStorageSync('tabList', JSON.stringify(res.data))
+          wx.setStorageSync('tabList', (res.data))
           console.log('更新')
         } else {
           console.log('不用更新')

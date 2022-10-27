@@ -42,9 +42,9 @@ Component({
         ]
     },
     attached: function () {
-        if (!app.$shallowEqual(this.data.list, JSON.parse(wx.getStorageSync('tabList')))) {
+        if (!app.$shallowEqual(this.data.list, (wx.getStorageSync('tabList')))) {
             this.setData({
-                list: JSON.parse(wx.getStorageSync('tabList'))
+                list: (wx.getStorageSync('tabList'))
             })
         }
 

@@ -189,13 +189,15 @@ Page({
     onShareAppMessage: function () {
         if (this.data.userInfo) {
             return {
-                title: '弹出分享时显示的分享标题',
+                title: '糖康有道',
+                imageUrl:'https://s3.bmp.ovh/imgs/2022/10/27/a89b4a11fb710c4b.png',
                 desc: '分享页面的内容',
                 path: '/pages/user/index?inviteCode=' + this.data.userInfo.inviteCode // 路径，传递参数到指定页面。
             }
         } else {
             return {
-                title: '弹出分享时显示的分享标题',
+                title: '糖康有道',
+                imageUrl:'https://s3.bmp.ovh/imgs/2022/10/27/a89b4a11fb710c4b.png',
                 desc: '分享页面的内容',
                 path: '/pages/user/index'
             }

@@ -8,7 +8,7 @@ Page({
      */
     data: {
         historyList: [],
-        jfImg: '../../../assets/img/jf.png',
+        jfImg: '../../../assets/img/jf.svg',
         integralNum: 0,
         marginTopview: app.globalData.navBarHeight
     },
