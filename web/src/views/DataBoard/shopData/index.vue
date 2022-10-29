@@ -8,11 +8,12 @@
                 <v-chart class="chart" :option="option2" />
             </el-col>
         </el-row>
-
+        <v-chart class="chart" :option="option" />
     </d2-container>
 </template>
 
 <script>
+
 import { use } from 'echarts/core'
 import { CanvasRenderer } from 'echarts/renderers'
 import { PieChart } from 'echarts/charts'
@@ -26,6 +27,7 @@ import VChart, { THEME_KEY } from 'vue-echarts';
 import { request } from '@/api/service' //改成这个请求真实后端
 export const urlPrefix1 = '/api/system/commodityDlassificationData/'
 export const urlPrefix2 = '/api/system/getBrandData/'
+export const urlPrefix3 = '/api/system/getDailyOrder/'
 use([
     CanvasRenderer,
     PieChart,
@@ -136,10 +138,61 @@ export default {
                 ]
             }
             this.option2 = option2
+        },
+        async getData2() {
+
+            let res = await request({
+                url: urlPrefix3,
+                method: 'get'
+            })
+            console.log('res', res.data)
+            let option = {
+                title: {
+                    text: '日订单统计',
+                    show: true,
+
+                },
+                grid: {
+                    show: true,
+                },
+                xAxis: {
+                    type: 'category',
+                    data: res.data.xAxis,
+                    name: '日期',
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '订单数量',
+                },
+                series: [
+                    {
+                        data: res.data.series,
+                        type: 'line'
+                    }
+                ],
+                tooltip: {
+                    trigger: 'axis',
+                    show: true,
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataZoom: {
+                            yAxisIndex: 'none'
+                        },
+                        dataView: { readOnly: false },
+                        magicType: { type: ['line', 'bar'] },
+                        restore: {},
+                        saveAsImage: {}
+                    }
+                }
+            };
+            this.option = option;
         }
     },
     created() {
         this.getData()
+        this.getData2()
     }
 }
 </script>

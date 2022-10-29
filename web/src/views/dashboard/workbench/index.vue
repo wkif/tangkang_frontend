@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <!-- <el-row :gutter="20">
+    <el-row :gutter="20">
       <el-col :span="12">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
@@ -40,7 +40,7 @@
         </el-card>
 
       </el-col>
-     
+
 
       <el-col :span="12">
         <div class="grid-content bg-purple">
@@ -70,14 +70,14 @@
           </el-card>
         </div>
       </el-col>
-    </el-row> -->
-    <v-chart class="chart" :option="option" />
+    </el-row>
+    <!-- <v-chart class="chart" :option="option" /> -->
   </d2-container>
 </template>
 
 <script>
-import { request } from '@/api/service' //改成这个请求真实后端
-export const urlPrefix1 = '/api/system/getDailyOrder/'
+// import { request } from '@/api/service' //改成这个请求真实后端
+// export const urlPrefix1 = '/api/system/getDailyOrder/'
 import { use } from 'echarts/core'
 import { CanvasRenderer } from 'echarts/renderers'
 import { PieChart, LineChart } from 'echarts/charts'
@@ -107,11 +107,24 @@ export default {
     return {
       projects: [
         {
-          name: '官方文档',
-          imageUrl: '/image/django-vue-admin.png',
-          slogan: 'Django-Vue-Admin 是一套全部开源的快速开发平台，毫无保留给个人及企业免费使用。',
-          link: 'http://django-vue-admin.com'
+          name: '阿里云',
+          imageUrl: 'https://img.alicdn.com/tfs/TB13DzOjXP7gK0jSZFjXXc5aXXa-212-48.png',
+          slogan: '服务器租用，域名解析',
+          link: 'https://cn.aliyun.com/'
         },
+        {
+          name: '七牛云',
+          imageUrl: '/image/django-vue-admin.png',
+          slogan: '七牛云图片存储',
+          link: 'https://www.qiniu.com/'
+        },
+        {
+          name: '宝塔面板',
+          imageUrl: 'https://www.bt.cn/Public/new/images/logo.svg',
+          slogan: '服务器管理',
+          link: 'http://121.40.213.208:8888/'
+        },
+
         {
           name: '官方论坛',
           imageUrl: '/image/django-vue-admin.png',
@@ -119,41 +132,10 @@ export default {
           link: 'http://bbs.django-vue-admin.com'
         },
         {
-          name: 'D2admin',
-          imageUrl: '/image/d2-pub.png',
-          slogan: 'D2Admin (opens new window)是一个完全 开源免费 的企业中后台产品前端集成方案，使用最新的前端技术栈，' +
-            '小于 60kb 的本地首屏 js 加载，已经做好大部分项目前期准备工作，并且带有大量示例代码，助力管理系统快速开发。',
-          link: 'https://d2.pub/zh'
-        },
-        {
-          name: 'SimpleUi',
-          imageUrl: '/image/simple-ui.png',
-          slogan: '一个基于Django Admin的现代化主题。',
-          link: 'https://simpleui.72wo.com/'
-        },
-        {
-          name: '若依',
-          imageUrl: '/image/ruoyi.png',
-          slogan: '基于SpringBoot、Shiro、Mybatis的权限后台管理系统。',
-          link: 'http://ruoyi.vip/'
-        },
-        {
-          name: 'Gin-Vue-Admin',
-          imageUrl: '/image/gin-vue-admin.png',
-          slogan: '使用gin+vue进行极速开发的全栈后台管理系统。',
-          link: 'https://www.gin-vue-admin.com/'
-        },
-        {
-          name: 'DCM',
-          imageUrl: '/image/django-comment-migrate.png',
-          slogan: '这是一个Django model注释迁移的app',
-          link: 'https://github.com/starryrbs/django-comment-migrate'
-        },
-        {
-          name: 'Jetbrains',
-          imageUrl: '/image/jetbrains.jpeg',
-          slogan: '我们构建我们的软件，让您可以享受构建自己的软件的乐趣',
-          link: 'https://www.jetbrains.com/'
+          name: 'Web分析',
+          imageUrl: '/image/django.png',
+          slogan: '小程序数据分析',
+          link: 'https://wedata.weixin.qq.com/mp2/basic-data/core-data'
         },
         {
           name: 'Django',
@@ -255,60 +237,60 @@ export default {
       // 返回当前时间段对应的状态
       return text;
     },
-    async getData() {
+    // async getData() {
 
-      let res = await request({
-        url: urlPrefix1,
-        method: 'get'
-      })
-      console.log('res', res.data)
-      let option = {
-        title: {
-          text: '日订单统计',
-          show: true,
+    //   let res = await request({
+    //     url: urlPrefix1,
+    //     method: 'get'
+    //   })
+    //   console.log('res', res.data)
+    //   let option = {
+    //     title: {
+    //       text: '日订单统计',
+    //       show: true,
 
-        },
-        grid: {
-          show: true,
-        },
-        xAxis: {
-          type: 'category',
-          data: res.data.xAxis,
-          name: '日期',
-        },
-        yAxis: {
-          type: 'value',
-          name: '订单数量',
-        },
-        series: [
-          {
-            data: res.data.series,
-            type: 'line'
-          }
-        ],
-        tooltip: {
-          trigger: 'axis',
-          show: true,
-        },
-        toolbox: {
-          show: true,
-          feature: {
-            dataZoom: {
-              yAxisIndex: 'none'
-            },
-            dataView: { readOnly: false },
-            magicType: { type: ['line', 'bar'] },
-            restore: {},
-            saveAsImage: {}
-          }
-        } 
-      };
-      this.option = option;
-    }
+    //     },
+    //     grid: {
+    //       show: true,
+    //     },
+    //     xAxis: {
+    //       type: 'category',
+    //       data: res.data.xAxis,
+    //       name: '日期',
+    //     },
+    //     yAxis: {
+    //       type: 'value',
+    //       name: '订单数量',
+    //     },
+    //     series: [
+    //       {
+    //         data: res.data.series,
+    //         type: 'line'
+    //       }
+    //     ],
+    //     tooltip: {
+    //       trigger: 'axis',
+    //       show: true,
+    //     },
+    //     toolbox: {
+    //       show: true,
+    //       feature: {
+    //         dataZoom: {
+    //           yAxisIndex: 'none'
+    //         },
+    //         dataView: { readOnly: false },
+    //         magicType: { type: ['line', 'bar'] },
+    //         restore: {},
+    //         saveAsImage: {}
+    //       }
+    //     } 
+    //   };
+    //   this.option = option;
+    // }
   },
   created() {
     this.timeState = this.getTimeState();
-    this.getData()
+    // this.getData()
   },
 
 }

@@ -100,9 +100,9 @@
               <a href="https://beian.miit.gov.cn" target="_blank">{{
                 keepRecord
                 }}</a>
-              | <a :href="helpUrl || '#'" target="_blank">帮助</a> |
+              <!-- | <a :href="helpUrl || '#'" target="_blank">帮助</a> |
               <a :href="privacyUrl || '#'" target="_blank">隐私</a> |
-              <a :href="clauseUrl || '#'" target="_blank">条款</a>
+              <a :href="clauseUrl || '#'" target="_blank">条款</a> -->
             </p>
           </div>
           <!-- footer -->

@@ -113,9 +113,10 @@ img {
 }
 .page-login--logo{
     margin: 0 auto;
-    top: 10px;
-    left: 52%;
+    top: 10%;
+    left: 60%;
     position: absolute;
+    width:100px;
 }
 /*-- //Reset-Code --*/
 

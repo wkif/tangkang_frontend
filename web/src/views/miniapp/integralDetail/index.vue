@@ -1,6 +1,6 @@
 <template>
     <d2-container :class="{ 'page-compact': crud.pageOptions.compact }">
-        <template slot="header">积分明细管理</template>
+        <template slot="header">积分记录类型管理</template>
         <d2-crud-x ref="d2Crud" v-bind="_crudProps" v-on="_crudListeners">
             <!-- 自动绑定参数与事件 -->
             <!-- 包含详细参数见：https://gitee.com/greper/d2-crud-plus/blob/master/packages/d2-crud-plus/src/lib/mixins/crud.js#L164-->

@@ -154,26 +154,7 @@ export const crudOptions = (vm) => {
                     }
                 }
             },
-            {
-                title: '卡路里',
-                key: 'foodCalory',
-                sortable: true,
-                search: {
-                    disabled: true,
-                    component: {
-                        props: {
-                            clearable: true
-                        }
-                    }
-                },
-                type: 'number',
-                form: {
-                    value: 1,
-                    component: {
-                        placeholder: '请输入'
-                    }
-                }
-            },
+           
             {
                 title: '蛋白质',
                 key: 'foodProtein',

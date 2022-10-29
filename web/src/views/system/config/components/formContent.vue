@@ -6,100 +6,57 @@
       <el-col :span="4" :offset="4">变量名</el-col>
     </el-row>
     <el-form ref="form" :model="form" label-width="140px" label-position="left" style="margin-top: 20px">
-      <el-form-item :label="item.title" :prop="['array'].indexOf(item.form_item_type_label) >-1?'':item.key"
-                    :key="index" :rules="item.rule || []"
-                    v-for="(item,index) in formList"
-
-      >
+      <el-form-item :label="item.title" :prop="['array'].indexOf(item.form_item_type_label) > -1 ? '' : item.key"
+        :key="index" :rules="item.rule || []" v-for="(item, index) in formList">
         <el-col :span="12" :offset="2">
           <!--    文本      -->
-          <el-input :key="index" v-if="['text','textarea'].indexOf(item.form_item_type_label) >-1"
-                    :type="item.form_item_type_label"
-                    v-model="form[item.key]" :placeholder="item.placeholder" clearable></el-input>
+          <el-input :key="index" v-if="['text', 'textarea'].indexOf(item.form_item_type_label) > -1"
+            :type="item.form_item_type_label" v-model="form[item.key]" :placeholder="item.placeholder" clearable>
+          </el-input>
 
           <el-input-number :key="index" v-else-if="item.form_item_type_label === 'number'" v-model="form[item.key]"
-                           :min="0"></el-input-number>
+            :min="0"></el-input-number>
           <!--     datetime、date、time     -->
-          <el-date-picker
-            v-else-if="['datetime','date','time'].indexOf(item.form_item_type_label) >-1"
-            v-model="form[item.key]"
-            :key="index"
-            :type="item.form_item_type_label"
-            :placeholder="item.placeholder">
+          <el-date-picker v-else-if="['datetime', 'date', 'time'].indexOf(item.form_item_type_label) > -1"
+            v-model="form[item.key]" :key="index" :type="item.form_item_type_label" :placeholder="item.placeholder">
           </el-date-picker>
           <!--    select      -->
-          <el-select
-            :key="index"
-            v-else-if="item.form_item_type_label === 'select'"
-            v-model="form[item.key]"
-            :placeholder="item.placeholder"
-            clearable
-          >
-            <el-option
-              v-for="item in dictionary(item.setting)  || []"
-              :key="item.value"
-              :label="item.label"
+          <el-select :key="index" v-else-if="item.form_item_type_label === 'select'" v-model="form[item.key]"
+            :placeholder="item.placeholder" clearable>
+            <el-option v-for="item in dictionary(item.setting) || []" :key="item.value" :label="item.label"
               :value="item.value">
             </el-option>
           </el-select>
           <!--    checkbox      -->
-          <el-checkbox-group
-            :key="index"
-            v-else-if="item.form_item_type_label === 'checkbox'"
-            v-model="form[item.key]"
-            :placeholder="item.placeholder"
-          >
-            <el-checkbox
-              v-for="item in dictionary(item.setting)  || []"
-              :key="item.value"
-              :label="item.value"
+          <el-checkbox-group :key="index" v-else-if="item.form_item_type_label === 'checkbox'" v-model="form[item.key]"
+            :placeholder="item.placeholder">
+            <el-checkbox v-for="item in dictionary(item.setting) || []" :key="item.value" :label="item.value"
               :value="item.value">
               {{ item.label }}
             </el-checkbox>
           </el-checkbox-group>
           <!--    radio      -->
-          <el-radio-group
-            :key="index"
-            v-else-if="item.form_item_type_label === 'radio'"
-            v-model="form[item.key]"
-            :placeholder="item.placeholder"
-            clearable
-          >
-            <el-radio
-              v-for="item in dictionary(item.setting)  || []"
-              :key="item.value"
-              :label="item.label"
+          <el-radio-group :key="index" v-else-if="item.form_item_type_label === 'radio'" v-model="form[item.key]"
+            :placeholder="item.placeholder" clearable>
+            <el-radio v-for="item in dictionary(item.setting) || []" :key="item.value" :label="item.label"
               :value="item.value">
               {{ item.label }}
             </el-radio>
           </el-radio-group>
           <!--    switch      -->
-          <el-switch
-            :key="index"
-            v-else-if="item.form_item_type_label === 'switch'"
-            v-model="form[item.key]"
-            active-color="#13ce66"
-            inactive-color="#ff4949">
+          <el-switch :key="index" v-else-if="item.form_item_type_label === 'switch'" v-model="form[item.key]"
+            active-color="#13ce66" inactive-color="#ff4949">
           </el-switch>
           <!--     图片     -->
-          <div v-else-if="['img','imgs'].indexOf(item.form_item_type_label) >-1" :key="index">
-            <el-upload
-              :action="uploadUrl"
-              :headers="uploadHeaders"
-              name="file"
-              :accept="'image/*'"
+          <div v-else-if="['img', 'imgs'].indexOf(item.form_item_type_label) > -1" :key="index">
+            <el-upload :action="uploadUrl" :headers="uploadHeaders" name="file" :accept="'image/*'"
               :on-preview="handlePictureCardPreview"
-              :on-success="(response, file, fileList)=>{handleUploadSuccess(response, file, fileList,item.key)}"
-              :on-error="handleError"
-              :on-exceed="handleExceed"
-              :before-remove="(file, fileList)=>{beforeRemove(file, fileList, item.key)}"
-              :multiple="item.form_item_type_label!=='img'"
-              :limit="item.form_item_type_label==='img'?1:5"
-              :ref="'imgUpload_'+item.key"
-              :data-keyname="item.key"
-              :file-list="item.value?item.value:[]"
-              list-type="picture-card"
-            >
+              :on-success="(response, file, fileList) => { handleUploadSuccess(response, file, fileList, item.key) }"
+              :on-error="handleError" :on-exceed="handleExceed"
+              :before-remove="(file, fileList) => { beforeRemove(file, fileList, item.key) }"
+              :multiple="item.form_item_type_label !== 'img'" :limit="item.form_item_type_label === 'img' ? 1 : 5"
+              :ref="'imgUpload_' + item.key" :data-keyname="item.key" :file-list="item.value ? item.value : []"
+              list-type="picture-card">
               <i class="el-icon-plus"></i>
               <div slot="tip" class="el-upload__tip">选取图片后,需手动上传到服务器,并且只能上传jpg/png文件</div>
             </el-upload>
@@ -108,22 +65,12 @@
             </el-dialog>
           </div>
           <!--     文件     -->
-          <div v-else-if="['file'].indexOf(item.form_item_type_label) >-1" :key="index">
-            <el-upload
-              :action="uploadUrl"
-              :headers="uploadHeaders"
-              name="file"
-              :on-preview="handlePictureCardPreview"
-              :on-success="(response, file, fileList)=>{handleUploadSuccess(response, file, fileList,item.key)}"
-              :on-error="handleError"
-              :on-exceed="handleExceed"
-              :before-remove="(file, fileList)=>{beforeRemove(file, fileList, item.key)}"
-              :limit="5"
-              :ref="'fileUpload_'+item.key"
-              :data-keyname="item.key"
-              :file-list="item.value"
-              list-type="picture-card"
-            >
+          <div v-else-if="['file'].indexOf(item.form_item_type_label) > -1" :key="index">
+            <el-upload :action="uploadUrl" :headers="uploadHeaders" name="file" :on-preview="handlePictureCardPreview"
+              :on-success="(response, file, fileList) => { handleUploadSuccess(response, file, fileList, item.key) }"
+              :on-error="handleError" :on-exceed="handleExceed"
+              :before-remove="(file, fileList) => { beforeRemove(file, fileList, item.key) }" :limit="5"
+              :ref="'fileUpload_' + item.key" :data-keyname="item.key" :file-list="item.value" list-type="picture-card">
               <i class="el-icon-plus"></i>
               <div slot="tip" class="el-upload__tip">选取图片后,需手动上传到服务器,并且只能上传jpg/png文件</div>
             </el-upload>
@@ -132,39 +79,26 @@
             </el-dialog>
           </div>
           <!--    关联表      -->
-          <div v-else-if="['foreignkey','manytomany'].indexOf(item.form_item_type_label) >-1" :key="index">
-            <table-selector
-              v-model="form[item.key]"
-              :el-props='{
+          <div v-else-if="['foreignkey', 'manytomany'].indexOf(item.form_item_type_label) > -1" :key="index">
+            <table-selector v-model="form[item.key]" :el-props='{
               pagination: true,
-              columns: item.setting.searchField}'
-            :dict="{
-              url:'/api/system/system_config/get_table_data/'+item.id+'/',
-               value: item.setting.primarykey,
-                label: item.setting.field,
-            }"
-            :pagination="true"
-              :multiple="item.form_item_type_label ==='manytomany'"
-            ></table-selector>
+              columns: item.setting.searchField
+            }' :dict="{
+  url: '/api/system/system_config/get_table_data/' + item.id + '/',
+  value: item.setting.primarykey,
+  label: item.setting.field,
+}" :pagination="true" :multiple="item.form_item_type_label === 'manytomany'"></table-selector>
           </div>
           <!--   数组       -->
-          <div v-else-if="item.form_item_type_label==='array'" :key="index">
-            <vxe-table
-              border
-              resizable
-              auto-resize
-              show-overflow
-              keep-source
-              :ref="'xTable_'+item.key"
-              height="200"
-              :edit-rules="validRules"
-              :edit-config="{trigger: 'click', mode: 'row', showStatus: true}">
-              <vxe-column field="title" title="标题" :edit-render="{autofocus: '.vxe-input--inner'}">
+          <div v-else-if="item.form_item_type_label === 'array'" :key="index">
+            <vxe-table border resizable auto-resize show-overflow keep-source :ref="'xTable_' + item.key" height="200"
+              :edit-rules="validRules" :edit-config="{ trigger: 'click', mode: 'row', showStatus: true }">
+              <vxe-column field="title" title="标题" :edit-render="{ autofocus: '.vxe-input--inner' }">
                 <template #edit="{ row }">
                   <vxe-input v-model="row.title" type="text"></vxe-input>
                 </template>
               </vxe-column>
-              <vxe-column field="key" title="键名" :edit-render="{autofocus: '.vxe-input--inner'}">
+              <vxe-column field="key" title="键名" :edit-render="{ autofocus: '.vxe-input--inner' }">
                 <template #edit="{ row }">
                   <vxe-input v-model="row.key" type="text"></vxe-input>
                 </template>
@@ -175,15 +109,12 @@
                 </template>
               </vxe-column>
               <vxe-column title="操作" width="100" show-overflow>
-                <template #default="{ row,index }">
-                  <el-popover
-                    placement="top"
-                    width="160"
-                    v-model="childRemoveVisible">
+                <template #default="{ row, index }">
+                  <el-popover placement="top" width="160" v-model="childRemoveVisible">
                     <p>删除后无法恢复,确定删除吗？</p>
                     <div style="text-align: right; margin: 0">
                       <el-button size="mini" type="text" @click="childRemoveVisible = false">取消</el-button>
-                      <el-button type="primary" size="mini" @click="onRemoveChild(row,index)">确定</el-button>
+                      <el-button type="primary" size="mini" @click="onRemoveChild(row, index)">确定</el-button>
                     </div>
                     <el-button type="text" slot="reference">删除</el-button>
                   </el-popover>
@@ -191,7 +122,7 @@
               </vxe-column>
             </vxe-table>
             <div>
-              <el-button size="mini" @click="onAppend('xTable_'+item.key)">追加</el-button>
+              <el-button size="mini" @click="onAppend('xTable_' + item.key)">追加</el-button>
             </div>
           </div>
         </el-col>
@@ -225,7 +156,7 @@ export default {
   },
   watch: {
     options: {
-      handler (nv) {
+      handler(nv) {
         if (nv && nv.id) {
           this.getInit()
         }
@@ -233,7 +164,7 @@ export default {
       immediate: true
     }
   },
-  data () {
+  data() {
     return {
       formList: [],
       form: {},
@@ -270,7 +201,7 @@ export default {
   },
   methods: {
     // 获取数据
-    getInit () {
+    getInit() {
       const that = this
       api.GetList({ parent: this.options.id }).then(res => {
         const { data } = res.data
@@ -299,7 +230,7 @@ export default {
       })
     },
     // 提交数据
-    onSubmit () {
+    onSubmit() {
       const that = this
       const form = JSON.parse(JSON.stringify(this.form))
       const keys = Object.keys(form)
@@ -354,9 +285,9 @@ export default {
         if (valid) {
           api.saveContent(this.options.id,
             this.formList).then(res => {
-            this.$message.success('保存成功')
-            this.refreshView()
-          })
+              this.$message.success('保存成功')
+              this.refreshView()
+            })
         } else {
           console.log('error submit!!')
           return false
@@ -364,7 +295,7 @@ export default {
       })
     },
     // 追加
-    async onAppend (tableName) {
+    async onAppend(tableName) {
       const $table = this.$refs[tableName][0]
       const { tableData } = $table.getTableData()
       const tableLength = tableData.length
@@ -382,7 +313,7 @@ export default {
       }
     },
     // 子表删除
-    onRemoveChild (row, index) {
+    onRemoveChild(row, index) {
       if (row.id) {
         console.log(1, 'ok')
       } else {
@@ -390,19 +321,19 @@ export default {
       }
     },
     // 图片预览
-    handlePictureCardPreview (file) {
+    handlePictureCardPreview(file) {
       this.dialogImageUrl = file.url
       this.dialogImgVisible = true
     },
     // 判断是否为图片
     // 封装一个判断图片文件后缀名的方法
-    isImage (fileName) {
+    isImage(fileName) {
       if (typeof fileName !== 'string') return
       const name = fileName.toLowerCase()
       return name.endsWith('.png') || name.endsWith('.jpeg') || name.endsWith('.jpg') || name.endsWith('.png') || name.endsWith('.bmp')
     },
     // 上传成功
-    handleUploadSuccess (response, file, fileList, imgKey) {
+    handleUploadSuccess(response, file, fileList, imgKey) {
       const that = this
       const {
         code,
@@ -410,6 +341,7 @@ export default {
       } = response
       if (code === 2000) {
         const { url } = response.data
+        console.log('url', url)
         const { name } = file
         const type = that.isImage(name)
         if (!type) {
@@ -422,7 +354,7 @@ export default {
           // console.log(len)
           const dict = {
             name: name,
-            url: util.baseURL() + url
+            url: url.indexOf('http') < 0 ? util.baseURL() + url : url
           }
           that.form[imgKey].push(dict)
         }
@@ -431,15 +363,15 @@ export default {
       }
     },
     // 上传失败
-    handleError () {
+    handleError() {
       this.$message.error('上传失败')
     },
     // 上传超出限制
-    handleExceed () {
+    handleExceed() {
       this.$message.error('超过文件上传数量')
     },
     // 删除时的钩子
-    beforeRemove (file, fileList, key) {
+    beforeRemove(file, fileList, key) {
       var index = 0
       this.form[key].map((value, inx) => {
         if (value.uid === file.uid) index = inx
@@ -447,7 +379,7 @@ export default {
       this.form[key].splice(index, 1)
     }
   },
-  mounted () {
+  mounted() {
     // this.getInit()
   }
 }
