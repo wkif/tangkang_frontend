@@ -14,7 +14,7 @@ const env = 1
 // 其余表示本地
 
 if (env == 0) {
-    baseURL = 'https://tkapi.kifroom.icu/api'
+    baseURL = 'https://tkapi.tkyd.shop/api'
 } else if (env == 1) {
     baseURL = 'http://426x8r6735.zicp.vip/api';
 } else {
@@ -132,7 +132,10 @@ const API = {
     getSportTargetValue: (data) => request(POST, `/miniapp/getSportTargetValue/`, data),
     addFoodTargetValue: (data) => request(POST, `/miniapp/addFoodTargetValue/`, data),
     getFoodTargetValue: (data) => request(POST, `/miniapp/getFoodTargetValue/`, data),
-
+    // 关联
+    getHealthHistory: (data) => request(GET, `/miniapp/getHealthHistory/`, data),
+    getMyAssociation: (data) => request(GET, `/miniapp/getMyAssociation/`, data),
+    Audit: (data) => request(GET, `/miniapp/Audit/`, data),
 
 
 };

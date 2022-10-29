@@ -1,5 +1,4 @@
 // app.js
-
 App({
   // 引入`towxml3.0`解析方法
   towxml: require('/towxml/index'),
@@ -8,6 +7,7 @@ App({
   $formatTime: require('./utils/util').formatTime,
   $shallowEqual: require('./utils/util').shallowEqual,
   $delHtmlTag: require('./utils/util').delHtmlTag,
+  $stopbgam: require('./utils/util').stopbgam,
   onLaunch: function (options) {
     // 获取系统信息
     const systemInfo = wx.getSystemInfoSync();
@@ -20,9 +20,28 @@ App({
     // 胶囊高
     this.globalData.menuHeight = menuButtonInfo.height;
     // 导航栏高度 = 状态栏到胶囊的间距（胶囊上边界坐标 - 状态栏高度） * 2 + 胶囊高度 + 状态栏高度
-    this.globalData.navBarHeight = this.globalData.menuTopSpace * 2 + menuButtonInfo.height + systemInfo.statusBarHeight+10;
+    this.globalData.navBarHeight = this.globalData.menuTopSpace * 2 + menuButtonInfo.height + systemInfo.statusBarHeight + 10;
     // 状态栏高
-    let tabList = [{ "name": "首页", "selectedIconPath": "/assets/icon/home-active.png", "iconPath": "/assets/icon/home.png", "pagePath": "/pages/home/index" }, { "name": "记录", "selectedIconPath": "/assets/icon/add-active.png", "iconPath": "/assets/icon/add.png", "pagePath": "/pages/record/index" }, { "name": "商城", "selectedIconPath": "/assets/icon/shop-active.png", "iconPath": "/assets/icon/shop.png", "pagePath": "/pages/shop/index" }, { "name": "我的", "selectedIconPath": "/assets/icon/user-active.png", "iconPath": "/assets/icon/user.png", "pagePath": "/pages/user/index" }]
+    let tabList = [
+      {
+        "name": "首页",
+        "selectedIconPath": "/assets/icon/home-active.png",
+        "iconPath": "/assets/icon/home.png",
+        "pagePath": "/pages/home/index"
+      },
+      {
+        "name": "记录",
+        "selectedIconPath": "/assets/icon/add-active.png",
+        "iconPath": "/assets/icon/add.png",
+        "pagePath": "/pages/record/index"
+      },
+      {
+        "name": "我的",
+        "selectedIconPath": "/assets/icon/user-active.png",
+        "iconPath": "/assets/icon/user.png",
+        "pagePath": "/pages/user/index"
+      }
+    ]
     wx.setStorageSync('tabList', tabList)
     this.globalData.statusBarHeight = systemInfo.statusBarHeight;
 

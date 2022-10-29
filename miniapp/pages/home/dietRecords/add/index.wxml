@@ -4,7 +4,8 @@
     <van-cell title="时间" value="{{timevalue }}" bind:tap="showTimePopup" />
     <!-- <van-cell wx:for="{{food}}" title="{{item.food.foodName}}" value="{{item.number}}" label="描述信息" border="{{ false }}" /> -->
   </van-cell-group>
-  <van-card wx:for="{{food}}" num="{{item.number}}" tag="{{item.food.foodType}}" desc="营养价值：卡路里：{{item.food.foodCalory}}；蛋白质：{{item.food.foodProtein}}脂肪：{{item.food.foodFat}}；碳水：{{item.food.foodCarbohydrate}}；热量：{{item.food.heat}}；维生素A：{{item.food.foodVitaminA}}；维生素C：{{item.food.foodVitaminC}}；维生素D：{{item.food.foodVitaminD}}；维生素E：{{item.food.foodVitaminE}}；" title="{{item.food.foodName}} 单位：{{item.food.unit}}" thumb="{{ item.food.img }}" bindlongpress="handleDel" data-index="{{index}}">
+  <van-card wx:for="{{food}}" num="{{item.number}}" tag="{{item.food.foodType}}"
+   desc="营养价值：蛋白质：{{item.food.foodProtein}}脂肪：{{item.food.foodFat}}；碳水：{{item.food.foodCarbohydrate}}；热量：{{item.food.heat}}；维生素A：{{item.food.foodVitaminA}}；维生素C：{{item.food.foodVitaminC}}；维生素D：{{item.food.foodVitaminD}}；维生素E：{{item.food.foodVitaminE}}；" title="{{item.food.foodName}} 单位：{{item.food.unit}}" thumb="{{ item.food.img }}" bindlongpress="handleDel" data-index="{{index}}">
     <view slot="footer">
       <van-button size="mini" bindtap="sub" data-index="{{index}}">-</van-button>
       <van-button size="mini" bindtap="add" data-index="{{index}}">+</van-button>

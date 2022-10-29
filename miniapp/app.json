@@ -1,86 +1,87 @@
 {
-    "pages": [
-        "pages/home/index",
-        "pages/index/index",
-        "pages/home/setGoals/index",
-        "pages/home/foodDatabase/index",
-        "pages/home/dietRecords/index",
-        "pages/home/dietRecords/add/index",
-        "pages/home/newsDetail/index",
-        "pages/home/announcement/index",
-        "pages/home/sport/index",
-        "pages/home/sport/addSportsRecords/index",
-        "pages/home/sport/dailySportList/index",
-        "pages/record/index",
-        "pages/record/dailyRecord/index",
-        "pages/record/irregularTimingRecording/index",
-        "pages/record/dailyRecord/add/index",
-        "pages/record/irregularTimingRecording/add/index",
-        "pages/shop/index",
-        "pages/shop/goodDetail/index",
-        "pages/shop/addOrder/index",
-        "pages/shop/orderManage/index",
-        "pages/user/index",
-        "pages/user/addressManage/index",
-        "pages/user/addressManage/editAddress/index",
-        "pages/user/about/index",
-        "pages/user/informationManage/index",
-        "pages/user/userAgreement/index",
-        "pages/user/setting/index",
-        "pages/user/about/versionLog/index",
-        "pages/user/integral/index",
-        "pages/information/index",
-        "pages/nodata/index",
-        "pages/user/userinfo/index"
-    ],
-    "window": {
-        "navigationStyle": "custom"
-    },
-    "tabBar": {
-        "color": "#1E1E1E",
-        "selectedColor": "#646464",
-        "custom": true,
-        "list": [
-            {
-                "pagePath": "pages/home/index",
-                "iconPath": "./assets/icon/home.png",
-                "selectedIconPath": "/assets/icon/home-active.png",
-                "text": "首页"
-            },
-            {
-                "pagePath": "pages/record/index",
-                "iconPath": "/assets/icon/add.png",
-                "selectedIconPath": "/assets/icon/add-active.png",
-                "text": "记录"
-            },
-            {
-                "pagePath": "pages/shop/index",
-                "iconPath": "/assets/icon/shop.png",
-                "selectedIconPath": "/assets/icon/shop-active.png",
-                "text": "商城"
-            },
-            {
-                "pagePath": "pages/user/index",
-                "iconPath": "/assets/icon/user.png",
-                "selectedIconPath": "/assets/icon/user-active.png",
-                "text": "我的"
-            }
-        ]
-    },
-    "usingComponents": {
-        "van-button": "@vant/weapp/button/index",
-        "van-nav-bar": "@vant/weapp/nav-bar/index",
-        "van-transition": "@vant/weapp/transition/index",
-        "van-icon": "@vant/weapp/icon/index",
-        "van-empty": "@vant/weapp/empty/index",
-        "van-notify": "@vant/weapp/notify/index"
-    },
-    "sitemapLocation": "sitemap.json",
-    "lazyCodeLoading": "requiredComponents",
-    "plugins": {
-        "WechatSI": {
-            "version": "0.3.5",
-            "provider": "wx069ba97219f66d99"
-        }
+  "pages": [
+    "pages/home/index",
+    "pages/index/index",
+    "pages/home/setGoals/index",
+    "pages/home/foodDatabase/index",
+    "pages/home/dietRecords/index",
+    "pages/home/dietRecords/add/index",
+    "pages/home/newsDetail/index",
+    "pages/home/announcement/index",
+    "pages/home/sport/index",
+    "pages/home/sport/addSportsRecords/index",
+    "pages/home/sport/dailySportList/index",
+    "pages/record/index",
+    "pages/record/dailyRecord/index",
+    "pages/record/irregularTimingRecording/index",
+    "pages/record/dailyRecord/add/index",
+    "pages/record/irregularTimingRecording/add/index",
+    "pages/shop/index",
+    "pages/shop/goodDetail/index",
+    "pages/shop/addOrder/index",
+    "pages/shop/orderManage/index",
+    "pages/user/index",
+    "pages/user/addressManage/index",
+    "pages/user/addressManage/editAddress/index",
+    "pages/user/about/index",
+    "pages/user/informationManage/index",
+    "pages/user/userAgreement/index",
+    "pages/user/setting/index",
+    "pages/user/about/versionLog/index",
+    "pages/user/integral/index",
+    "pages/information/index",
+    "pages/nodata/index",
+    "pages/user/association/userinfo/index",
+    "pages/user/association/index"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#1E1E1E",
+    "selectedColor": "#646464",
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "./assets/icon/home.png",
+        "selectedIconPath": "/assets/icon/home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/record/index",
+        "iconPath": "/assets/icon/add.png",
+        "selectedIconPath": "/assets/icon/add-active.png",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/shop/index",
+        "iconPath": "/assets/icon/shop.png",
+        "selectedIconPath": "/assets/icon/shop-active.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "/assets/icon/user.png",
+        "selectedIconPath": "/assets/icon/user-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-transition": "@vant/weapp/transition/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-notify": "@vant/weapp/notify/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.5",
+      "provider": "wx069ba97219f66d99"
     }
+  }
 }

@@ -14,25 +14,25 @@ Page({
         loginFlag: false,
         iconBox: [
             {
-                icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111311675.svg',
+                icon: '../../assets/img/informationManage.svg',
                 name: '信息管理',
                 path: '/pages/user/informationManage/index'
             },
             {
-                icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111312241.svg',
+                icon: '../../assets/img/integral.svg',
                 name: '积分',
                 path: '/pages/user/integral/index'
             },
             {
-                icon: 'https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111312946.svg',
+                icon: '../../assets/img/orderManage.svg',
                 name: '订单',
                 path: '/pages/shop/orderManage/index'
             },
-            // {
-            //     icon: 'logistics',
-            //     name: '物流',
-            //     path: '/pages/nodata/index'
-            // }
+            {
+                icon: '../../assets/img/Association.svg',
+                name: '关联',
+                path: '/pages/user/association/index'
+            }
         ],
         cellList: [
             {
@@ -122,6 +122,18 @@ Page({
                                     })
                                     app.globalData.loginFlag = true
                                     app.globalData.speedFlag = res.data.speed
+                                    if (!res.data.mobile) {
+                                        wx.showToast({
+                                            title: '请完善信息',
+                                            icon: 'none',
+                                            duration: 2000
+                                        })
+                                        setTimeout(() => {
+                                            wx.navigateTo({
+                                                url: '/pages/user/informationManage/index',
+                                            })
+                                        }, 2000)
+                                    }
                                 } else {
                                     wx.showToast({
                                         title: res.msg,
@@ -168,7 +180,7 @@ Page({
     },
     gotouserInfo() {
         wx.navigateTo({
-            url: "/pages/user/userinfo/index?username="+wx.getStorageSync('userInfo').username,
+            url: "/pages/user/userinfo/index?username=" + wx.getStorageSync('userInfo').username,
 
         })
     },
@@ -190,14 +202,14 @@ Page({
         if (this.data.userInfo) {
             return {
                 title: '糖康有道',
-                imageUrl:'https://s3.bmp.ovh/imgs/2022/10/27/a89b4a11fb710c4b.png',
+                imageUrl: 'https://s3.bmp.ovh/imgs/2022/10/27/a89b4a11fb710c4b.png',
                 desc: '分享页面的内容',
                 path: '/pages/user/index?inviteCode=' + this.data.userInfo.inviteCode // 路径，传递参数到指定页面。
             }
         } else {
             return {
                 title: '糖康有道',
-                imageUrl:'https://s3.bmp.ovh/imgs/2022/10/27/a89b4a11fb710c4b.png',
+                imageUrl: 'https://s3.bmp.ovh/imgs/2022/10/27/a89b4a11fb710c4b.png',
                 desc: '分享页面的内容',
                 path: '/pages/user/index'
             }

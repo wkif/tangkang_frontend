@@ -15,10 +15,10 @@
         <view class="dataBox">
             <text class="cuIcon-like lg text-gray"></text>
             <text>糖化血红蛋白：</text>
-            <text>{{Data.glycosylatedHemoglobin}}\n\n\n</text>
+            <text>{{Data.glycosylatedHemoglobin}} \n\n\n</text>
             <text class="cuIcon-titles lg text-gray"></text>
             <text>微量白蛋白：</text>
-            <text>{{Data.microalbuminuria}}\n\n\n</text>
+            <text>{{Data.microalbuminuria}} mg/l\n\n\n</text>
             <text class="cuIcon-footprint lg text-gray"></text>
             <text>足跟静脉搏动：</text>
             <text>{{Data.dorsalisPedisArtery}}\n\n\n</text>

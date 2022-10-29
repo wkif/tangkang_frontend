@@ -12,8 +12,8 @@
                 <text class="cuIcon-delete lg text-red"></text>
             </view>
             <view class="padding-xl radius shadow shadow-lg bg-white margin-top">
-                <van-icon name="flower-o" />
-                <text>卡路里：{{d.foodCalory}}千卡\n</text>
+                <!-- <van-icon name="flower-o" />
+                <text>卡路里：{{d.foodCalory}}千卡\n</text> -->
                 <van-icon name="flower-o" />
                 <text>蛋白质：{{d.foodProtein}} \n</text>
                 <van-icon name="flower-o" />
@@ -39,24 +39,24 @@
                                 <van-tag plain type="primary">{{item.food.foodType}}</van-tag>
                                 <van-tag plain type="success">X {{item.number}}</van-tag>
                             </view>
+                            <!-- <van-icon name="flower-o" />
+                            <text>卡路里：{{item.food.foodCalory}}千卡\n</text> -->
                             <van-icon name="flower-o" />
-                            <text>卡路里：{{item.food.foodCalory}}千卡\n</text>
+                            <text>蛋白质：{{item.food.foodProtein}} 克 \n</text>
                             <van-icon name="flower-o" />
-                            <text>蛋白质：{{item.food.foodProtein}} \n</text>
+                            <text>脂肪：{{item.food.foodFat}}  克 \n</text>
                             <van-icon name="flower-o" />
-                            <text>脂肪：{{item.food.foodFat}}   \n</text>
+                            <text>热量：{{item.food.heat}} 卡 \n</text>
                             <van-icon name="flower-o" />
-                            <text>热量：{{item.food.heat}}\n</text>
+                            <text>碳水化合物：{{item.food.foodCarbohydrate}} KJ\n</text>
                             <van-icon name="flower-o" />
-                            <text>碳水化合物：{{item.food.foodCarbohydrate}}\n</text>
+                            <text>维生素A：{{item.food.foodVitaminA}} 毫克\n</text>
                             <van-icon name="flower-o" />
-                            <text>维生素A：{{item.food.foodVitaminA}}\n</text>
+                            <text>维生素C：{{item.food.foodVitaminC}} 毫克\n</text>
                             <van-icon name="flower-o" />
-                            <text>维生素C：{{item.food.foodVitaminC}}\n</text>
+                            <text>维生素E：{{item.food.foodVitaminE}} 毫克\n</text>
                             <van-icon name="flower-o" />
-                            <text>维生素E：{{item.food.foodVitaminE}}\n</text>
-                            <van-icon name="flower-o" />
-                            <text>维生素D：{{item.food.foodVitaminD}}\n</text>
+                            <text>维生素D：{{item.food.foodVitaminD}} 毫克\n</text>
                         </van-collapse-item>
                     </van-collapse>
                 </view>

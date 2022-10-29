@@ -1,5 +1,6 @@
 // pages/home/newsDetail/index.js
 const app = getApp()
+import Dialog from '@vant/weapp/dialog/dialog';
 Page({
 
     /**
@@ -26,10 +27,12 @@ Page({
         ],
         isLike: false,
         goTopFlag: true,
-        goCommitFlag: true
+        goCommitFlag: true,
+        timer: null,
+        speakFlag: true,
 
     },
-    //判断上下滚动方向）（deltaY小于0时，向下，向上则反之）
+    //判断上下滚动方向（deltaY小于0时，向下，向上则反之）
     bindscrollfx: function (e) {
         var that = this;
         var scrollfx = e.detail.deltaY;
@@ -45,24 +48,6 @@ Page({
             })
         }
     },
-    // handletouchmove(event) {
-    //     let currentY = event.changedTouches[0].clientY
-    //     if (currentY <= this.data.startY) {
-    //         this.setData({
-    //             toolFlag: false
-    //         })
-    //         console.log("下滑")
-    //     } else {
-    //         this.setData({
-    //             toolFlag: true
-    //         })
-    //         console.log("上滑")
-    //     }
-    // },
-    // //滑动开始事件
-    // handletouchstart: function (event) {
-    //     this.data.startY = event.changedTouches[0].clientY
-    // },
     onSharClick(event) {
         this.setData({ showShare: true });
     },
@@ -72,13 +57,23 @@ Page({
     },
 
     ononShareSelect(event) {
-        Toast(event.detail.name);
+        // Toast(event.detail.name);
         this.ononShareClose();
     },
     onClickLeft() {
-        wx.navigateBack({
-            delta: 1
+        app.$stopbgam()
+        clearTimeout(this.data.timer)
+        this.setData({
+            timer: null,
+            speakFlag: false
         })
+        // wx.navigateBack({
+        //     delta: 1
+        // })
+        wx.switchTab({
+            url: '/pages/home/index'
+        })
+
     },
     goTop() {
         //scroll-view的方法
@@ -113,7 +108,8 @@ Page({
     },
     goCommit() {
         this.setData({
-            toViewid: 'commitView'
+            toViewid: 'commitView',
+            goCommitFlag: false
         })
     },
     async submit() {
@@ -122,7 +118,7 @@ Page({
             newsId: this.data.newsData.id,
             content: this.data.inputValue
         }
-        console.log('data', data)
+        // console.log('data', data)
         let res = await app.$api.addCommit(data)
         if (res.status == 200) {
             this.setData({
@@ -143,27 +139,41 @@ Page({
         }
     },
     delete(e) {
-        let data = {
-            userId: this.data.userInfo.id,
-            newsId: this.data.newsData.id,
-            commitId: e.currentTarget.dataset.id
-        }
-        app.$api.deleteCommit(data).then(res => {
-            if (res.status == 200) {
-                wx.showToast({
-                    title: res.data,
-                    icon: 'success',
-                    duration: 2000
-                })
-                this.getNewsComment()
-            } else {
-                wx.showToast({
-                    title: res.data,
-                    icon: 'none',
-                    duration: 2000
-                })
-            }
+        // 询问
+        let that = this
+        Dialog.confirm({
+            title: '删除',
+            message: '确认删除？',
         })
+            .then(() => {
+                // on confirm
+                let data = {
+                    userId: that.data.userInfo.id,
+                    newsId: that.data.newsData.id,
+                    commitId: e.currentTarget.dataset.id
+                }
+                app.$api.deleteCommit(data).then(res => {
+                    if (res.status == 200) {
+                        wx.showToast({
+                            title: res.data,
+                            icon: 'success',
+                            duration: 2000
+                        })
+                        this.getNewsComment()
+                    } else {
+                        wx.showToast({
+                            title: res.data,
+                            icon: 'none',
+                            duration: 2000
+                        })
+                    }
+                })
+            })
+            .catch(() => {
+                // on cancel
+            });
+
+
     },
     async getStatusOfLike() {
         let data = {
@@ -172,9 +182,12 @@ Page({
         }
         let res = await app.$api.getStatusOfLike(data)
         console.log(res)
+        let kif = res.data ? this.data.newsData.Number_of_likes + 1 : (this.data.newsData.Number_of_likes > 0 ? this.data.newsData.Number_of_likes - 1 : 0)
+
         if (res.status == 200) {
             this.setData({
-                isLike: res.data
+                isLike: res.data,
+                'newsData.Number_of_likes': kif
             })
         }
     },
@@ -214,6 +227,8 @@ Page({
             this.setData({
                 newsData: res.data.news,
                 // commitList: res.data.commitList
+                speakFlag: true
+
             })
             this.getStatusOfLike()
             let result = app.towxml(res.data.news.content, 'markdown', {
@@ -244,13 +259,19 @@ Page({
         let count = str.length / 300
         for (let i = 0; i < count; i++) {
             let item = (str.slice((i) * 300, (i + 1) * 300))
-            
-            setTimeout(()=>{app.$Text2Speech(item)},i*75620)
+
+            this.data.timer = setTimeout(() => {
+                console.log('this.data.speakFlag', this.data.speakFlag)
+                if (this.data.speakFlag) {
+                    app.$Text2Speech(item)
+                }
+
+            }, i * 75620)
         }
         console.log(count, arr)
         // let res = app.$Text2Speech('kif')
         // console.log('res',res)
-       
+
     },
 
 

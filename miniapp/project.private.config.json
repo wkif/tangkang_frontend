@@ -185,6 +185,20 @@
           "query": "id=3",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/association/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/association/userinfo/index",
+          "query": "userid=20",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

@@ -1,5 +1,6 @@
 
 
+const app = getApp();
 
 const formatTime = timestamp => {
   timestamp = timestamp ? timestamp : null;
@@ -19,7 +20,7 @@ var plugin = requirePlugin("WechatSI")
 let manager = plugin.getRecordRecognitionManager()
 var bgam = wx.createInnerAudioContext();
 
-const Text2Speech = function (text,isDelay=false) {
+const Text2Speech = function (text, isDelay = false) {
   plugin.textToSpeech({
     lang: "zh_CN",
     tts: true,
@@ -32,6 +33,9 @@ const Text2Speech = function (text,isDelay=false) {
       console.log("fail tts", res)
     }
   })
+}
+const stopbgam = function () {
+  bgam.stop()
 }
 const toDecimal2 = (x) => {
   var f = parseFloat(x);
@@ -97,5 +101,6 @@ module.exports = {
   Text2Speech,
   regFenToYuan,
   shallowEqual,
-  delHtmlTag
+  delHtmlTag,
+  stopbgam
 }

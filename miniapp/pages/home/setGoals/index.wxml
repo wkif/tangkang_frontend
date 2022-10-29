@@ -2,9 +2,7 @@
 <view class="app" style="margin-top:{{marginTopview}}px;">
     <van-divider contentPosition="center">血糖目标</van-divider>
     <van-cell-group inset>
-        <van-cell wx:for="{{bloodSugar_targetValue_list.targetValue}}" 
-        title="{{item.name}}" value="{{item.value}} mmol/L" label="{{bloodSugar_targetValue_list.updateTime}}"
-         bindtap="bloodSugarEdit" data-index="{{index}}" />
+        <van-cell wx:for="{{bloodSugar_targetValue_list.targetValue}}" title="{{item.name}}" value="{{item.value[0]}} - {{item.value[1]}} mmol/L" label="{{bloodSugar_targetValue_list.updateTime}}" bindtap="bloodSugarEdit" data-index="{{index}}" />
     </van-cell-group>
     <van-divider contentPosition="center">运动目标</van-divider>
     <van-cell-group inset>
@@ -17,9 +15,9 @@
     <view class="buttonView" wx:if="{{isEdit}}">
         <van-button type="primary" bindtap="submit" block>保存</van-button>
     </view>
-    <van-popup show="{{ show }}" round position="bottom" custom-style="height: 20%;" closeable bind:close="onClose">
-        <van-picker wx:if="{{showFlag==0}}" columns="{{ valueColumns }}" default-index="{{ 30 }}" bind:change="onChange" />
-        <van-picker wx:if="{{showFlag==1}}" columns="{{ heatValueColumn }}" bind:change="onChange1" />
-        <van-picker wx:if="{{showFlag==2}}" columns="{{ heatValueColumn }}" bind:change="onChange2" />
+    <van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%;" bind:close="onClose">
+        <van-picker show-toolbar title="血糖目标" bind:cancel="onClose" bind:confirm="onClose" wx:if="{{showFlag==0}}" columns="{{ valueColumns }}" default-index="{{ 30 }}" bind:change="onChange" />
+        <van-picker show-toolbar title="运动目标热量消耗" bind:cancel="onClose" bind:confirm="onClose" wx:if="{{showFlag==1}}" columns="{{ heatValueColumn }}" bind:change="onChange1" />
+        <van-picker show-toolbar title="饮食目标热量限制" bind:cancel="onClose" bind:confirm="onClose" wx:if="{{showFlag==2}}" columns="{{ heatValueColumn }}" bind:change="onChange2" />
     </van-popup>
 </view>

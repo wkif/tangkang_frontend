@@ -20,7 +20,14 @@ Page({
         isEdit: false,
         show: false,
         showFlag: '',
-        valueColumns: [],
+        valueColumns: [
+            // {
+            //   values:[1,2,3,4]
+            // },
+            // {
+            //   values:[1,2,3,4]
+            // }
+        ],
         heatValueColumn: [],
         marginTopview: app.globalData.navBarHeight
 
@@ -28,6 +35,14 @@ Page({
     onChange(event) {
         const { picker, value, index } = event.detail;
         console.log({ picker, value, index })
+        if (value[0] >= value[1]) {
+            wx.showToast({
+                title: "数据有误",
+                icon: 'none',
+                duration: 2000
+            })
+            return 
+        }
         let x = this.data.bloodSugar_targetValue_list
         x.targetValue[this.data.bloodSugar_targetValue_list_Index].value = value
         this.setData({
@@ -190,10 +205,18 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        let valueColumns = []
+        let values = []
         for (let i = 2.0; i <= 10.0; i += 0.1) {
-            valueColumns.push(i.toFixed(1))
+            values.push(i.toFixed(1))
         }
+        let valueColumns = [
+            {
+                values: values
+            },
+            {
+                values: values
+            }
+        ]
         let heatValueColumn = []
         for (let i = 1700; i <= 3000; i += 100) {
             heatValueColumn.push(i.toFixed(1))

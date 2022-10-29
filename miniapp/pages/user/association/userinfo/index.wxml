@@ -1,0 +1,95 @@
+<van-nav-bar title="{{username}}" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app" style="margin-top:{{marginTopview}}px;">
+    <scroll-view scroll-y class="scrollPage">
+        <view class="UCenter-bg" style=" background-image: url({{healthData.avatar}});">
+            <image src="/images/logo.png" class="png" mode="widthFix"></image>
+            <view class="text-xl">{{healthData.username}}</view>
+            <image src="https://tva3.sinaimg.cn/large/8d406c5egy1gamn31scsdg20f002skhn.gif" mode="scaleToFill" class="gif-wave"></image>
+        </view>
+        <view class="padding flex text-center text-grey bg-white shadow-warp">
+            <view class="flex flex-sub flex-direction solid-right">
+                <view class="text-xxl text-orange">{{healthData.height}}</view>
+                <view class="margin-top-sm">
+                    <text class="cuIcon-top"></text>
+                    身高
+                </view>
+            </view>
+            <view class="flex flex-sub flex-direction solid-right">
+                <view class="text-xxl text-blue">{{healthData.weight}}</view>
+                <view class="margin-top-sm">
+                    <text class="cuIcon-activity"></text>
+                    体重
+                </view>
+            </view>
+            <view class="flex flex-sub flex-direction">
+                <view class="text-xxl text-green">{{healthData.bloodType}}</view>
+                <view class="margin-top-sm">
+                    <text class="cuIcon-brand"></text>
+                    血型
+                </view>
+            </view>
+        </view>
+        <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+            <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+                <van-collapse-item title="血糖记录" name="1">
+                    <van-empty wx:if="{{healthData.bloodSugarLevelsData.length==0}}" description="描述文字" />
+                    <view class="list" wx:else>
+                        <view class="item" wx:for="{{healthData.bloodSugarLevelsData}}">
+                            <text>类型： {{bloodSugarTypeList[item.bloodSugarType]}} \n</text>
+                            <text>血糖值：{{item.bloodSugarLevel}} mmol/L \n</text>
+                            <van-tag plain type="primary" style="float:right">
+                                {{item.bloodSugarTime}}
+                            </van-tag>
+                        </view>
+                    </view>
+                </van-collapse-item>
+                <van-collapse-item title="不定期记录" name="2">
+                    <van-empty wx:if="{{healthData.periodicalLoggingData.length==0}}" description="描述文字" />
+                    <view class="list" wx:else>
+                        <view class="item" wx:for="{{healthData.periodicalLoggingData}}">
+                            <text>糖化血红蛋白: {{item.glycosylatedHemoglobin}} \n</text>
+                            <text>微量白蛋白：{{item.microalbuminuria}} mg/l \n</text>
+                            <text>足跟静脉搏动:{{item.dorsalisPedisArtery}}  \n</text>
+                            <van-tag plain type="primary" style="float:right">
+                                {{item.periodicalTime}}
+                            </van-tag>
+                        </view>
+                    </view>
+                </van-collapse-item>
+                <van-collapse-item title="饮食记录" name="3">
+                    <van-empty wx:if="{{healthData.dietRecordsData.length==0}}" description="描述文字" />
+                    <view class="list" wx:else>
+                        <view class="item" wx:for="{{healthData.dietRecordsData}}">
+                            <text>热量: {{item.heat}} 卡 \n</text>
+                            <text>蛋白质:{{item.foodProtein}} 克 \n</text>
+                            <!-- <text>卡路里:{{item.foodCalory}}  \n</text> -->
+                            <text>脂肪: {{item.foodFat}} 克\n</text>
+                            <text>碳水化合物:{{item.foodCarbohydrate}} KJ \n</text>
+                            <text>维生素A:{{item.foodVitaminA}} 毫克 \n</text>
+                            <text>维生素D:{{item.foodVitaminD}} 毫克  \n</text>
+                            <text>维生素E:{{item.foodVitaminE}} 毫克 \n</text>
+                            <van-tag plain type="primary" style="float:right">
+                                {{item.time}}
+                            </van-tag>
+                        </view>
+                    </view>
+                </van-collapse-item>
+                <van-collapse-item title="运动记录" name="4">
+                    <van-empty wx:if="{{healthData.sportsRecordsData.length==0}}" description="描述文字" />
+                    <view class="list" wx:else>
+                        <view class="item" wx:for="{{healthData.sportsRecordsData}}">
+                            <text>类型: {{item.sportstype.name}} \n</text>
+                            <text>热量{{item.heat}} 卡 \n</text>
+                            <text>开始时间: {{item.startTime}} \n</text>
+                            <text>结束时间: {{item.endTime}} \n</text>
+                            <van-tag plain type="primary" style="float:right">
+                                {{item.time}}
+                            </van-tag>
+                        </view>
+                    </view>
+                </van-collapse-item>
+            </van-collapse>
+        </view>
+        <view class="cu-tabbar-height"></view>
+    </scroll-view>
+</view>

@@ -40,3 +40,6 @@
   width: 750rpx;
   height: 300rpx;
 }
+.app .menu .list .item {
+  padding: 1rem;
+}
