@@ -15,8 +15,11 @@ Page({
         marginTopview: app.globalData.navBarHeight
     },
     onClickLeft() {
-        wx.navigateBack({
-            delta: 1
+        // wx.navigateBack({
+        //     delta: 1
+        // })
+        wx.switchTab({
+          url: '/pages/home/index',
         })
     },
     async getData() {

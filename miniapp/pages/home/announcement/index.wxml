@@ -1,4 +1,11 @@
 <van-nav-bar title="公告" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
-<view class="app">
-    
+<view class="app" style="margin-top:{{marginTopview}}px;">
+    <view class="content-info">
+        <view class="title">{{Data.title}}</view>
+        <towxml nodes="{{article}}" />
+        <view class="content-info-title">
+            <text>创建时间：{{createTime}}\n</text>
+            <text>更新时间：{{updateTime}}\n</text>
+        </view>
+    </view>
 </view>

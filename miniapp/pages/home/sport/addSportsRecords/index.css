@@ -2,7 +2,10 @@
   margin-top: 200rpx;
 }
 .app .submitButton {
-  margin-top: 20px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-top: 10px;
+}
+.app .submitButton button {
+  margin-left: 50%;
+  width: 40vw;
+  transform: translateX(-50%);
 }

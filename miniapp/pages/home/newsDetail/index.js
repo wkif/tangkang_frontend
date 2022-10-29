@@ -20,16 +20,17 @@ Page({
         showShare: false,
         options: [
             { name: '微信', icon: 'wechat', openType: 'share' },
-            { name: '微博', icon: 'weibo' },
-            { name: '复制链接', icon: 'link' },
-            { name: '分享海报', icon: 'poster' },
-            { name: '二维码', icon: 'qrcode' },
+            // { name: '微博', icon: 'weibo' },
+            // { name: '复制链接', icon: 'link' },
+            // { name: '分享海报', icon: 'poster' },
+            // { name: '二维码', icon: 'qrcode' },
         ],
         isLike: false,
         goTopFlag: true,
         goCommitFlag: true,
         timer: null,
         speakFlag: true,
+        chatFlag: false
 
     },
     //判断上下滚动方向（deltaY小于0时，向下，向上则反之）
@@ -48,6 +49,18 @@ Page({
             })
         }
     },
+    // 获取容器高度，使页面滚动到容器底部
+    pageScrollToBottom: function () {
+        wx.createSelectorQuery().select('#page').boundingClientRect(function (rect) {
+            if (rect) {
+                // 使页面滚动到底部
+                console.log(rect.height);
+                wx.pageScrollTo({
+                    scrollTop: rect.height
+                })
+            }
+        }).exec()
+    },
     onSharClick(event) {
         this.setData({ showShare: true });
     },
@@ -59,6 +72,12 @@ Page({
     ononShareSelect(event) {
         // Toast(event.detail.name);
         this.ononShareClose();
+    },
+    chat() {
+        this.setData({
+            chatFlag: !this.data.chatFlag
+        })
+        this.pageScrollToBottom()
     },
     onClickLeft() {
         app.$stopbgam()
@@ -97,6 +116,7 @@ Page({
                 this.setData({
                     commitList: res.data
                 })
+                this.pageScrollToBottom()
             } else {
                 wx.showToast({
                     title: res.data,

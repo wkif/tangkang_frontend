@@ -22,6 +22,7 @@
         <van-picker  columns="{{ columns }}" bind:change="onChange" />
     </van-popup> -->
     <view class="submitButton">
-        <van-button type="primary" block bindtap="addSportsRecords">提交</van-button>
+        <!-- <van-button type="primary" block bindtap="addSportsRecords">提交</van-button> -->
+        <button class="cu-btn bg-themeColor shadow-blur round lg" bindtap="addSportsRecords">提交</button>
     </view>
 </view>

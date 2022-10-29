@@ -2,8 +2,10 @@
   padding-bottom: 2rem;
 }
 .app .buttonView {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-top: 10px;
+}
+.app .buttonView button {
+  margin-left: 50%;
+  width: 40vw;
+  transform: translateX(-50%);
 }

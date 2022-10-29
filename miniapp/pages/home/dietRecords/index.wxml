@@ -69,7 +69,7 @@
     </view>
     <van-empty image="error" wx:else description="描述文字" />
     <view class="addButtonView">
-        <button class="cu-btn block line-greeen lg" bindtap="addButton">
+        <button class="cu-btn block  bg-themeColor lg" bindtap="addButton">
             <text class="cuIcon-edit"></text>
             <text>记录刚刚吃的！</text>
         </button>

@@ -12,10 +12,10 @@
     </view>
   </van-card>
   <view class="addButtonView">
-    <button class="cu-btn block line-greeen lg margin-top" bindtap="showPopup">
+    <button class="cu-btn block bg-themeColor lg margin-top" bindtap="showPopup">
       <text class="cuIcon-edit">新增</text>
     </button>
-    <button class="cu-btn block line-greeen lg margin-top" bindtap="submit">
+    <button class="cu-btn block bg-themeColor lg margin-top" bindtap="submit">
       <text class="cuIcon-upload">提交</text>
     </button>
   </view>

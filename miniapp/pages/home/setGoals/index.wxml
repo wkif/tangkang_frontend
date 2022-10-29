@@ -13,7 +13,9 @@
         <van-cell title="热量限制" bindtap="FoodTargetValueEdit" value="{{FoodTargetValue.heat}} 千卡" label="{{FoodTargetValue.updateDate}}" />
     </van-cell-group>
     <view class="buttonView" wx:if="{{isEdit}}">
-        <van-button type="primary" bindtap="submit" block>保存</van-button>
+        <!-- <van-button type="primary" bindtap="submit" block>保存</van-button>
+         -->
+                 <button class="cu-btn bg-themeColor shadow-blur round lg" bindtap="submit">保存</button>
     </view>
     <van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%;" bind:close="onClose">
         <van-picker show-toolbar title="血糖目标" bind:cancel="onClose" bind:confirm="onClose" wx:if="{{showFlag==0}}" columns="{{ valueColumns }}" default-index="{{ 30 }}" bind:change="onChange" />

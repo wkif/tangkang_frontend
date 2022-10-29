@@ -45,6 +45,10 @@ Page({
             this.setData({
                 integralNum: res.data
             })
+            if (app.globalData.speedFlag) {
+                app.$Text2Speech("当前积分为"+res.data)
+              }
+            
         } else {
             wx.showToast({
                 title: res.data,

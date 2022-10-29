@@ -9,7 +9,8 @@ Page({
     data: {
         article: {},
         createTime: '',
-        updateTime: ''
+        updateTime: '',
+        marginTopview: app.globalData.navBarHeight
     },
     onClickLeft() {
         wx.navigateBack({

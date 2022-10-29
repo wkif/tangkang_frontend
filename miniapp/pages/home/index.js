@@ -149,6 +149,12 @@ Page({
         )
 
     },
+    gotoannouncement(e) {
+        wx.navigateTo({
+            url: '/pages/home/announcement/index?announcementid=' + e.currentTarget.dataset.announcementid,
+
+        })
+    },
     getDate() {
         let date = new Date();
         let month = date.getMonth() + 1;

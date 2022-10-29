@@ -41,7 +41,10 @@ Page({
                 icon: 'none',
                 duration: 2000
             })
-            return 
+            return
+        }
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(value[0] + "至" + value[1])
         }
         let x = this.data.bloodSugar_targetValue_list
         x.targetValue[this.data.bloodSugar_targetValue_list_Index].value = value
@@ -52,6 +55,9 @@ Page({
     },
     onChange1(e) {
         const { picker, value, index } = e.detail;
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(value)
+        }
         this.setData({
             'SportTargetValue.heat': value,
             isEdit: true
@@ -59,14 +65,20 @@ Page({
     },
     onChange2(e) {
         const { picker, value, index } = e.detail;
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(value)
+        }
         this.setData({
             'FoodTargetValue.heat': value,
             isEdit: true
         })
     },
     onClickLeft() {
-        wx.navigateBack({
-            delta: 1
+        // wx.navigateBack({
+        //     delta: 1
+        // })
+        wx.switchTab({
+            url: '/pages/home/index',
         })
     },
     showPopup() {
@@ -196,6 +208,9 @@ Page({
                     icon: 'success',
                     duration: 2000
                 })
+                if (app.globalData.speedFlag) {
+                    app.$Text2Speech("成功")
+                }
                 setInterval(() => { that.onClickLeft() }, 2000)
 
             }

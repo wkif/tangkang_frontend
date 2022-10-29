@@ -1,5 +1,5 @@
 <van-nav-bar title="{{newsData.title}}" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
-<view class="app" style="margin-top:{{marginTopview}}px;">
+<view class="app" id="page" style="margin-top:{{marginTopview}}px;">
     <view class="content-info">
         <scroll-view scroll-y bindscroll="bindscrollfx" scroll-top="{{scrollTop}}" scroll-with-animation="true" style="height: 100vh;" scroll-into-view="{{toViewid}}">
             <view class="coverImg">
@@ -14,6 +14,7 @@
             <view class="actionView">
                 <van-icon name="good-job" wx:if="{{isLike}}" info="{{newsData.Number_of_likes}}" size="20px" bind:click="LikeOfNews" />
                 <van-icon name="good-job-o" wx:else size="20px" info="{{newsData.Number_of_likes}}" bind:click="LikeOfNews" />
+                 <van-icon name="chat-o" size="20px" bind:click="chat" />
                 <van-icon name="share-o" size="20px" bind:click="onSharClick" />
             </view>
             <view class="tool ">
@@ -26,7 +27,7 @@
                 </view>
             </view>
             <view class="commitView" id="commitView">
-                <view class="commitInput">
+                <view class="commitInput" wx:if="{{chatFlag}}" >
                     <view class="cu-bar input">
                         <view class="cu-avatar round" style="background-image:url({{userInfo.avatar}});"></view>
                         <input bindinput="input" value="{{inputValue}}" class="solid-bottom" maxlength="300" cursor-spacing="10"></input>

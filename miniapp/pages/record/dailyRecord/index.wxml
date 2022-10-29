@@ -37,14 +37,14 @@
     </scroll-view>
     <view class="mainView">
         <view class="chartView" wx:if="{{TabCur==0}}">
-            <view class=" padding-xl radius shadow bg-white box" wx:if="{{xAxisData.length!=0}}">
+            <view class=" padding-xl radius shadow bg-white box">
                 <ec-canvas id="mychart" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
                 <view class="title">
                     <text class="text-gray">{{title[dateType]}}</text>
                     <van-switch checked="{{ checked }}" bind:change="onChange" size="24px" />
                 </view>
             </view>
-             <van-empty description="描述文字" wx:else />
+            <!-- <van-empty class="{{xAxisData.length!=0?'hide':''}}" description="描述文字" /> -->
         </view>
         <view class="cardView" wx:else>
             <view class="cardBox" wx:if="{{dateList.length!=0}}">

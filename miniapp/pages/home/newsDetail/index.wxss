@@ -1,6 +1,9 @@
 .app {
   margin-top: 11vh;
 }
+.app .content-info {
+  padding-bottom: 1rem;
+}
 .app .content-info .coverImg {
   width: 100%;
   background-size: cover;

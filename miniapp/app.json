@@ -29,10 +29,10 @@
     "pages/user/setting/index",
     "pages/user/about/versionLog/index",
     "pages/user/integral/index",
-    "pages/information/index",
-    "pages/nodata/index",
     "pages/user/association/userinfo/index",
-    "pages/user/association/index"
+    "pages/user/association/index",
+    "pages/nodata/index"
+ 
   ],
   "window": {
     "navigationStyle": "custom"

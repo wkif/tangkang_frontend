@@ -125,6 +125,9 @@ Page({
     let food = this.data.food
     this.data.result.forEach(index => {
       console.log('index', index)
+      // if (app.globalData.speedFlag) {
+      //   app.$Text2Speech(this.data.foodList[index].foodName)
+      // }
       let obj = {
         "food": this.data.foodList[index],
         "number": 1
@@ -145,6 +148,7 @@ Page({
     this.setData({
       food: food
     })
+    
     this.calculate()
   },
   add(e) {

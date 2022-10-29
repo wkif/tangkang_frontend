@@ -7,7 +7,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        Data: {}
+        Data: {},
+        announcementid: '',
+        marginTopview: app.globalData.navBarHeight
     },
     onClickLeft() {
         wx.navigateBack({
@@ -16,12 +18,45 @@ Page({
     },
 
 
-  
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+
+        (async () => {
+            //markdown数据源
+            let res = await app.$api.getTopNotice()
+            console.log('res', res)
+            this.setData({
+                createTime: res.data.createTime,
+                updateTime: res.data.updateTime,
+                Data: res.data
+            })
+            let result = app.towxml(res.data.content, 'markdown', {
+                base: 'www.xxx.com',
+                theme: 'light',
+                events: {
+                    tap: (e) => {
+                        console.log('h4', e);
+                    }
+                }
+            });
+            // 更新解析数据
+            this.setData({
+                article: result
+            });
+        })()
+
+
+
         // this.getDietRecords()
+        // console.log('options', options)
+        // this.setData({
+        //     announcementid: options.announcementid
+        // })
+        // this.getTopnotice()
+
     },
 
     /**

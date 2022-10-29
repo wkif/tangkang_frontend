@@ -2,7 +2,7 @@
 <view class="app">
     <view class='margin-xl bg-white padding-xl radius shadow-lg'>
         <view class='text-center margin-bottom text-lg  text-grey'>关于糖康有道</view>
-        <view class='text-center margin-bottom text-lg  text-grey'>v 0.0.1</view>
+        <view class='text-center margin-bottom text-lg  text-grey'>v 0.4.0</view>
         <view class='text-content'>
             <view>Hi！~欢迎使用糖康有道！</view>
             <view class='margin-top-sm'>

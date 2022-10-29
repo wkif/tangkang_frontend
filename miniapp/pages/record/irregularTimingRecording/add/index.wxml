@@ -1,12 +1,12 @@
 <van-nav-bar title="新增日记录" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
     <van-cell-group>
-        <van-field value="{{ bloodSugarTime }}" required clearable label="时间" placeholder="请选择记录时间" border="{{ false }}" bind:tap="selectTime" />
-        <van-field value="{{ GLL }}" required clearable label="糖化血红蛋白(%)" 
+        <van-field value="{{ bloodSugarTime }}" readonly required clearable label="时间" placeholder="请选择记录时间" border="{{ false }}" bind:tap="selectTime" />
+        <van-field value="{{ GLL }}" readonly required clearable label="糖化血红蛋白(%)" 
         placeholder="请选择糖化血红蛋白" border="{{ false }}" bind:tap="selectGLL" />
-        <van-field value="{{ ML }}" required clearable label="微量白蛋白(mg/L)"
+        <van-field value="{{ ML }}" readonly required clearable label="微量白蛋白(mg/L)"
          placeholder="请选择微量白蛋白" border="{{ false }}" bind:tap="selectML" />
-        <van-field value="{{ DPA }}" required clearable label="足跟静脉搏动"
+        <van-field value="{{ DPA }}" readonly required clearable label="足跟静脉搏动"
          placeholder="请选择足跟静脉搏动" border="{{ false }}" bind:tap="selectDPA" />
     </van-cell-group>
     <view class="buttonView">

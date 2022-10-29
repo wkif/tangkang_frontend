@@ -17,9 +17,9 @@ Page({
         ]
     },
     onClickLeft() {
-        wx.navigateBack({
-            delta: 1
-        })
+      wx.switchTab({
+        url: '/pages/home/index',
+      })
     },
     async getSportsRecordsByid() {
         let data = {
@@ -74,7 +74,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.getSportsRecordsByid()
     },
 
     /**

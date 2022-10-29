@@ -20,9 +20,9 @@ Page({
         });
     },
     onClickLeft() {
-        wx.navigateBack({
-            delta: 1
-        })
+      wx.switchTab({
+        url: '/pages/home/index',
+      })
     },
     addButton() {
         wx.navigateTo({

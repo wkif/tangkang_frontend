@@ -115,13 +115,13 @@ Page({
             series: series,
             cardData: res.data.cardData
         })
-        await that.init_echarts();
+        await that.initEcharts();
         await this.initCardData()
         // await that.initChartOption(xAxisData, series)
 
     },
     //初始化图表
-    init_echarts: function () {
+    initEcharts: function () {
         this.echartsComponnet.init((canvas, width, height) => {
             // 初始化图表
             const Chart = echarts.init(canvas, null, {
@@ -178,7 +178,7 @@ Page({
         if (e.currentTarget.dataset.id == 0) {
 
             this.echartsComponnet = this.selectComponent('#mychart');
-            this.init_echarts();
+            this.initEcharts();
             // this.getbloodData();
         }
 
@@ -192,7 +192,6 @@ Page({
         })
     },
     initCardData() {
-        console.log('this.data.cardData', this.data.cardData)
         let cardData = this.data.cardData
         let dateList = []
         for (let i = 0; i < cardData.length; i++) {
@@ -285,7 +284,7 @@ Page({
     onLoad: function (options) {
         // this.getbloodData()
         this.echartsComponnet = this.selectComponent('#mychart');
-        this.init_echarts();
+        this.initEcharts();
         this.getbloodData();
     },
 
@@ -300,8 +299,9 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+        this.onLoad()
         this.echartsComponnet = this.selectComponent('#mychart');
-        this.init_echarts();
+        this.initEcharts();
         this.getbloodData();
     },
 

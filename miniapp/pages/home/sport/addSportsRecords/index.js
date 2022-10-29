@@ -86,6 +86,9 @@ Page({
     onChange(event) {
         const { picker, value, index } = event.detail;
         console.log('index', value, index)
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(this.data.sportsType[index].name)
+        }
         this.setData({
             ['formdata.sportstypeid']: index + 1
         })
@@ -104,12 +107,12 @@ Page({
         let res = await app.$api.getsportsType()
         console.log('res', res)
         if (res.status == 200) {
-            if(!res.data.length){
+            if (!res.data.length) {
                 wx.showToast({
                     title: '无类型请联系客服',
                     duration: 2000,
                     icon: 'error',
-    
+
                 })
             }
             let d = res.data.map(item => {
@@ -128,6 +131,9 @@ Page({
                 duration: 2000,
                 icon: 'error',
             })
+            if (app.globalData.speedFlag) {
+                app.$Text2Speech('选择开始时间')
+            }
             return
         }
         if (!this.data.formdata.endTime) {
@@ -137,29 +143,37 @@ Page({
                 icon: 'error',
 
             })
+            if (app.globalData.speedFlag) {
+                app.$Text2Speech('选择结束时间')
+            }
             return
         }
-        console.log("1233333")
-        console.log('new Date(this.data.formdata.startTime).getTime()',new Date(this.data.formdata.startTime).getTime())
-        console.log('new Date(this.data.formdata.endTime).getTime()',new Date(this.data.formdata.endTime).getTime())
-        if (new Date(this.data.formdata.endTime).getTime() <new Date(this.data.formdata.startTime).getTime()) {
+        console.log('new Date(this.data.formdata.startTime).getTime()', new Date(this.data.formdata.startTime).getTime())
+        console.log('new Date(this.data.formdata.endTime).getTime()', new Date(this.data.formdata.endTime).getTime())
+        if (new Date(this.data.formdata.endTime).getTime() < new Date(this.data.formdata.startTime).getTime()) {
             wx.showToast({
                 title: '时间错误',
                 duration: 2000,
                 icon: 'error',
 
             })
+            if (app.globalData.speedFlag) {
+                app.$Text2Speech('时间错误')
+            }
             return
         }
         let res = await app.$api.addSportsRecords(this.data.formdata)
         console.log('res', res)
-        if(res.status==200){
+        if (res.status == 200) {
             wx.showToast({
                 title: '记录成功',
                 duration: 2000,
                 icon: 'success',
 
             })
+            if (app.globalData.speedFlag) {
+                app.$Text2Speech('记录成功')
+            }
             this.onClickLeft()
         }
     },
