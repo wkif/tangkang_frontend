@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    logList: [{
+    logList: [
+      {
+        version: '0.5.0',
+        time: '2022-10-29 17:33',
+        content: [
+          '新增语音提示场景 ',
+          ' 优化资讯模块评论',
+          '修复制定目标模块bug '
+        ]
+      }, {
         version: '0.4.0',
         time: '2022-10-29 17:33',
         content: [
