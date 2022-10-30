@@ -211,7 +211,7 @@ Page({
                 if (app.globalData.speedFlag) {
                     app.$Text2Speech("成功")
                 }
-                setInterval(() => { that.onClickLeft() }, 2000)
+                setTimeout(() => { that.onClickLeft() }, 2000)
 
             }
         });
