@@ -1,77 +1,111 @@
-.list {
-    padding: 2rem;
-    .item {
-        padding: 1rem;
-        border-radius: 1.25rem;
-        box-shadow:
-        3.6px 5.5px 2.4px rgba(0, 0, 0, 0.019),
-        8.6px 13.2px 5.9px rgba(0, 0, 0, 0.027),
-        16.2px 24.8px 11px rgba(0, 0, 0, 0.033),
-        28.8px 44.2px 19.7px rgba(0, 0, 0, 0.04),
-        53.9px 82.7px 36.8px rgba(0, 0, 0, 0.048),
-        129px 198px 88px rgba(0, 0, 0, 0.07)
-      ;
-      text-align: center;
-        .avatarView {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            
-            .user {
-                .avatar {
-                    width: 4rem;
-                }
-                .username{
-                    font-size: large;
-                }
-                text-align: center;
-            }
-            
+.app {
 
-        }
 
-        .timeView {
-            text-align: center;
+
+    .list {
+        padding: 2rem;
+
+        .item {
             padding: 1rem;
-            color: white;
-            // background-color: #f1f1f1;
-            margin-top: 10px;
-        }
-        .buttomView{
+            border-radius: 1.25rem;
+            box-shadow:
+                3.6px 5.5px 2.4px rgba(0, 0, 0, 0.019),
+                8.6px 13.2px 5.9px rgba(0, 0, 0, 0.027),
+                16.2px 24.8px 11px rgba(0, 0, 0, 0.033),
+                28.8px 44.2px 19.7px rgba(0, 0, 0, 0.04),
+                53.9px 82.7px 36.8px rgba(0, 0, 0, 0.048),
+                129px 198px 88px rgba(0, 0, 0, 0.07);
+            text-align: center;
 
+            .avatarView {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+
+                .user {
+                    .avatar {
+                        width: 4rem;
+                    }
+
+                    .username {
+                        font-size: large;
+                    }
+
+                    text-align: center;
+                }
+
+
+            }
+
+            .timeView {
+                text-align: center;
+                padding: 1rem;
+                color: white;
+                // background-color: #f1f1f1;
+                margin-top: 10px;
+            }
+
+            .buttomView {}
+        }
+
+        .flower {
+            z-index: 1;
+            transform: translate(-50%,-100%);
+            position: absolute;
+        }
+
+        .hide {
+            display: none;
         }
     }
-}
-.bg0{
-    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
-}
-.bg1{
-    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
-}
-.bg2{
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-}
-.bg3{
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 
-}
-.bg4{
-    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
-}
-.bg5{
-    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
-}
-.bg6{
-    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
-}
-.bg7{
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-}
-.bg8{
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    .searchDataAvatar {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 
-}
-.bg9{
-    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    .bg0 {
+        background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    }
+
+    .bg1 {
+        background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    }
+
+    .bg2 {
+        background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    }
+
+    .bg3 {
+        background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+
+    }
+
+    .bg4 {
+        background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    }
+
+    .bg5 {
+        background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    }
+
+    .bg6 {
+        background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    }
+
+    .bg7 {
+        background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    }
+
+    .bg8 {
+        background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+
+    }
+
+    .bg9 {
+        background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    }
 }

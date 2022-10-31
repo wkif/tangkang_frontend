@@ -3,6 +3,7 @@
     "towxml": "../../../towxml/towxml",
     "van-sticky": "@vant/weapp/sticky/index",
     "van-share-sheet": "@vant/weapp/share-sheet/index",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-notify": "@vant/weapp/notify/index"
   }
 }

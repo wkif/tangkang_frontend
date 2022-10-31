@@ -8,7 +8,7 @@ const DELETE = 'DELETE';
 let baseURL = ''
 
 
-const env = 0
+const env = 3
 // 1表示本地穿透
 // 0表示正式
 // 其余表示本地
@@ -136,6 +136,9 @@ const API = {
     getHealthHistory: (data) => request(GET, `/miniapp/getHealthHistory/`, data),
     getMyAssociation: (data) => request(GET, `/miniapp/getMyAssociation/`, data),
     Audit: (data) => request(GET, `/miniapp/Audit/`, data),
+    searchUserForAssociation: (data) => request(POST, `/miniapp/searchUserForAssociation/`, data),
+    createAssociation: (data) => request(POST, `/miniapp/createAssociation/`, data),
+    cancelAssociation:(data)=>request(POST, `/miniapp/cancelAssociation/`, data),
 
 
 };

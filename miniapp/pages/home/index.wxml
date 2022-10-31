@@ -1,110 +1,114 @@
 <page-meta page-style="{{ show ? 'overflow: hidden;' : '' }}" />
 <van-nav-bar title="糖康有道" />
 <view class="app">
-    <van-notice-bar mode="link" scrollable wx:if="{{topnotice.length>0}}" text="{{topnotice.title}}" bindtap="gotoannouncement" data-announcementid="{{topnotice.id}}" />
-    <view class="saerchView">
-        <van-search value="{{ searchValue }}" placeholder="{{searchHotVal.name}}" use-action-slot bind:change="onChange" bind:search="onSearch">
-            <view slot="action" bind:tap="onSearch">搜索</view>
-        </van-search>
-        <van-popup show="{{ show }}" round position="bottom" custom-style="height: 50%" lock-scroll closeable close-icon="close" bind:close="onClickHide">
-            <!-- {{[0].title}} -->
-            <!-- <view class="resList"> -->
-            <scroll-view class="resList" scroll-y="true" style="height: 100%">
-                <van-cell-group inset>
-                    <!-- <van-cell wx:for="{{searchResList}}" title="{{item.title}}" value="内容" /> -->
-                    <van-cell wx:for="{{searchResList}}" value="详情" url="/pages/home/newsDetail/index?id={{item.id}}" is-link>
-                        <view slot="title">
-                            <view class="van-cell-text">{{item.title}}</view>
-                        </view>
-                    </van-cell>
-                </van-cell-group>
-            </scroll-view>
-            <!-- </view> -->
-        </van-popup>
-    </view>
-    <van-notice-bar scrollable mode="closeable" speed="100" wx:if="{{topnotice.length}}" text="{{topnotice.title}}" />
-    <view class="swiperView">
-        <swiper class="card-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
-            <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
-                <view class="swiper-item" bindtap="gotoNewsDetail" data-id="{{item.id}}">
-                    <image src="{{item.url}}" mode="aspectFill"></image>
-                </view>
-            </swiper-item>
-        </swiper>
-    </view>
-    <!-- <view class="box">
+  <van-notice-bar mode="link" scrollable wx:if="{{topnotice.length>0}}" text="{{topnotice.title}}" bindtap="gotoannouncement" data-announcementid="{{topnotice.id}}" />
+  <view class="saerchView">
+    <van-search value="{{ searchValue }}" placeholder="{{searchHotVal.name}}" use-action-slot bind:change="onChange" bind:search="onSearch">
+      <view slot="action" bind:tap="onSearch">搜索</view>
+    </van-search>
+    <van-popup show="{{ show }}" round position="bottom" custom-style="height: 50%" lock-scroll closeable close-icon="close" bind:close="onClickHide">
+      <!-- {{[0].title}} -->
+      <!-- <view class="resList"> -->
+      <scroll-view class="resList" scroll-y="true" style="height: 100%">
+        <van-cell-group inset>
+          <!-- <van-cell wx:for="{{searchResList}}" title="{{item.title}}" value="内容" /> -->
+          <van-cell wx:for="{{searchResList}}" value="详情" url="/pages/home/newsDetail/index?id={{item.id}}" is-link>
+            <view slot="title">
+              <view class="van-cell-text">{{item.title}}</view>
+            </view>
+          </van-cell>
+        </van-cell-group>
+      </scroll-view>
+      <!-- </view> -->
+    </van-popup>
+  </view>
+  <van-notice-bar scrollable mode="closeable" speed="100" wx:if="{{topnotice.length}}" text="{{topnotice.title}}" />
+  <view class="swiperView">
+    <swiper class="card-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+      <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+        <view class="swiper-item" bindtap="gotoNewsDetail" data-id="{{item.id}}">
+          <image src="{{item.url}}" mode="aspectFill"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- <view class="box">
         <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
     </view> -->
-    <view class="currentDataView  radius shadow shadow-lg bg-white margin-top">
-        <image class="iconImg" src="https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111327634.png" mode="widthFix"></image>
-        <van-row>
-            <van-col span="4">
-                <view class="dateView">
-                    <view class="svg_icon">
-                        <image class="svg_icon-inner" src="https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111315254.svg" />
-                    </view>
-                    <view class="date-text day">{{date.day}}</view>
-                    <view class="date-text month">{{date.month}}</view>
-                </view>
-            </van-col>
-            <van-col span="10" offset="4">
-                <van-tag class="lastTag" type="warning">最近血糖值数据：</van-tag>
-                <view class="last" bindtap="gotoRe" wx:if="{{lastBloodSugarData}}">
-                    <view class="data">
-                        <!-- 血糖值： -->
-                        <text class="last-text bloodSugarLevel text-red" wx:if="{{lastBloodSugarData.bloodSugarLevel>6 || lastBloodSugarData.bloodSugarLevel<3.9}}">
-                            {{lastBloodSugarData.bloodSugarLevel}}
-                        </text>
-                        <text class="last-text bloodSugarLevel" wx:else>
-                            {{lastBloodSugarData.bloodSugarLevel}}
-                        </text>
-                        <text class="unit">mmol/L</text>
-                    </view>
-                    <view class="tagView">
-                        <view class="cu-tag line-cyan">{{lastBloodSugarData.bloodSugarType}}</view>
-                        <view class="cu-tag line-blue">{{lastBloodSugarData.bloodSugarTime}}</view>
-                    </view>
-                </view>
-                <view class="noData" bindtap="gotoRe" wx:else>
-                    <view class="noData-text">暂无今日数据，快来记录吧</view>
-                </view>
-            </van-col>
-        </van-row>
-    </view>
-    <view class="cu-list grid col-5 {{gridBorder?'':'no-border'}}">
-        <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<5}}" bindtap="gotoCuItem" data-path="{{item.path}}">
-            <!-- <view class="cuIcon-{{item.icon}} text-{{item.color}}"></view> -->
-            <view class="svg_icon">
-                <image class="svg_icon-inner" src="{{item.icon}}" />
-            </view>
-            <text>{{item.name}}</text>
+  <view class="currentDataView  radius shadow shadow-lg bg-white margin-top">
+    <image class="iconImg" src="https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111327634.png" mode="widthFix"></image>
+    <van-row>
+      <van-col span="4">
+        <view class="dateView">
+          <view class="svg_icon">
+            <image class="svg_icon-inner" src="https://kifimg.oss-cn-beijing.aliyuncs.com/project/202209111315254.svg" />
+          </view>
+          <view class="date-text day">{{date.day}}</view>
+          <view class="date-text month">{{date.month}}</view>
         </view>
-    </view>
-    <view class="newsList">
-        <view class="cu-card article" wx:for="{{newsList}}">
-            <view class="cu-item shadow" bindtap="gotoNewsDetail" data-id="{{item.id}}">
-                <view class="title">
-                    <view class="text-cut">{{item.title}}</view>
-                </view>
-                <view class="content" wx:if="{{index%2==0}}">
-                    <image src="{{item.cover}}" mode="aspectFill"></image>
-                    <view class="desc">
-                        <view class="text-content">{{item.content}}</view>
-                        <view>
-                            <view class="cu-tag bg-red light sm round">{{item.tag}}</view>
-                        </view>
-                    </view>
-                </view>
-                <view class="content" wx:else>
-                    <view class="desc">
-                        <view class="text-content">{{item.content}}</view>
-                        <view>
-                            <view class="cu-tag bg-red light sm round">{{item.tag}}</view>
-                        </view>
-                    </view>
-                    <image src="{{item.cover}}" mode="aspectFill"></image>
-                </view>
-            </view>
+      </van-col>
+      <van-col span="10" offset="4">
+        <van-tag class="lastTag" type="warning">最近血糖值数据：</van-tag>
+        <view class="last" bindtap="gotoRe" wx:if="{{lastBloodSugarData}}">
+          <view class="data">
+            <!-- 血糖值： -->
+            <text class="last-text bloodSugarLevel text-red" wx:if="{{lastBloodSugarData.bloodSugarLevel>6 || lastBloodSugarData.bloodSugarLevel<3.9}}">
+              {{lastBloodSugarData.bloodSugarLevel}}
+            </text>
+            <text class="last-text bloodSugarLevel" wx:else>
+              {{lastBloodSugarData.bloodSugarLevel}}
+            </text>
+            <text class="unit">mmol/L</text>
+          </view>
+          <view class="tagView">
+            <view class="cu-tag line-cyan">{{lastBloodSugarData.bloodSugarType}}</view>
+            <view class="cu-tag line-blue">{{lastBloodSugarData.bloodSugarTime}}</view>
+          </view>
         </view>
+        <view class="noData" bindtap="gotoRe" wx:else>
+          <view class="noData-text">暂无今日数据，快来记录吧</view>
+        </view>
+      </van-col>
+    </van-row>
+  </view>
+  <view class="cu-list grid col-5 {{gridBorder?'':'no-border'}}">
+    <view class="cu-item animation-slide-bottom" wx:for="{{iconList}}" wx:key wx:if="{{index<5}}" bindtap="gotoCuItem" data-path="{{item.path}}">
+      <!-- <view class="cuIcon-{{item.icon}} text-{{item.color}}"></view> -->
+      <view class="svg_icon">
+        <image class="svg_icon-inner" src="{{item.icon}}" />
+      </view>
+      <text>{{item.name}}</text>
     </view>
+  </view>
+  <view class="newsList" wx:if="{{newsList.length!=0}}">
+    <van-transition name="slide-up">
+    <view class="cu-card article" wx:for="{{newsList}}">
+      <view class="cu-item shadow" bindtap="gotoNewsDetail" data-id="{{item.id}}">
+        <view class="title">
+          <view class="text-cut">{{item.title}}</view>
+        </view>
+        <view class="content" wx:if="{{index%2==0}}">
+          <image src="{{item.cover}}" mode="aspectFill"></image>
+          <view class="desc">
+            <view class="text-content">{{item.content}}</view>
+            <view>
+              <view class="cu-tag bg-red light sm round">{{item.tag}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="content" wx:else>
+          <view class="desc">
+            <view class="text-content">{{item.content}}</view>
+            <view>
+              <view class="cu-tag bg-red light sm round">{{item.tag}}</view>
+            </view>
+          </view>
+          <image src="{{item.cover}}" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+  </van-transition>
+  </view>
+  <van-empty wx:else image="network" description="暂无内容" />
+
 </view>

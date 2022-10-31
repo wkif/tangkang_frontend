@@ -1,11 +1,17 @@
 <van-nav-bar title="关联" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
-    <view class="list" wx:for="{{healthData}}">
-        <view class="item bg{{index%10}}">
+    <view class="searchView">
+        <van-search value="{{ searchValue }}" placeholder="请输入用户名或手机号" use-action-slot error="{{error}}" bind:change="onChange" bind:search="onSearch">
+            <view slot="action" bind:tap="onClick">搜索</view>
+        </van-search>
+    </view>
+    <van-transition wx:if="{{Data.length!=0}}"  name="slide-up">
+    <view class="list" wx:for="{{Data}}">
+        <view class="item bg{{index%10}} animation-slide-bottom">
             <view class="avatarView ">
                 <view class="user">
                     <view class="avatar">
-                        <view class="cu-avatar round lg margin-left" style="background-image:url({{item.userA.avatar}});">
+                        <view class="cu-avatar round lg" style="background-image:url({{item.userA.avatar}});">
                             <view class="cu-tag badge {{item.userA.gender==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
                         </view>
                     </view>
@@ -19,7 +25,7 @@
                 <view class="user">
                     <view class="avatar">
                         <!-- <van-image round width="4rem" height="4rem" src="{{item.userA.avatar}}" /> -->
-                        <view class="cu-avatar round lg margin-left" style="background-image:url({{item.userB.avatar}});">
+                        <view class="cu-avatar round lg" style="background-image:url({{item.userB.avatar}});">
                             <view class="cu-tag badge {{item.userB.gender==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
                         </view>
                     </view>
@@ -30,17 +36,41 @@
             </view>
             <view class="timeView">{{item.time}}</view>
             <view class="buttomView">
-                <!-- <van-button type="default" size="small">默认按钮</van-button> -->
-                <button wx:if="{{item.is_active}}" class="cu-btn round sm line bordersize-green shadow" bindtap="gotouserinfo" data-userId="{{item.userB.id==userId?item.userA.id:item.userB.id}}">
-                    查看数据
-                </button>
-                <button wx:elif="{{item.createUser==userId}}" class="cu-btn round sm line bordersize-green shadow" disabled>
-                    等待同意
-                </button>
-                <button wx:else class="cu-btn round sm line bordersize-green shadow" bindtap="Audit" data-id="{{item.id}}">
-                    同意关联
-                </button>
+                <view class="" wx:if="{{item.is_active}}" hover-class="none" hover-stop-propagation="false">
+                    <button class="cu-btn round sm bg-mauve bordersize-green shadow" bindtap="gotouserinfo" data-userId="{{item.userB.id==userId?item.userA.id:item.userB.id}}">
+                        查看数据
+                    </button>
+                    <button class="cu-btn round sm bg-orange  bordersize-green shadow" bindtap="cancelAssociation" data-id="{{item.id}}">
+                        取消关联
+                    </button>
+                </view>
+                <view class="" wx:elif="{{item.createUser==userId}}" hover-class="none" hover-stop-propagation="false">
+                    <button class="cu-btn round sm line bordersize-green shadow" disabled>
+                        等待同意
+                    </button>
+                    <button class="cu-btn round sm bg-orange  bordersize-green shadow" bindtap="cancelAssociation" data-id="{{item.id}}">
+                        取消邀请
+                    </button>
+                </view>
+                <view class="" wx:else hover-class="none" hover-stop-propagation="false">
+                    <button class="cu-btn round sm bg-orange  bordersize-green shadow" bindtap="Audit" data-id="{{item.id}}" data-index="{{index}}">
+                        同意关联
+                    </button>
+                    <button class="cu-btn round sm bg-orange  bordersize-green shadow" bindtap="cancelAssociation" data-id="{{item.id}}">
+                        拒绝关联
+                    </button>
+                </view>
             </view>
+            <image class=" flower {{item.imgactive ? '' :'hide'}}" src="{{flowerUrl}}" />
         </view>
     </view>
+   
+  </van-transition>
+  <van-empty wx:else image="error" description="暂无内容" />
+    <van-dialog use-slot title="{{searchData.username}}" show="{{ show }}" confirm-button-text="确认关联" show-cancel-button bind:close="onClose" bind:confirm="createAssociation">
+        <view class="cu-avatar round lg  searchDataAvatar" style="background-image:url({{searchData.avatar}});">
+            <view class="cu-tag badge {{searchData.gender==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+        </view>
+    </van-dialog>
+    <van-dialog id="van-dialog" />
 </view>

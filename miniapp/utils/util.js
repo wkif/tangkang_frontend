@@ -96,11 +96,22 @@ function trim(str) {
   return str.replace(/(^\s*)|(\s*$)/g, "");
 }
 
+function isPhone(phone) {
+  var myreg=/^[1][3,4,5,6,7,8,9][0-9]{9}$/;
+  if (!myreg.test(phone)) {
+      return false;
+  } else {
+      return true;
+  }
+}
+
+
 module.exports = {
   formatTime,
   Text2Speech,
   regFenToYuan,
   shallowEqual,
   delHtmlTag,
-  stopbgam
+  stopbgam,
+  isPhone
 }

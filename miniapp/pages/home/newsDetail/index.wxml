@@ -1,61 +1,64 @@
 <van-nav-bar title="{{newsData.title}}" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" id="page" style="margin-top:{{marginTopview}}px;">
-    <view class="content-info">
-        <scroll-view scroll-y bindscroll="bindscrollfx" scroll-top="{{scrollTop}}" scroll-with-animation="true" style="height: 100vh;" scroll-into-view="{{toViewid}}">
-            <view class="coverImg">
-                <image src="{{newsData.cover}}" mode="widthFix" />
-            </view>
-            <view class="title">{{newsData.title}}</view>
-            <view class="content-time">
-                <!-- <text>创建时间：{{newsData.createTime}}\n</text> -->
-                <text>{{newsData.updateTime}}\n</text>
-            </view>
-            <towxml nodes="{{article}}" />
-            <view class="actionView">
-                <van-icon name="good-job" wx:if="{{isLike}}" info="{{newsData.Number_of_likes}}" size="20px" bind:click="LikeOfNews" />
-                <van-icon name="good-job-o" wx:else size="20px" info="{{newsData.Number_of_likes}}" bind:click="LikeOfNews" />
-                 <van-icon name="chat-o" size="20px" bind:click="chat" />
-                <van-icon name="share-o" size="20px" bind:click="onSharClick" />
-            </view>
-            <view class="tool ">
-                <view class="tool-item {{goTopFlag ? '':'hide'}}" bindtap="goTop">
-                    <image src="../../../assets/icon/go_to_top.png" />
+  <view class="content-info">
+    <scroll-view scroll-y bindscroll="bindscrollfx" scroll-top="{{scrollTop}}" scroll-with-animation="true" style="height: 100vh;" scroll-into-view="{{toViewid}}">
+      <view class="coverImg">
+        <image src="{{newsData.cover}}" mode="widthFix" />
+      </view>
+      <view class="title">{{newsData.title}}</view>
+      <view class="content-time">
+        <!-- <text>创建时间：{{newsData.createTime}}\n</text> -->
+        <text>{{newsData.updateTime}}\n</text>
+      </view>
+      <view wx:if="{{newsData.videoUrl}}">
+        <video id="myVideo" src='{{newsData.videoUrl}}' controls></video>
+      </view>
+      <towxml nodes="{{article}}" />
+      <view class="actionView">
+        <van-icon name="good-job" wx:if="{{isLike}}" info="{{newsData.Number_of_likes}}" size="20px" bind:click="LikeOfNews" />
+        <van-icon name="good-job-o" wx:else size="20px" info="{{newsData.Number_of_likes}}" bind:click="LikeOfNews" />
+        <van-icon name="chat-o" size="20px" bind:click="chat" />
+        <van-icon name="share-o" size="20px" bind:click="onSharClick" />
+      </view>
+      <view class="tool ">
+        <view class="tool-item {{goTopFlag ? '':'hide'}}" bindtap="goTop">
+          <image src="../../../assets/icon/go_to_top.png" />
+        </view>
+        <view class="tool-item {{goCommitFlag ? '':'hide'}}" bindtap="goCommit">
+          <image src="../../../assets/icon/commit.png" />
+          <!-- <text>评论</text> -->
+        </view>
+      </view>
+      <view class="commitView" id="commitView">
+        <view class="commitInput" wx:if="{{chatFlag}}">
+          <view class="cu-bar input">
+            <view class="cu-avatar round" style="background-image:url({{userInfo.avatar}});"></view>
+            <input bindinput="input" value="{{inputValue}}" class="solid-bottom" maxlength="300" cursor-spacing="10"></input>
+            <button class="cu-btn  shadow-blur" bindtap="submit">发送</button>
+          </view>
+        </view>
+        <view class="cu-list menu-avatar comment solids-top">
+          <view class="cu-item" wx:for="{{commitList}}">
+            <view class="cu-avatar round" style="background-image:url({{item.user.avatar}});"></view>
+            <view class="content">
+              <view class="text-grey">{{item.user.username}}</view>
+              <view class="text-gray text-content text-df">{{item.content}}</view>
+              <view class="margin-top-sm flex justify-between">
+                <view class="text-gray text-df">{{item.time}}</view>
+                <view>
+                  <view class="text-gray text-df" wx:if="{{userInfo.id==item.user.id}}" bindtap="delete" data-id="{{item.id}}">
+                    <text class="cuIcon-delete lg text-gray"></text>
+                  </view>
+                  <text class="text-gray">{{index+1}}楼</text>
+                  <!-- <text class="cuIcon-messagefill text-gray margin-left-sm"></text> -->
                 </view>
-                <view class="tool-item {{goCommitFlag ? '':'hide'}}" bindtap="goCommit">
-                    <image src="../../../assets/icon/commit.png" />
-                    <!-- <text>评论</text> -->
-                </view>
+              </view>
             </view>
-            <view class="commitView" id="commitView">
-                <view class="commitInput" wx:if="{{chatFlag}}" >
-                    <view class="cu-bar input">
-                        <view class="cu-avatar round" style="background-image:url({{userInfo.avatar}});"></view>
-                        <input bindinput="input" value="{{inputValue}}" class="solid-bottom" maxlength="300" cursor-spacing="10"></input>
-                        <button class="cu-btn  shadow-blur" bindtap="submit">发送</button>
-                    </view>
-                </view>
-                <view class="cu-list menu-avatar comment solids-top">
-                    <view class="cu-item" wx:for="{{commitList}}">
-                        <view class="cu-avatar round" style="background-image:url({{item.user.avatar}});"></view>
-                        <view class="content">
-                            <view class="text-grey">{{item.user.username}}</view>
-                            <view class="text-gray text-content text-df">{{item.content}}</view>
-                            <view class="margin-top-sm flex justify-between">
-                                <view class="text-gray text-df">{{item.time}}</view>
-                                <view>
-                                    <view class="text-gray text-df" wx:if="{{userInfo.id==item.user.id}}" bindtap="delete" data-id="{{item.id}}">
-                                        <text class="cuIcon-delete lg text-gray"></text>
-                                    </view>
-                                    <text class="text-gray">{{index+1}}楼</text>
-                                    <!-- <text class="cuIcon-messagefill text-gray margin-left-sm"></text> -->
-                                </view>
-                            </view>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </scroll-view>
-        <van-dialog id="van-dialog" />
-        <van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="ononShareSelect" bind:close="ononShareClose" />
-    </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <van-dialog id="van-dialog" />
+    <van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="ononShareSelect" bind:close="ononShareClose" />
+  </view>
 </view>

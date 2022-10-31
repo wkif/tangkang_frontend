@@ -1,25 +1,27 @@
 <van-nav-bar title="积分" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
-    <view class="inteCard">
-        <view class=" card-left radius shadow shadow-lg margin-top"></view>
-        <view class="padding-xl card  margin-top">
-            <image class="jfImg" mode="widthFix" src="{{jfImg}}" />
-            <text class="tracking-in-expand integralNum">积分：{{integralNum}}</text>
-        </view>
-        <view class=" card-right radius shadow shadow-lg margin-top"></view>
+  <view class="inteCard">
+    <view class=" card-left radius shadow shadow-lg margin-top"></view>
+    <view class="padding-xl card  margin-top">
+      <image class="jfImg" mode="widthFix" src="{{jfImg}}" />
+      <text class="tracking-in-expand integralNum">积分：{{integralNum}}</text>
     </view>
-    <view class="historyList">
-        <view class="history" wx:for="{{historyList}}">
-            <view class="history-left">
-                <van-tag class="history-type" color="#ffe1e1" text-color="#817ac8">
-                    {{item.integralType.type}}
-                </van-tag>
-                <view class="time">
-                    <van-icon name="clock-o" />
-                    <text class="history-time">{{item.time}}</text>
-                </view>
-            </view>
-            <text class="history-integral">{{item.integralType.integral}}</text>
+    <view class=" card-right radius shadow shadow-lg margin-top"></view>
+  </view>
+  <view class="historyList">
+    <van-transition name="slide-up">
+      <view class="history" wx:for="{{historyList}}">
+        <view class="history-left">
+          <van-tag class="history-type" color="#ffe1e1" text-color="#817ac8">
+            {{item.integralType.type}}
+          </van-tag>
+          <view class="time">
+            <van-icon name="clock-o" />
+            <text class="history-time">{{item.time}}</text>
+          </view>
         </view>
-    </view>
+        <text class="history-integral">{{item.integralType.integral}}</text>
+      </view>
+    </van-transition>
+  </view>
 </view>

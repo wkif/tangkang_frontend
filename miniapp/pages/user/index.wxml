@@ -3,7 +3,7 @@
         <view class="circle1 "></view>
         <view class="circle2 animate-bounce-up"></view>
         <view class="infoView" wx:if="{{loginFlag}}" bindtap="gotouserInfo">
-            <van-transition name="slide-left" >
+            <van-transition name="slide-left">
                 <van-row>
                     <van-col span="4">
                         <div class="head-img">
@@ -28,6 +28,8 @@
             <view class="content">
                 <van-row>
                     <van-col span="{{24/iconBox.length}}" wx:for="{{iconBox}}">
+                      <van-transition name="slide-left">
+                      
                         <view class="iconBox" bindtap='gotoInfor' data-path="{{item.path}}">
                             <!-- <van-icon name="{{item.icon}}" size="35px" color="#aed6db" /> -->
                             <view class="svg_icon">
@@ -35,6 +37,7 @@
                             </view>
                             <text>{{item.name}}</text>
                         </view>
+                      </van-transition>
                     </van-col>
                     <!-- <van-col span="6">
                         <view class="iconBox" bindtap="gotointegral">
@@ -49,7 +52,9 @@
     <!-- <view>{{inviteCode}}</view> -->
     <view class="mainView">
         <van-cell-group inset wx:for="{{cellList}}" wx:for-item="item">
+          <van-transition name="slide-up">
             <van-cell title="{{item.title}}" is-link icon="{{item.icon}}" label="{{item.label}}" bindtap="gotoCell" data-path="{{item.path}}" />
+          </van-transition>
         </van-cell-group>
         <button class='contactButton' open-type="contact">联系客服</button>
         <button class='logoutButton' wx:if="{{loginFlag}}" bindtap="loginOut">退出登录</button>
@@ -61,10 +66,11 @@
                 <van-col span="10" offset="4">
                     <button class="addText" open-type='share'>邀好友 赚积分</button>
                     <view class="count" wx:if="{{userInfo.numberofPersonsInvited}}">
-                        已经邀请 {{userInfo.numberofPersonsInvited}}1 人
+                        已经邀请 {{userInfo.numberofPersonsInvited}} 人
                     </view>
                 </van-col>
             </van-row>
         </view>
+        
     </view>
 </view>

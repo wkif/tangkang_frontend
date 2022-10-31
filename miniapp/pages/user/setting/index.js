@@ -9,7 +9,8 @@ Page({
      */
     data: {
         speedFlag: false,
-        marginTopview: app.globalData.navBarHeight
+        marginTopview: app.globalData.navBarHeight,
+        version :app.globalData.version
     },
     onClickLeft() {
         wx.navigateBack({
@@ -38,6 +39,11 @@ Page({
             }
         })
 
+    },
+    gotoedit(){
+      wx.navigateTo({
+        url: '/pages/user/informationManage/index',
+      })
     },
 
     /**

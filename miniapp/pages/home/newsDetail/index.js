@@ -121,7 +121,7 @@ Page({
     app.$api.getNewsComment(data).then(res => {
       if (res.status == 200) {
         this.setData({
-          commitList: res.data
+          commitList: res.data.reverse()
         })
         this.pageScrollToBottom()
       } else {
@@ -151,19 +151,15 @@ Page({
       this.setData({
         inputValue: ''
       })
-      // wx.showToast({
-      //     title: res.data,
-      //     icon: 'success',
-      //     duration: 2000
-      // })
-      this.getNewsComment()
     } else {
       wx.showToast({
         title: res.data,
         icon: 'none',
-        duration: 2000
+        duration: 5000
       })
     }
+    this.getNewsComment()
+
   },
   delete(e) {
     // 询问

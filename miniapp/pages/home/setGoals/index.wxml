@@ -2,7 +2,9 @@
 <view class="app" style="margin-top:{{marginTopview}}px;">
     <van-divider contentPosition="center">血糖目标</van-divider>
     <van-cell-group inset>
+      <van-transition name="slide-up">
         <van-cell wx:for="{{bloodSugar_targetValue_list.targetValue}}" title="{{item.name}}" value="{{item.value[0]}} - {{item.value[1]}} mmol/L" label="{{bloodSugar_targetValue_list.updateTime}}" bindtap="bloodSugarEdit" data-index="{{index}}" />
+      </van-transition>
     </van-cell-group>
     <van-divider contentPosition="center">运动目标</van-divider>
     <van-cell-group inset>

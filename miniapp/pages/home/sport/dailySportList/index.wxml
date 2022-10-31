@@ -1,6 +1,6 @@
 <van-nav-bar title="排行榜" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
-    <view class="topThree">
+    <view class="topThree" wx:if="{{dailySportList.length>0}}">
         <view class="topThreeitem" hover-class="none" hover-stop-propagation="false">
             <view class="cu-avatar round lg margin-left" style="background-image:url({{dailySportList[1].user.avatar}});">
                 <view class="cu-tag badge {{index%2==0?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
@@ -53,6 +53,7 @@
             </div>
         </view>
     </view>
+    <van-empty wx:else image="search" description="暂无数据" />
     <view class="list">
         <van-cell-group>
             <van-cell wx:for="{{dailySportList}}" wx:if="{{index>=3}}">
@@ -70,7 +71,7 @@
                     </view>
                     <van-tag type="danger">
                         <van-icon name="clock" />
-                         {{item.startTime}}
+                        {{item.startTime}}
                     </van-tag>
                 </view>
             </van-cell>

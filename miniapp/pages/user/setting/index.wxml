@@ -2,7 +2,9 @@
 <view class="app" style="margin-top:{{marginTopview}}px;">
     <van-cell-group inset>
         <van-cell title="语音播报" value="{{speedFlag?'开':'关'}}" bind:click="changeSpeed" />
+        <van-cell title="信息管理" bind:click="gotoedit" />
         <!-- <van-cell title="单元格" value="内容" label="描述信息" /> -->
     </van-cell-group>
+    <view class="author">糖康有道 v{{version}}</view>
     <van-dialog id="van-dialog" />
 </view>

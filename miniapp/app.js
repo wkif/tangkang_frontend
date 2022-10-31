@@ -8,6 +8,7 @@ App({
   $shallowEqual: require('./utils/util').shallowEqual,
   $delHtmlTag: require('./utils/util').delHtmlTag,
   $stopbgam: require('./utils/util').stopbgam,
+  $isPhone: require('./utils/util').isPhone,
   onLaunch: function (options) {
     // 获取系统信息
     const systemInfo = wx.getSystemInfoSync();
@@ -66,7 +67,8 @@ App({
     userInfo: null,
     loginFlag: false,
     speedFlag: false,
-    tabList: []
+    tabList: [],
+    version:'0.7.0'
   },
   //设置tabbar的选中 添加一个全局方法
   setTabBarIndex(index) {
@@ -138,7 +140,4 @@ App({
       // console.log('this.globalData.tabList', this.globalData.tabList)
     })
   }
-
-
-
 })

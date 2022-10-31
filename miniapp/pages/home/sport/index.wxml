@@ -1,7 +1,9 @@
 <van-nav-bar title="运动打卡" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
     <scroll-view scroll-y="true" style="height: 80vh" class="historyList" wx:if="{{sportsList}}">
-        <view wx:for="{{sportsList}}" class="historyitem" style="background-image: url('{{backimgList[item.sportstype.id-1]}}');background-repeat: no-repeat;background-size: cover;background-position: center;">
+
+      <van-transition name="slide-up">
+        <view wx:for="{{sportsList}}" class="historyitem animation-slide-bottom" style="background-image: url('{{backimgList[item.sportstype.id-1]}}');background-repeat: no-repeat;background-size: cover;background-position: center;">
             <view class="left" hover-class="none" hover-stop-propagation="false">
                 <view class="typename">
                     <van-tag color="#FBAB7E" size="large">
@@ -23,6 +25,7 @@
                 </van-tag>
             </view>
         </view>
+      </van-transition>
     </scroll-view>
     <van-empty description="暂无数据" wx:else />
     <view class="buttomView">

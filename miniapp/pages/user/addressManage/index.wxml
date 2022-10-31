@@ -13,8 +13,11 @@
         </van-cell-group>
     </view>
     <van-empty wx:else description="描述文字" />
-    <button class="cu-btn block line-cyan lg" bindtap='editAddress'>
+    <!-- <button class="cu-btn block line-cyan lg" bindtap='editAddress'>
         <text class="cuIcon-upload"></text>
         新增
-    </button>
+    </button> -->
+    <view class="cu-bar btn-group buttonView">
+        <button class="cu-btn bg-themeColor shadow-blur round lg" bindtap="editAddress">新增</button>
+    </view>
 </view>
