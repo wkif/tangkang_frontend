@@ -6,6 +6,5 @@
     "van-button": "@vant/weapp/button/index",
     "van-popup": "@vant/weapp/popup/index",
     "van-picker": "@vant/weapp/picker/index"
-
   }
 }

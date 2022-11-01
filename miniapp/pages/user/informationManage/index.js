@@ -146,7 +146,7 @@ Page({
     submit: function () {
         let userInfo = this.data.userInfo
         let that = this
-        if (userInfo.height && userInfo.weight && userInfo.waistline && userInfo.bloodType && userInfo.birthday && userInfo.mobile && userInfo.email) {
+        if (userInfo.height && userInfo.weight && userInfo.waistline && userInfo.bloodType && userInfo.birthday && userInfo.mobile) {
             wx.showLoading({
                 title: '提交中',
                 mask: true

@@ -7,6 +7,13 @@ Page({
   data: {
     logList: [
       {
+        version: '0.7.1',
+        time: '2022-11-1 15:33',
+        content: [
+          "优化部分功能"
+        ]
+      },
+      {
         version: '0.7.0',
         time: '2022-10-31 22:33',
         content: [

@@ -3,5 +3,6 @@
     "van-image": "@vant/weapp/image/index",
     "van-search": "@vant/weapp/search/index",
     "van-dialog": "@vant/weapp/dialog/index"
-  }
+  },
+  "enablePullDownRefresh": true
 }

@@ -3,5 +3,6 @@
     "van-empty": "@vant/weapp/empty/index",
     "van-tag": "@vant/weapp/tag/index",
     "van-icon": "@vant/weapp/icon/index"
-  }
+  },
+  "enablePullDownRefresh": true
 }

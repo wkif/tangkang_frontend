@@ -1,7 +1,7 @@
 <page-meta page-style="{{ show ? 'overflow: hidden;' : '' }}" />
 <van-nav-bar title="糖康有道" />
 <view class="app">
-  <van-notice-bar mode="link" scrollable wx:if="{{topnotice.length>0}}" text="{{topnotice.title}}" bindtap="gotoannouncement" data-announcementid="{{topnotice.id}}" />
+  <van-notice-bar mode="link" scrollable wx:if="{{topnotice}}" text="{{topnotice.title}}" bindtap="gotoannouncement" data-announcementid="{{topnotice.id}}" />
   <view class="saerchView">
     <van-search value="{{ searchValue }}" placeholder="{{searchHotVal.name}}" use-action-slot bind:change="onChange" bind:search="onSearch">
       <view slot="action" bind:tap="onSearch">搜索</view>

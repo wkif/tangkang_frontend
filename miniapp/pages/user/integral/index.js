@@ -63,45 +63,31 @@ Page({
     onLoad: function (options) {
         this.getHistory()
         this.getIntegral()
-        // let info = wx.getStorageSync('userInfo')
-        // this.setData({
-        //     integralNum: info.integral
-        // })
+    },
+    onRefresh:function(){
+      //导航条加载动画
+      wx.showNavigationBarLoading()
+      //loading 提示框
+      wx.showLoading({
+        title: 'Loading...',
+      })
+      console.log("下拉刷新啦");
+      this.getHistory()
+      this.getIntegral()
+      setTimeout(function () {
+        wx.hideLoading();
+        wx.hideNavigationBarLoading();
+        //停止下拉刷新
+        wx.stopPullDownRefresh();
+      }, 2000)
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+      this.onRefresh();
     },
 
     /**

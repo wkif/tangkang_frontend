@@ -8,7 +8,7 @@ const DELETE = 'DELETE';
 let baseURL = ''
 
 
-const env = 3
+const env = 0
 // 1表示本地穿透
 // 0表示正式
 // 其余表示本地

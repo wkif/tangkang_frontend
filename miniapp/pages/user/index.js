@@ -7,9 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {
-
-    },
+    userInfo: {},
     InviteFriendsNum: 13,
     loginFlag: false,
     iconBox: [
@@ -66,7 +64,7 @@ Page({
         label: '请仔细阅读本《用户协议》'
       }
     ],
-    inviteCode: '12',
+    inviteCode: 'DYX6866IA5A4MZID',
     marginTopview: app.globalData.navBarHeight
   },
 
@@ -79,6 +77,7 @@ Page({
       loginFlag: app.globalData.loginFlag,
       userInfo: wx.getStorageSync('userInfo'),
       inviteCode: options?.inviteCode
+      // inviteCode:'DYX6866IA5A4MZID'
     })
     if (!this.data.loginFlag) {
       app.loginAutomatic().then(res => {
