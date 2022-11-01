@@ -193,7 +193,11 @@ export const crudOptions = (vm) => {
                 title: '封面图片',
                 key: 'cover',
                 type: 'image-uploader',
-
+            },
+            {
+                title: '视频',
+                key: 'videoUrl',
+                type: 'file-uploader',
             },
             {
                 title: '创建日期',
