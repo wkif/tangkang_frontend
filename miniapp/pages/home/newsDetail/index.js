@@ -140,6 +140,9 @@ Page({
     })
   },
   async submit() {
+    if(!this.data.inputValue){
+      return
+    }
     let data = {
       userId: this.data.userInfo.id,
       newsId: this.data.newsData.id,

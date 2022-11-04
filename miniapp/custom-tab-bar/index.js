@@ -5,9 +5,7 @@ Component({
   /**
    * 组件的属性列表
    */
-  properties: {
-
-  },
+  properties: {},
 
   /**
    * 组件的初始数据
@@ -47,8 +45,7 @@ Component({
         console.log('restan!!!', res)
         if (res.status == 200) {
           if (!app.$shallowEqual(res.data, this.data.list)) {
-            // this.globalData.tabList = res.data
-            // wx.setStorageSync('tabList', (res.data))
+            wx.setStorageSync('tabList', (res.data))
             this.setData({
               list: res.data
             })
@@ -56,6 +53,11 @@ Component({
           } else {
             console.log('不用更新')
           }
+        }else{
+          console.log('本地数据')
+          this.setData({
+            list: wx.getStorageSync('tabList')
+          })
         }
         // console.log('this.globalData.tabList', this.globalData.tabList)
       })

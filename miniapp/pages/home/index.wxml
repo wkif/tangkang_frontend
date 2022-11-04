@@ -66,7 +66,7 @@
           </view>
         </view>
         <view class="noData" bindtap="gotoRe" wx:else>
-          <view class="noData-text">暂无今日数据，快来记录吧</view>
+          <view class="noData-text tracking-in-expand">暂无今日数据，快来记录吧</view>
         </view>
       </van-col>
     </van-row>
@@ -77,7 +77,7 @@
       <view class="svg_icon">
         <image class="svg_icon-inner" src="{{item.icon}}" />
       </view>
-      <text>{{item.name}}</text>
+      <text class = "tracking-in-expand-fwd-bottom">{{item.name}}</text>
     </view>
   </view>
   <view class="newsList" wx:if="{{newsList.length!=0}}">
@@ -85,12 +85,12 @@
     <view class="cu-card article" wx:for="{{newsList}}">
       <view class="cu-item shadow" bindtap="gotoNewsDetail" data-id="{{item.id}}">
         <view class="title">
-          <view class="text-cut">{{item.title}}</view>
+          <view class="text-cut tracking-in-expand">{{item.title}}</view>
         </view>
         <view class="content" wx:if="{{index%2==0}}">
           <image src="{{item.cover}}" mode="aspectFill"></image>
           <view class="desc">
-            <view class="text-content">{{item.content}}</view>
+            <view class="text-content tracking-in-expand-fwd-bottom">{{item.content}}</view>
             <view>
               <view class="cu-tag bg-red light sm round">{{item.tag}}</view>
             </view>

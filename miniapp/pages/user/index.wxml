@@ -56,8 +56,8 @@
             <van-cell title="{{item.title}}" is-link icon="{{item.icon}}" label="{{item.label}}" bindtap="gotoCell" data-path="{{item.path}}" />
           </van-transition>
         </van-cell-group>
-        <button class='contactButton' open-type="contact">联系客服</button>
-        <button class='logoutButton' wx:if="{{loginFlag}}" bindtap="loginOut">退出登录</button>
+        <button class='contactButton bounce-top' open-type="contact">联系客服</button>
+        <button class='logoutButton bounce-top' wx:if="{{loginFlag}}" bindtap="loginOut">退出登录</button>
         <view class="adView">
             <van-row class="adRow">
                 <van-col span="4">

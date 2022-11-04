@@ -293,14 +293,15 @@ Page({
         console.log('app.globalData.loginFlag)', app.globalData.loginFlag)
         this.getDate()
         if (app.globalData.loginFlag) {
-            this.getTopnotice()
+           
             this.getLastBloodSugarData()
         } else {
             app.loginAutomatic().then(res => {
-                this.getTopnotice()
+                
                 this.getLastBloodSugarData()
             })
         }
+        this.getTopnotice()
         this.getTopNews()
         this.getNewsList()
         this.getHotSearch()

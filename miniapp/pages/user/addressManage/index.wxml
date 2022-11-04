@@ -18,6 +18,6 @@
         新增
     </button> -->
     <view class="cu-bar btn-group buttonView">
-        <button class="cu-btn bg-themeColor shadow-blur round lg" bindtap="editAddress">新增</button>
+        <button class="cu-btn bg-themeColor shadow-blur round lg bounce-top" bindtap="editAddress">新增</button>
     </view>
 </view>

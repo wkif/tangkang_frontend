@@ -7,6 +7,14 @@ Page({
   data: {
     logList: [
       {
+        version: '0.7.2',
+        time: '2022-11-3 13:33',
+        content: [
+          "修复tab",
+          "优化信息编辑引导"
+        ]
+      },
+      {
         version: '0.7.1',
         time: '2022-11-1 15:33',
         content: [

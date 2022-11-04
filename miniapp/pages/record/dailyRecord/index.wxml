@@ -56,10 +56,10 @@
                 <view class="card padding-xl radius shadow shadow-lg bg-white margin-top">
                     <view class="dataBox">
                         <text class="cuIcon-like lg text-gray"></text>
-                        <text>血糖值：</text>
+                        <text class = "tracking-in-expand ">血糖值：</text>
                         <text>{{Data.bloodSugarLevel}}\n\n\n</text>
                         <text class="cuIcon-titles lg text-gray"></text>
-                        <text>记录类型：</text>
+                        <text class = "tracking-in-expand ">记录类型：</text>
                         <text>{{Data.bloodSugarType}}\n\n\n</text>
                     </view>
                     <view class="deleteView" bindtap="delete">
@@ -79,6 +79,6 @@
         </view>
     </view>
     <view class="buttonView">
-        <button class="cu-btn bg-themeColor shadow-blur round lg" bindtap="addRec">新增记录</button>
+        <button class="cu-btn bg-themeColor shadow-blur round lg " bindtap="addRec">新增记录</button>
     </view>
 </view>

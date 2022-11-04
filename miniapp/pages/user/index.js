@@ -259,7 +259,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (this.data.loginFlag &&!this.data.userInfo.mobile) {
+      wx.showToast({
+        title: '请完善信息',
+        icon: 'none',
+        duration: 1000
+      })
+      setTimeout(() => {
+        wx.navigateTo({
+          url: '/pages/user/informationManage/index',
+        })
+      }, 1000)
+    }
   },
 
   /**

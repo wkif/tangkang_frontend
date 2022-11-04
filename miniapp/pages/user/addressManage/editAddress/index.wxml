@@ -15,10 +15,10 @@
     设置为默认地址：
     <van-switch checked="{{isDefault}}" bind:change="onChange" />
     <view class="buttonView">
-        <button class="cu-btn bg-themeColor shadow-blur round lg" wx:if="{{!editFlag}}" bindtap="onClick">
+        <button class="cu-btn bg-themeColor shadow-blur round lg bounce-top" wx:if="{{!editFlag}}" bindtap="onClick">
             保存
         </button>
-        <button class="cu-btn bg-themeColor shadow-blur round lg" wx:else bindtap="submitEdit">保存</button>
+        <button class="cu-btn bg-themeColor shadow-blur round lg bounce-top" wx:else bindtap="submitEdit">保存</button>
         <!-- <van-button type="primary" wx:if="{{!editFlag}}" bind:click="onClick">保存</van-button>
         <van-button type="primary" wx:else bind:click="submitEdit">保存</van-button> -->
     </view>

@@ -68,7 +68,7 @@ App({
     loginFlag: false,
     speedFlag: false,
     tabList: [],
-    version:'0.7.1'
+    version:'0.7.2'
   },
   //设置tabbar的选中 添加一个全局方法
   setTabBarIndex(index) {

@@ -232,6 +232,7 @@ Page({
                 text: date,
                 value: i
             })
+            
         }
         this.setData({
             dateList: dateList,

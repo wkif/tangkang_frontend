@@ -1,8 +1,8 @@
 <van-nav-bar title="积分" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
-  <view class="inteCard">
+  <view class="inteCard ">
     <view class=" card-left radius shadow shadow-lg margin-top"></view>
-    <view class="padding-xl card  margin-top">
+    <view class="padding-xl card bounce-top margin-top">
       <image class="jfImg" mode="widthFix" src="{{jfImg}}" />
       <text class="tracking-in-expand integralNum">积分：{{integralNum}}</text>
     </view>

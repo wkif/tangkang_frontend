@@ -10,7 +10,7 @@
          placeholder="请选择足跟静脉搏动" border="{{ false }}" bind:tap="selectDPA" />
     </van-cell-group>
     <view class="buttonView">
-        <button class="cu-btn bg-green shadow-blur round lg" bindtap="addRec">新增记录</button>
+        <button class="cu-btn bg-themeColor shadow-blur round lg" bindtap="addRec">新增记录</button>
     </view>
     <van-action-sheet show="{{ GLLShow }}">
         <view>
