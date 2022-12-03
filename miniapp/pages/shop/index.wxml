@@ -1,3 +1,4 @@
+<page-meta root-font-size="system"/>
 <view class="app" style="margin-top:{{marginTopview}}px;">
     <view class="topImg">
         <!-- <image src="https://img.yzcdn.cn/vant/custom-empty-image.png" mode="widthFix" /> -->

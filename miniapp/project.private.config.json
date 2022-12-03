@@ -1,7 +1,7 @@
 {
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": true
+    "urlCheck": false
   },
   "condition": {
     "miniprogram": {
@@ -205,6 +205,13 @@
           "name": "",
           "pathName": "pages/home/announcement/index",
           "query": "announcementid=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/setting/fontsizeseeting/index",
+          "query": "",
           "launchMode": "default",
           "scene": null
         }

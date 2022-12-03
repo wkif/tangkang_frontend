@@ -1,3 +1,4 @@
+<page-meta root-font-size="system"/>
 <van-nav-bar title="新增日记录" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
     <van-cell-group>
@@ -24,7 +25,7 @@
     </van-action-sheet>
     <van-action-sheet show="{{ DPAShow }}">
         <view>
-            <van-picker show-toolbar title="足跟静脉搏动" default-index="{{ 0 }}" columns="{{ DPAColumns }}" bind:cancel="onCancelDPA" bind:confirm="onConfirmDPA" bind:change="onTypeChange" />
+            <van-picker show-toolbar title="足背静脉搏动" default-index="{{ 0 }}" columns="{{ DPAColumns }}" bind:cancel="onCancelDPA" bind:confirm="onConfirmDPA" bind:change="onTypeChange" />
         </view>
     </van-action-sheet>
     <van-action-sheet show="{{ selectTimeShow }}">

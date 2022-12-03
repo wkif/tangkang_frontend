@@ -256,19 +256,12 @@ Page({
     },
     getNewsList() {
         app.$api.getNewsList().then(res => {
-            console.log('res', res)
-
             if (res.status == 200) {
-                // let data = res.data.map(item => {
-                //     console.log('item',item)
-                //     item.content= item.content.replace(/<[^>]+>/g, "")
-                // })
                 this.setData({
                     newsList: res.data
                 })
             }
-        }
-        )
+        })
     },
     gotoNewsDetail(e) {
         if (app.globalData.loginFlag) {
@@ -289,15 +282,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
         console.log('app.globalData.loginFlag)', app.globalData.loginFlag)
         this.getDate()
         if (app.globalData.loginFlag) {
-           
             this.getLastBloodSugarData()
         } else {
             app.loginAutomatic().then(res => {
-                
                 this.getLastBloodSugarData()
             })
         }
@@ -324,7 +314,7 @@ Page({
       wx.showNavigationBarLoading()
       //loading 提示框
       wx.showLoading({
-        title: 'Loading...',
+        title: '加载中...',
       })
       console.log("下拉刷新啦");
       this.getTopNews()

@@ -1,3 +1,4 @@
+<page-meta root-font-size="system"/>
 <van-nav-bar title="积分" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
   <view class="inteCard ">

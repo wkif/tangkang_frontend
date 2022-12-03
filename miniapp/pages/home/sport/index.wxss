@@ -15,14 +15,14 @@
   margin-right: 10px;
 }
 .app .historyList .historyitem .left .typename {
-  font-size: 17px;
+  font-size: calc(17px + 0.5 * (1rem - 16px));
   margin-bottom: 20px;
 }
 .app .historyList .historyitem .left .heat {
-  font-size: 15px;
+  font-size: calc(15px + 0.5 * (1rem - 16px));
 }
 .app .historyList .historyitem .time {
-  font-size: 14px;
+  font-size: calc(14px + 0.5 * (1rem - 16px));
   float: right;
 }
 .app .buttomView {

@@ -84,10 +84,10 @@
     position:absolute;
     right:0;
     top:0;
-    height: 32rpx;
-    line-height: 32rpx;
+    height: calc(32rpx + 0.5 * (1rem - 16px));
+    line-height: calc(32rpx + 0.5 * (1rem - 16px));
     padding:10rpx 20rpx;
-    font-size:20rpx;
+    font-size:calc(20rpx + 0.5 * (1rem - 16px));
 }
 
 .h2w__audio--error .h2w__audioTips {
@@ -96,24 +96,24 @@
 
 .h2w__audioTitle {
     display: block;
-    font-size: 24rpx;
-    height: 40rpx;
-    line-height: 40rpx;
+    font-size: calc(24rpx + 0.5 * (1rem - 16px));
+    height: calc(40rpx + 0.5 * (1rem - 16px));
+    line-height: calc(40rpx + 0.5 * (1rem - 16px));
     font-weight: bold;
 }
 
 .h2w__audioAuthor {
     display: block;
-    font-size: 20rpx;
-    height: 32rpx;
-    line-height: 32rpx;
+    font-size: calc(20rpx + 0.5 * (1rem - 16px));
+    height: calc(32rpx + 0.5 * (1rem - 16px));
+    line-height: calc(32rpx + 0.5 * (1rem - 16px));
 }
 
 .h2w__audioTime {
     display: block;
-    font-size: 20rpx;
-    height: 32rpx;
-    line-height: 32rpx;
+    font-size: calc(20rpx + 0.5 * (1rem - 16px));
+    height: calc(32rpx + 0.5 * (1rem - 16px));
+    line-height: calc(32rpx + 0.5 * (1rem - 16px));
 }
 
 .h2w__audioIcon {

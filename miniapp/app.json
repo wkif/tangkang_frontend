@@ -31,8 +31,8 @@
     "pages/user/integral/index",
     "pages/user/association/userinfo/index",
     "pages/user/association/index",
-    "pages/nodata/index"
-
+    "pages/nodata/index",
+    "pages/user/setting/fontsizeseeting/index"
   ],
   "window": {
     "navigationStyle": "custom",
@@ -42,7 +42,8 @@
     "color": "#1E1E1E",
     "selectedColor": "#646464",
     "custom": true,
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/home/index",
         "iconPath": "./assets/icon/home.png",
         "selectedIconPath": "/assets/icon/home-active.png",

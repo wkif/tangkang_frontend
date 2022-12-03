@@ -24,7 +24,7 @@ var utils_1 = require("../common/utils");
         },
         zIndex: {
             type: Number,
-            value: 2,
+            value: 1,
         },
         safeAreaInsetTop: {
             type: Boolean,

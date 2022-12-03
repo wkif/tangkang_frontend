@@ -1,3 +1,4 @@
+<page-meta root-font-size="system"/>
 <van-nav-bar title="{{username}}" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
     <scroll-view scroll-y class="scrollPage">

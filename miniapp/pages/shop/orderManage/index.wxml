@@ -1,3 +1,4 @@
+<page-meta root-font-size="system"/>
 <van-nav-bar title="订单管理" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app">
     <view class="tabView">

@@ -1,3 +1,4 @@
+<page-meta root-font-size="system"/>
 <home wx:if="{{PageCur=='home'}}"></home>
 <record wx:if="{{PageCur=='record'}}"></record>
 <shop wx:if="{{PageCur=='shop'}}"></shop>

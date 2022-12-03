@@ -1,3 +1,4 @@
+<page-meta root-font-size="system"/>
 <view class="app">
     <view class="topView">
         <view class="circle1 "></view>

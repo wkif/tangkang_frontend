@@ -10,10 +10,12 @@ Page({
         heightPicker: [],
         weightPicker: [],
         waistlinePicker: [],
+        genderPicker:['男','女'],
         bloodTypePicker: ['A', 'B', 'AB', 'O', 'Rh阳性', 'Rh阴性', '其他'],
         index: 0,
         endDate: '',
-        marginTopview: app.globalData.navBarHeight
+        marginTopview: app.globalData.navBarHeight,
+        fontSet:app.globalData.fontSet
     },
     onClickLeft() {
         // wx.navigateBack({
@@ -30,6 +32,14 @@ Page({
         }
         this.setData({
             'userInfo.height': this.data.heightPicker[e.detail.value]
+        })
+    },
+    PickerChangegender(e){
+        if (app.globalData.speedFlag) {
+            app.$Text2Speech(`性别已经更改为${this.data.heightPicker[e.detail.value]}`)
+        }
+        this.setData({
+            'userInfo.gender': this.data.genderPicker[e.detail.value]=="男"?1:0
         })
     },
     PickerChangeweight(e) {

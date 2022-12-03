@@ -8,7 +8,7 @@ const DELETE = 'DELETE';
 let baseURL = ''
 
 
-const env = 0
+const env = 1
 // 1表示本地穿透
 // 0表示正式
 // 其余表示本地
@@ -52,10 +52,7 @@ function request(method, url, data) {
 // 请求不同的接口
 
 const API = {
-    // getListData: () => request(GET, `/index/index`),
-    // SearchGoodsListApi:() => request(GET,`/search/index`) 
     // 基本功能接口
-
     wxLogin: (data) => request(POST, `/miniapp/login/`, data),
     verifyToken: (data) => request(POST, `/token/verify/`, data),
     getTabList: () => request(GET, `/miniapp/getTabList/`),
@@ -123,7 +120,6 @@ const API = {
     deleteSportsRecordsByid: (data) => request(POST, `/miniapp/deleteSportsRecordsByid/`, data),
     dailySportList: () => request(GET, `/miniapp/dailySportList/`),
     getsportsType: () => request(GET, `/miniapp/getsportsType/`),
-
 
     // 目标计划addBloodGlucoseTargetValue
     addBloodGlucoseTargetValue: (data) => request(POST, `/miniapp/addBloodGlucoseTargetValue/`, data),

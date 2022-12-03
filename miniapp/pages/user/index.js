@@ -126,18 +126,18 @@ Page({
                   })
                   app.globalData.loginFlag = true
                   app.globalData.speedFlag = res.data.speed
-                  if (!res.data.mobile) {
-                    wx.showToast({
-                      title: '请完善信息',
-                      icon: 'none',
-                      duration: 2000
-                    })
-                    setTimeout(() => {
-                      wx.navigateTo({
-                        url: '/pages/user/informationManage/index',
-                      })
-                    }, 2000)
-                  }
+                  // if (!res.data.mobile) {
+                  //   wx.showToast({
+                  //     title: '请完善信息',
+                  //     icon: 'none',
+                  //     duration: 2000
+                  //   })
+                  //   setTimeout(() => {
+                  //     wx.navigateTo({
+                  //       url: '/pages/user/informationManage/index',
+                  //     })
+                  //   }, 2000)
+                  // }
                 } else {
                   wx.showToast({
                     title: res.msg,

@@ -1,3 +1,4 @@
+<page-meta root-font-size="system"/>
 <van-nav-bar title="不定期记录" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
   <view wx:if="{{dataList.length>0}}">
@@ -21,7 +22,7 @@
         <text class = "tracking-in-expand">微量白蛋白：</text>
         <text class = "tracking-in-expand">{{Data.microalbuminuria}} mg/l\n\n\n</text>
         <text class="cuIcon-footprint lg text-gray"></text>
-        <text class = "tracking-in-expand">足跟静脉搏动：</text>
+        <text class = "tracking-in-expand">足背静脉搏动:</text>
         <text class = "tracking-in-expand">{{Data.dorsalisPedisArtery}}\n\n\n</text>
       </view>
       <view class="deleteView" bindtap="delete">

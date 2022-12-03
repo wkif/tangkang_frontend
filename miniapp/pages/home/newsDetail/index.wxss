@@ -14,14 +14,14 @@
   width: 100%;
 }
 .app .content-info .title {
-  font-size: 20px;
+  font-size: calc(20px + 0.5 * (1rem - 16px));
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
   background-color: #ffffff;
 }
 .app .content-info .content-time {
-  font-size: 14px;
+  font-size: calc(14px + 0.5 * (1rem - 16px));
   text-align: center;
   background-color: #ffffff;
 }
@@ -51,9 +51,9 @@
   margin-bottom: 20px;
 }
 .app .content-info .tool .tool-item image {
-  height: 100%;
+  height: calc(100% + 0.5 * (1rem - 16px));
   width: 100%;
-  font-size: 20px;
+  font-size: calc(20px + 0.5 * (1rem - 16px));
   opacity: 0.4;
 }
 .app .content-info .hide {

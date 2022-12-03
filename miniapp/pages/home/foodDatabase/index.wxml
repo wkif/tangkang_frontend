@@ -1,3 +1,4 @@
+<page-meta root-font-size="system"/>
 <van-nav-bar title="食品营养价值表" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
     <van-search value="{{ searchValue }}" bind:search="search" input-align="center" placeholder="请输入搜索关键词" />

@@ -1,3 +1,26 @@
+
+/* @import "font.wxss"; */
+.font-11{
+   font-size:calc(11pt + 0.5 * (1rem - 16px));
+}
+.font-13{
+   font-size:calc(13pt + 0.5 * (1rem - 16px));
+}
+.font-14{
+   font-size:calc(14pt + 0.5 * (1rem - 16px));
+}
+.font-17{
+   font-size:calc(17pt + 0.5 * (1rem - 16px));
+}
+.font-18{
+   font-size:calc(18pt + 0.5 * (1rem - 16px));
+}
+.font-20{
+   font-size:calc(20pt + 0.5 * (1rem - 16px));
+}
+.font-40{
+   font-size:calc(4rem + 0.5 * (1rem - 16px)) !important;
+}
 /*
   ColorUi for MP-weixin  v2.1.4 | by 文晓港 2019年4月25日19:15:42
   仅供学习交流，如作它用所承受的法律责任一概与作者无关
@@ -69,7 +92,7 @@ page {
 	--blackShadow: rgba(26, 26, 26, 0.2);
 
 	background-color: var(--ghostWhite);
-	font-size: 28rpx;
+	font-size: calc(28rpx + 0.5 * (1rem - 16px));
 	color: var(--black);
 	font-family: Helvetica Neue, Helvetica, sans-serif;
 }
@@ -122,12 +145,12 @@ image.loading::after {
 	top: 0;
 	left: 0;
 	width: 32rpx;
-	height: 32rpx;
-	line-height: 32rpx;
+	height: calc(32rpx + 0.5 * (1rem - 16px));
+	line-height: calc(32rpx + 0.5 * (1rem - 16px));
 	right: 0;
 	bottom: 0;
 	z-index: -1;
-	font-size: 32rpx;
+	font-size: calc(32rpx + 0.5 * (1rem - 16px));
 	margin: auto;
 	color: #ccc;
 	-webkit-animation: cuIcon-spin 2s infinite linear;
@@ -157,8 +180,8 @@ switch::before {
 	color: var(--white) !important;
 	top: 0%;
 	left: 0rpx;
-	font-size: 26rpx;
-	line-height: 26px;
+	font-size: calc(26rpx + 0.5 * (1rem - 16px));
+	line-height: calc(26px + 0.5 * (1rem - 16px));
 	width: 50%;
 	text-align: center;
 	pointer-events: none;
@@ -166,7 +189,7 @@ switch::before {
 	transition: all 0.3s ease-in-out 0s;
 	z-index: 9;
 	bottom: 0;
-	height: 26px;
+	height: calc(26px + 0.5 * (1rem - 16px));
 	margin: auto;
 }
 
@@ -200,8 +223,8 @@ checkbox::before {
 	top: 50%;
 	margin-top: -8px;
 	right: 5px;
-	font-size: 32rpx;
-	line-height: 16px;
+	font-size: calc(32rpx + 0.5 * (1rem - 16px));
+	line-height: calc(16px + 0.5 * (1rem - 16px));
 	pointer-events: none;
 	transform: scale(1, 1);
 	transition: all 0.3s ease-in-out 0s;
@@ -687,9 +710,9 @@ radio.white[checked] .wx-radio-input {
 	justify-content: center;
 	box-sizing: border-box;
 	padding: 0 30rpx;
-	font-size: 28rpx;
-	height: 64rpx;
-	line-height: 1;
+	font-size: calc(28rpx + 0.5 * (1rem - 16px));
+	height: calc(64rpx + 0.5 * (1rem - 16px));
+	line-height: calc(1 + 0.5 * (1rem - 16px));
 	text-align: center;
 	text-decoration: none;
 	overflow: visible;
@@ -741,14 +764,14 @@ radio.white[checked] .wx-radio-input {
 
 .cu-btn.sm {
 	padding: 0 20rpx;
-	font-size: 20rpx;
-	height: 48rpx;
+	font-size: calc(20rpx + 0.5 * (1rem - 16px));
+	height: calc(48rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-btn.lg {
 	padding: 0 40rpx;
-	font-size: 32rpx;
-	height: 80rpx;
+	font-size: calc(32rpx + 0.5 * (1rem - 16px));
+	height: calc(80rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-btn.icon.sm {
@@ -797,7 +820,7 @@ button.icon.lg {
  ==================== */
 
 .cu-tag {
-	font-size: 24rpx;
+	font-size: calc(24rpx + 0.5 * (1rem - 16px));
 	vertical-align: middle;
 	position: relative;
 	display: inline-flex;
@@ -805,7 +828,7 @@ button.icon.lg {
 	justify-content: center;
 	box-sizing: border-box;
 	padding: 0rpx 16rpx;
-	height: 48rpx;
+	height: calc(48rpx + 0.5 * (1rem - 16px));
 	font-family: Helvetica Neue, Helvetica, sans-serif;
 	white-space: nowrap;
 }
@@ -847,9 +870,9 @@ button.icon.lg {
 }
 
 .cu-tag.sm {
-	font-size: 20rpx;
+	font-size: calc(20rpx + 0.5 * (1rem - 16px));
 	padding: 0rpx 12rpx;
-	height: 32rpx;
+	height: calc(32rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-capsule {
@@ -902,9 +925,9 @@ button.icon.lg {
 	position: absolute;
 	top: -10rpx;
 	right: -10rpx;
-	font-size: 20rpx;
+	font-size: calc(20rpx + 0.5 * (1rem - 16px));
 	padding: 0rpx 10rpx;
-	height: 28rpx;
+	height: calc(28rpx + 0.5 * (1rem - 16px));
 	color: var(--white);
 }
 
@@ -944,33 +967,33 @@ button.icon.lg {
 	white-space: nowrap;
 	position: relative;
 	width: 64rpx;
-	height: 64rpx;
+	height: calc(64rpx + 0.5 * (1rem - 16px));
 	background-size: cover;
 	background-position: center;
 	vertical-align: middle;
-	font-size: 1.5em;
+	font-size: calc(1.5em + 0.5 * (1rem - 16px));
 }
 
 .cu-avatar.sm {
 	width: 48rpx;
-	height: 48rpx;
-	font-size: 1em;
+	height: calc(48rpx + 0.5 * (1rem - 16px));
+	font-size: calc(1em + 0.5 * (1rem - 16px));
 }
 
 .cu-avatar.lg {
 	width: 96rpx;
-	height: 96rpx;
-	font-size: 2em;
+	height: calc(96rpx + 0.5 * (1rem - 16px));
+	font-size: calc(2em + 0.5 * (1rem - 16px));
 }
 
 .cu-avatar.xl {
 	width: 128rpx;
-	height: 128rpx;
-	font-size: 2.5em;
+	height: calc(128rpx + 0.5 * (1rem - 16px));
+	font-size: calc(2.5em + 0.5 * (1rem - 16px));
 }
 
 .cu-avatar .avatar-text {
-	font-size: 0.4em;
+	font-size: calc(0.4em + 0.5 * (1rem - 16px));
 }
 
 .cu-avatar-group {
@@ -1019,12 +1042,12 @@ button.icon.lg {
 
 .cu-progress view {
 	width: 0;
-	height: 100%;
+	height: calc(100% + 0.5 * (1rem - 16px));
 	align-items: center;
 	display: flex;
 	justify-items: flex-end;
 	justify-content: space-around;
-	font-size: 20rpx;
+	font-size: calc(20rpx + 0.5 * (1rem - 16px));
 	color: var(--white);
 	transition: width 0.6s ease;
 }
@@ -1032,7 +1055,7 @@ button.icon.lg {
 .cu-progress text {
 	align-items: center;
 	display: flex;
-	font-size: 20rpx;
+	font-size: calc(20rpx + 0.5 * (1rem - 16px));
 	color: var(--black);
 	text-indent: 10rpx;
 }
@@ -1102,7 +1125,7 @@ button.icon.lg {
 }
 
 .cu-load.load-icon::before {
-	font-size: 32rpx;
+	font-size: calc(32rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-load.load-icon::after {
@@ -1121,7 +1144,7 @@ button.icon.lg {
 	left: 0;
 	margin: auto;
 	width: 260rpx;
-	height: 260rpx;
+	height: calc(260rpx + 0.5 * (1rem - 16px));
 	background-color: var(--white);
 	border-radius: 10rpx;
 	box-shadow: 0 0 0rpx 2000rpx rgba(0, 0, 0, 0.5);
@@ -1129,13 +1152,13 @@ button.icon.lg {
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
-	font-size: 28rpx;
+	font-size: calc(28rpx + 0.5 * (1rem - 16px));
 	z-index: 9999;
-	line-height: 2.4em;
+	line-height: calc(2.4em + 0.5 * (1rem - 16px));
 }
 
 .cu-load.load-modal [class*="cuIcon-"] {
-	font-size: 60rpx;
+	font-size: calc(60rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-load.load-modal image {
@@ -1149,8 +1172,8 @@ button.icon.lg {
 	background-color: var(--white);
 	border-radius: 50%;
 	width: 200rpx;
-	height: 200rpx;
-	font-size: 10px;
+	height: calc(200rpx + 0.5 * (1rem - 16px));
+	font-size: calc(10px + 0.5 * (1rem - 16px));
 	border-top: 6rpx solid rgba(0, 0, 0, 0.05);
 	border-right: 6rpx solid rgba(0, 0, 0, 0.05);
 	border-bottom: 6rpx solid rgba(0, 0, 0, 0.05);
@@ -1298,7 +1321,7 @@ button.icon.lg {
 }
 
 .cu-list.menu-avatar>.cu-item .content>view:first-child {
-	font-size: 30rpx;
+	font-size: calc(30rpx + 0.5 * (1rem - 16px));
 	display: flex;
 	align-items: center
 }
@@ -1306,9 +1329,9 @@ button.icon.lg {
 .cu-list.menu-avatar>.cu-item .content .cu-tag.sm {
 	display: inline-block;
 	margin-left: 10rpx;
-	height: 28rpx;
-	font-size: 16rpx;
-	line-height: 32rpx
+	height: calc(28rpx + 0.5 * (1rem - 16px));
+	font-size: calc(16rpx + 0.5 * (1rem - 16px));
+	line-height: calc(32rpx + 0.5 * (1rem - 16px))
 }
 
 .cu-list.menu-avatar>.cu-item .action {
@@ -1385,13 +1408,13 @@ button.icon.lg {
 	display: block;
 	margin: auto;
 	width: 30rpx;
-	height: 30rpx;
+	height: calc(30rpx + 0.5 * (1rem - 16px));
 	color: var(--grey);
 	content: "\e6a3";
 	text-align: center;
-	font-size: 34rpx;
+	font-size: calc(34rpx + 0.5 * (1rem - 16px));
 	font-family: "cuIcon";
-	line-height: 30rpx
+	line-height: calc(30rpx + 0.5 * (1rem - 16px))
 }
 
 .cu-list.menu>.cu-item button.content {
@@ -1429,17 +1452,17 @@ button.icon.lg {
 }
 
 .cu-list.menu>.cu-item .content {
-	font-size: 30rpx;
-	line-height: 1.6em;
+	font-size: calc(30rpx + 0.5 * (1rem - 16px));
+	line-height: calc(1.6em + 0.5 * (1rem - 16px));
 	flex: 1
 }
 
 .cu-list.menu>.cu-item .content .cu-tag.sm {
 	display: inline-block;
 	margin-left: 10rpx;
-	height: 28rpx;
-	font-size: 16rpx;
-	line-height: 32rpx
+	height: calc(28rpx + 0.5 * (1rem - 16px));
+	font-size: calc(16rpx + 0.5 * (1rem - 16px));
+	line-height: calc(32rpx + 0.5 * (1rem - 16px))
 }
 
 .cu-list.menu>.cu-item .action .cu-tag:empty {
@@ -1484,8 +1507,8 @@ button.icon.lg {
 	display: block;
 	margin-top: 10rpx;
 	color: #888;
-	font-size: 26rpx;
-	line-height: 40rpx
+	font-size: calc(26rpx + 0.5 * (1rem - 16px));
+	line-height: calc(40rpx + 0.5 * (1rem - 16px))
 }
 
 .cu-list.grid>.cu-item [class*=cuIcon] {
@@ -1493,7 +1516,7 @@ button.icon.lg {
 	display: block;
 	margin-top: 20rpx;
 	width: 100%;
-	font-size: 48rpx
+	font-size: calc(48rpx + 0.5 * (1rem - 16px))
 }
 
 .cu-list.grid>.cu-item .cu-tag {
@@ -1598,7 +1621,7 @@ button.icon.lg {
 	z-index: 0;
 	text-align: right;
 	font-weight: 900;
-	font-size: 36rpx;
+	font-size: calc(36rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-bar.justify-center .action.border-title text:last-child,
@@ -1611,7 +1634,7 @@ button.icon.lg {
 
 .cu-bar .action:first-child {
 	margin-left: 30rpx;
-	font-size: 30rpx;
+	font-size: calc(30rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-bar .action text.text-cut {
@@ -1634,7 +1657,7 @@ button.icon.lg {
 
 .cu-bar .action>text[class*="cuIcon-"],
 .cu-bar .action>view[class*="cuIcon-"] {
-	font-size: 36rpx;
+	font-size: calc(36rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-bar .action>text[class*="cuIcon-"]+text[class*="cuIcon-"] {
@@ -1650,9 +1673,9 @@ button.icon.lg {
 	bottom: 0;
 	top: 0;
 	margin: auto;
-	height: 60rpx;
-	font-size: 32rpx;
-	line-height: 60rpx;
+	height: calc(60rpx + 0.5 * (1rem - 16px));
+	font-size: calc(32rpx + 0.5 * (1rem - 16px));
+	line-height: calc(60rpx + 0.5 * (1rem - 16px));
 	cursor: none;
 	pointer-events: none;
 	text-overflow: ellipsis;
@@ -1662,9 +1685,9 @@ button.icon.lg {
 
 .cu-bar.ios .content {
 	bottom: 7px;
-	height: 30px;
-	font-size: 32rpx;
-	line-height: 30px;
+	height: calc(30px + 0.5 * (1rem - 16px));
+	font-size: calc(32rpx + 0.5 * (1rem - 16px));
+	line-height: calc(30px + 0.5 * (1rem - 16px));
 }
 
 .cu-bar.btn-group {
@@ -1683,9 +1706,9 @@ button.icon.lg {
 
 .cu-bar .search-form {
 	background-color: #f5f5f5;
-	line-height: 64rpx;
-	height: 64rpx;
-	font-size: 24rpx;
+	line-height: calc(64rpx + 0.5 * (1rem - 16px));
+	height: calc(64rpx + 0.5 * (1rem - 16px));
+	font-size: calc(24rpx + 0.5 * (1rem - 16px));
 	color: var(--black);
 	flex: 1;
 	display: flex;
@@ -1700,9 +1723,9 @@ button.icon.lg {
 .cu-bar .search-form input {
 	flex: 1;
 	padding-right: 30rpx;
-	height: 64rpx;
-	line-height: 64rpx;
-	font-size: 26rpx;
+	height: calc(64rpx + 0.5 * (1rem - 16px));
+	line-height: calc(64rpx + 0.5 * (1rem - 16px));
+	font-size: calc(26rpx + 0.5 * (1rem - 16px));
 	background-color: transparent;
 }
 
@@ -1747,14 +1770,14 @@ button.icon.lg {
 }
 
 .cu-bar.tabbar .action {
-	font-size: 22rpx;
+	font-size: calc(22rpx + 0.5 * (1rem - 16px));
 	position: relative;
 	flex: 1;
 	text-align: center;
 	padding: 0;
 	display: block;
 	height: auto;
-	line-height: 1;
+	line-height: calc(1 + 0.5 * (1rem - 16px));
 	margin: 0;
 	overflow: initial;
 }
@@ -1775,10 +1798,10 @@ button.icon.lg {
 	position: absolute;
 	width: 70rpx;
 	z-index: 2;
-	height: 70rpx;
+	height: calc(70rpx + 0.5 * (1rem - 16px));
 	border-radius: 50%;
-	line-height: 70rpx;
-	font-size: 50rpx;
+	line-height: calc(70rpx + 0.5 * (1rem - 16px));
+	font-size: calc(50rpx + 0.5 * (1rem - 16px));
 	top: -35rpx;
 	left: 0;
 	right: 0;
@@ -1833,7 +1856,7 @@ button.icon.lg {
 	height: auto;
 	margin: 0 auto 10rpx;
 	text-align: center;
-	font-size: 40rpx;
+	font-size: calc(40rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-bar.tabbar .action .cuIcon-cu-image {
@@ -1888,11 +1911,11 @@ button.icon.lg {
 
 .cu-bar.input input {
 	overflow: initial;
-	line-height: 64rpx;
-	height: 64rpx;
-	min-height: 64rpx;
+	line-height: calc(64rpx + 0.5 * (1rem - 16px));
+	height: calc(64rpx + 0.5 * (1rem - 16px));
+	min-height: calc(64rpx + 0.5 * (1rem - 16px));
 	flex: 1;
-	font-size: 30rpx;
+	font-size: calc(30rpx + 0.5 * (1rem - 16px));
 	margin: 0 20rpx;
 }
 
@@ -1901,7 +1924,7 @@ button.icon.lg {
 }
 
 .cu-bar.input .action [class*="cuIcon-"] {
-	font-size: 48rpx;
+	font-size: calc(48rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-bar.input input+.action {
@@ -1980,7 +2003,7 @@ button.icon.lg {
 	flex: 1;
 	margin: auto !important;
 	text-align: center;
-	font-size: 34rpx;
+	font-size: calc(34rpx + 0.5 * (1rem - 16px));
 }
 
 /* ==================
@@ -2020,7 +2043,7 @@ button.icon.lg {
 	width: 120rpx;
 	text-align: center;
 	padding: 20rpx 0;
-	font-size: 26rpx;
+	font-size: calc(26rpx + 0.5 * (1rem - 16px));
 	color: #888;
 	display: block;
 }
@@ -2130,10 +2153,10 @@ button.icon.lg {
 	display: inline-flex;
 	max-width: 100%;
 	align-items: center;
-	font-size: 30rpx;
+	font-size: calc(30rpx + 0.5 * (1rem - 16px));
 	position: relative;
-	min-height: 80rpx;
-	line-height: 40rpx;
+	min-height: calc(80rpx + 0.5 * (1rem - 16px));
+	line-height: calc(40rpx + 0.5 * (1rem - 16px));
 	text-align: left;
 }
 
@@ -2144,7 +2167,7 @@ button.icon.lg {
 
 .cu-chat .cu-item .date {
 	position: absolute;
-	font-size: 24rpx;
+	font-size: calc(24rpx + 0.5 * (1rem - 16px));
 	color: var(--grey);
 	width: calc(100% - 320rpx);
 	bottom: 20rpx;
@@ -2212,13 +2235,13 @@ button.icon.lg {
 .cu-chat .cu-info {
 	display: inline-block;
 	margin: 20rpx auto;
-	font-size: 24rpx;
+	font-size: calc(24rpx + 0.5 * (1rem - 16px));
 	padding: 8rpx 12rpx;
 	background-color: rgba(0, 0, 0, 0.2);
 	border-radius: 6rpx;
 	color: var(--white);
 	max-width: 400rpx;
-	line-height: 1.4;
+	line-height: calc(1.4 + 0.5 * (1rem - 16px));
 }
 
 /* ==================
@@ -2291,9 +2314,9 @@ button.icon.lg {
 
 .cu-card.dynamic>.cu-item>.text-content {
 	padding: 0 30rpx 0;
-	max-height: 6.4em;
+	max-height: calc(6.4em + 0.5 * (1rem - 16px));
 	overflow: hidden;
-	font-size: 30rpx;
+	font-size: calc(30rpx + 0.5 * (1rem - 16px));
 	margin-bottom: 20rpx;
 }
 
@@ -2318,10 +2341,10 @@ button.icon.lg {
 }
 
 .cu-card.article>.cu-item .title {
-	font-size: 30rpx;
+	font-size: calc(30rpx + 0.5 * (1rem - 16px));
 	font-weight: 900;
 	color: var(--black);
-	line-height: 100rpx;
+	line-height: calc(100rpx + 0.5 * (1rem - 16px));
 	padding: 0 30rpx;
 }
 
@@ -2345,9 +2368,9 @@ button.icon.lg {
 }
 
 .cu-card.article>.cu-item .content .text-content {
-	font-size: 28rpx;
+	font-size: calc(28rpx + 0.5 * (1rem - 16px));
 	color: #888;
-	height: 4.8em;
+	height: calc(4.8em + 0.5 * (1rem - 16px));
 	overflow: hidden;
 }
 
@@ -2371,32 +2394,32 @@ button.icon.lg {
 .cu-form-group .title {
 	text-align: justify;
 	padding-right: 30rpx;
-	font-size: 30rpx;
+	font-size: calc(30rpx + 0.5 * (1rem - 16px));
 	position: relative;
-	height: 60rpx;
-	line-height: 60rpx;
+	height: calc(60rpx + 0.5 * (1rem - 16px));
+	line-height: calc(60rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-form-group input {
 	flex: 1;
-	font-size: 30rpx;
+	font-size: calc(30rpx + 0.5 * (1rem - 16px));
 	color: #555;
 	padding-right: 20rpx;
 }
 
 .cu-form-group>text[class*="cuIcon-"] {
-	font-size: 36rpx;
+	font-size: calc(36rpx + 0.5 * (1rem - 16px));
 	padding: 0;
 	box-sizing: border-box;
 }
 
 .cu-form-group textarea {
 	margin: 32rpx 0 30rpx;
-	height: 4.6em;
+	height: calc(4.6em + 0.5 * (1rem - 16px));
 	width: 100%;
-	line-height: 1.2em;
+	line-height: calc(1.2em + 0.5 * (1rem - 16px));
 	flex: 1;
-	font-size: 28rpx;
+	font-size: calc(28rpx + 0.5 * (1rem - 16px));
 	padding: 0;
 }
 
@@ -2414,8 +2437,8 @@ button.icon.lg {
 }
 
 .cu-form-group picker .picker {
-	line-height: 100rpx;
-	font-size: 28rpx;
+	line-height: calc(100rpx + 0.5 * (1rem - 16px));
+	font-size: calc(28rpx + 0.5 * (1rem - 16px));
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
@@ -2428,9 +2451,9 @@ button.icon.lg {
 	display: block;
 	content: "\e6a3";
 	position: absolute;
-	font-size: 34rpx;
+	font-size: calc(34rpx + 0.5 * (1rem - 16px));
 	color: var(--grey);
-	line-height: 100rpx;
+	line-height: calc(100rpx + 0.5 * (1rem - 16px));
 	width: 60rpx;
 	text-align: center;
 	top: 0;
@@ -2708,8 +2731,8 @@ scroll-view.cu-steps .cu-item {
 .cu-steps .cu-item [class*="cuIcon-"],
 .cu-steps .cu-item .num {
 	display: block;
-	font-size: 40rpx;
-	line-height: 80rpx;
+	font-size: calc(40rpx + 0.5 * (1rem - 16px));
+	line-height: calc(80rpx + 0.5 * (1rem - 16px));
 }
 
 .cu-steps .cu-item::before,
@@ -2764,11 +2787,11 @@ scroll-view.cu-steps .cu-item {
 
 .cu-steps .cu-item .num {
 	width: 40rpx;
-	height: 40rpx;
+	height: calc(40rpx + 0.5 * (1rem - 16px));
 	border-radius: 50%;
-	line-height: 40rpx;
+	line-height: calc(40rpx + 0.5 * (1rem - 16px));
 	margin: 20rpx auto;
-	font-size: 24rpx;
+	font-size: calc(24rpx + 0.5 * (1rem - 16px));
 	border: 1px solid currentColor;
 	position: relative;
 	overflow: hidden;
@@ -2941,7 +2964,7 @@ scroll-view.cu-steps .cu-item {
 }
 
 .grid.grid-square>view>text[class*="cuIcon-"] {
-	font-size: 52rpx;
+	font-size: calc(52rpx + 0.5 * (1rem - 16px));
 	position: absolute;
 	color: var(--grey);
 	margin: auto;
@@ -3783,35 +3806,35 @@ scroll-view.cu-steps .cu-item {
  ==================== */
 
 .text-xs {
-	font-size: 20rpx;
+	font-size: calc(20rpx + 0.5 * (1rem - 16px));
 }
 
 .text-sm {
-	font-size: 24rpx;
+	font-size: calc(24rpx + 0.5 * (1rem - 16px));
 }
 
 .text-df {
-	font-size: 28rpx;
+	font-size: calc(28rpx + 0.5 * (1rem - 16px));
 }
 
 .text-lg {
-	font-size: 32rpx;
+	font-size: calc(32rpx + 0.5 * (1rem - 16px));
 }
 
 .text-xl {
-	font-size: 36rpx;
+	font-size: calc(36rpx + 0.5 * (1rem - 16px));
 }
 
 .text-xxl {
-	font-size: 44rpx;
+	font-size: calc(44rpx + 0.5 * (1rem - 16px));
 }
 
 .text-sl {
-	font-size: 80rpx;
+	font-size: calc(80rpx + 0.5 * (1rem - 16px));
 }
 
 .text-xsl {
-	font-size: 120rpx;
+	font-size: calc(120rpx + 0.5 * (1rem - 16px));
 }
 
 .text-Abc {
@@ -3828,7 +3851,7 @@ scroll-view.cu-steps .cu-item {
 
 .text-price::before {
 	content: "¥";
-	font-size: 80%;
+	font-size: calc(80% + 0.5 * (1rem - 16px));
 	margin-right: 4rpx;
 }
 

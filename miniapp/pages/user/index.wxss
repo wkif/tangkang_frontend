@@ -66,14 +66,14 @@
 }
 .app .topView .loginView .loginBtn {
   width: 100%;
-  height: 50px;
+  height: calc(50px + 0.5 * (1rem - 16px));
   background-color: #fff;
   border-radius: 10rpx;
   border: 1px solid #fff;
   color: #000;
-  font-size: 30rpx;
+  font-size: calc(30rpx + 0.5 * (1rem - 16px));
   text-align: center;
-  line-height: 50px;
+  line-height: calc(50px + 0.5 * (1rem - 16px));
   cursor: pointer;
 }
 .app .cardView {
@@ -113,7 +113,7 @@
   transform: translateX(-50%);
 }
 .app .cardView .card .content .iconBox text {
-  font-size: 20rpx;
+  font-size: calc(20rpx + 0.5 * (1rem - 16px));
   font-weight: bold;
   color: #000;
 }
@@ -161,7 +161,7 @@
   border: none;
 }
 .app .mainView .adView .count {
-  font-size: 12px;
+  font-size: calc(12px + 0.5 * (1rem - 16px));
   margin-left: 40px;
 }
 .app .mainView .adView .shareButton {

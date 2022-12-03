@@ -1,5 +1,6 @@
+<page-meta root-font-size="system"/>
 <van-nav-bar title="个人信息" left-text="返回" left-arrow bind:click-left="onClickLeft" />
-<view class="app" >
+<view class="app {{fontSet}}" >
     <form>
         <view class="cu-form-group  margin-top" >
             <view class="title">手机号码</view>
@@ -15,7 +16,10 @@
         </view>
         <view class="cu-form-group">
             <view class="title">性别</view>
-            <switch class="red sm switch-sex" checked="{{userInfo.gender}}" bindchange="changeSex"></switch>
+            <!-- <switch class="red sm switch-sex" checked="{{userInfo.gender}}" bindchange="changeSex"></switch> -->
+             <picker bindchange="PickerChangegender" value="{{userInfo.gender}}" range="{{genderPicker}}">
+                <view class="picker">{{userInfo.gender==1?"男":"女"}}</view>
+            </picker>
         </view>
         <view class="cu-form-group">
             <view class="title">身高</view>
