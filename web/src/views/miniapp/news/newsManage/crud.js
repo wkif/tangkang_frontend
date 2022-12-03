@@ -136,6 +136,56 @@ export const crudOptions = (vm) => {
                 }
             },
             {
+                title: '点赞',
+                key: 'Number_of_likes',
+                search: {
+                    disabled: true
+                },
+              
+                type: 'number',
+                form: {
+                    show: false,
+                    value: 0,
+                    component: {
+                        span: 12
+                    }
+                }
+            },
+            {
+                title: '浏览',
+                key: 'Number_of_view',
+                search: {
+                    disabled: true
+                },
+              
+                type: 'number',
+
+                form: {
+                    show: false,
+                    value: 0,
+                    component: {
+                        span: 12
+                    }
+                }
+            },
+            {
+                title: '分享',
+                key: 'Number_of_share',
+                search: {
+                    disabled: true
+                },
+               
+                type: 'number',
+
+                form: {
+                    show: false,
+                    value: 0,
+                    component: {
+                        span: 12
+                    }
+                }
+            },
+            {
                 title: '状态',
                 key: 'is_delete',
                 search: {
@@ -168,7 +218,6 @@ export const crudOptions = (vm) => {
                 search: {
                     disabled: false
                 },
-                width: 70,
                 type: 'radio',
                 dict: {
                     data: [
@@ -197,6 +246,7 @@ export const crudOptions = (vm) => {
             {
                 title: '视频',
                 key: 'videoUrl',
+                width: 170,
                 type: 'file-uploader',
             },
             {
