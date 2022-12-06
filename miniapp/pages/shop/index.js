@@ -130,13 +130,24 @@ Page({
     onUnload: function () {
 
     },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
+    onRefresh:function(){
+        //导航条加载动画
+        wx.showNavigationBarLoading()
+        //loading 提示框
+      //   wx.showLoading({
+      //     title: '加载中...',
+      //   })
+        console.log("下拉刷新啦");
+        this.getGoodsData()
+        this.getTopGoods()
+      },
+    
+      /**
+       * 页面相关事件处理函数--监听用户下拉动作
+       */
+      onPullDownRefresh: function () {
+        this.onRefresh();
+      },
 
     /**
      * 页面上拉触底事件的处理函数

@@ -67,19 +67,9 @@ Page({
     onRefresh:function(){
       //导航条加载动画
       wx.showNavigationBarLoading()
-      //loading 提示框
-      wx.showLoading({
-        title: 'Loading...',
-      })
       console.log("下拉刷新啦");
       this.getHistory()
       this.getIntegral()
-      setTimeout(function () {
-        wx.hideLoading();
-        wx.hideNavigationBarLoading();
-        //停止下拉刷新
-        wx.stopPullDownRefresh();
-      }, 2000)
     },
 
 

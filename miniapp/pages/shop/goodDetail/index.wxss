@@ -6,7 +6,7 @@
   width: 100%;
   position: absolute;
   top: 11vh;
-  bottom: 90px;
+  bottom: 80px;
   overflow-y: auto;
 }
 .app .main .topImg {
@@ -16,6 +16,9 @@
   width: 100%;
 }
 .app .main .goodDetail {
+  margin-left: 20px;
+  margin-right: 20px;
+  transform: translateY(-20%);
   padding-left: 10px;
   padding-right: 10px;
   display: flex;
@@ -23,14 +26,14 @@
   justify-content: center;
 }
 .app .main .goodDetail .price {
-  font-size: calc(20px + 0.5 * (1rem - 16px));
+  font-size: 20px;
   color: #ff8b37;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 5px;
 }
 .app .main .goodDetail .info {
-  font-size: calc(14px + 0.5 * (1rem - 16px));
+  font-size: 14px;
   color: #666666;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -38,23 +41,17 @@
   padding-right: 10px;
 }
 .app .main .goodDetail .info .name {
-  font-size: calc(16px + 0.5 * (1rem - 16px));
+  font-size: 16px;
   color: #333333;
   font-weight: bold;
 }
-.app .main .goodDetail .info .caption {
-  float: right;
-}
 .app .main .goodDetail .info .desc {
   margin-top: 20px;
+  padding-bottom: 20px;
 }
 .app .main .goodDetail .info .brand {
   float: right;
-  transform: translate(0, -500%);
-}
-.app .main .imgList {
-  margin-left: 10px;
-  margin-right: 10px;
+  transform: translate(0, -200%);
 }
 .app .main .imgList image {
   width: 100%;

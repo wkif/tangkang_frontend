@@ -1,0 +1,49 @@
+.app .order .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.app .order .title .name {
+  font-size: 16px;
+  color: #333333;
+}
+.app .order .goodInfo {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.app .order .goodInfo .goodImg {
+  flex: 2;
+}
+.app .order .goodInfo .goodImg .img {
+  width: 100%;
+  border-radius: 10px;
+}
+.app .order .goodInfo .goodIn {
+  padding-left: 20px;
+  flex: 3;
+}
+.app .order .goodInfo .goodIn .detail {
+  margin-bottom: 20px;
+}
+.app .order .goodInfo .goodIn .price {
+  font-size: 16px;
+  color: #ff8b37;
+  font-weight: bold;
+}
+.app .order .orderInfo .addressInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 30px;
+}
+.app .order .commentView .rate {
+  padding-left: 29%;
+  margin-top: 1rem;
+}
+.app .order .buttonView {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}

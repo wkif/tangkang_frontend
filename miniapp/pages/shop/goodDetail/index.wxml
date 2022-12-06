@@ -1,24 +1,27 @@
-<page-meta root-font-size="system"/>
+<page-meta root-font-size="system" />
 <van-nav-bar title="商品详情" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
 <view class="app">
     <view class="main">
         <view class="topImg">
             <image src="{{goodDetail.image}}" mode="widthFix" />
         </view>
-        <view class="goodDetail radius shadow shadow-lg bg-white">
-            <view class="price">￥{{goodDetail.price}}</view>
+        <view class="goodDetail radius shadow shadow-lg bg-white ">
+            <view class="price tracking-in-expand-fwd ">￥{{goodDetail.price}}</view>
             <view class="info">
-                <view class="name">{{goodDetail.name}}</view>
-                <view class="caption">{{goodDetail.caption}}</view>
-                <view class="desc">{{goodDetail.detail}}</view>
-                <view class="brand">
-                    <van-tag color="#ffe1e1" text-color="#ad0000">{{goodDetail.brand}}</van-tag>
+                <view class="" hover-class="none" hover-stop-propagation="false">
+                    <view class="name tracking-in-expand-fwd ">{{goodDetail.name}}</view>
+                    <view class="caption tracking-in-expand-fwd ">{{goodDetail.caption}}</view>
+                    <view class="brand tracking-in-expand-fwd ">
+                        <van-tag color="#ffe1e1" text-color="#ad0000">{{goodDetail.brand}}</van-tag>
+                    </view>
                 </view>
+                <view class="desc tracking-in-expand-fwd ">{{goodDetail.detail}}</view>
             </view>
         </view>
         <view class="imgList">
             <image wx:for="{{swiperList}}" src="{{item}}" mode="widthFix" />
         </view>
+        <van-divider contentPosition="center">评论</van-divider>
         <view class="commitList">
             <view class="cu-list menu-avatar comment solids-top">
                 <view class="cu-item" wx:for="{{goodDetail.comments}}">
@@ -40,22 +43,34 @@
         </view>
     </view>
     <view class="bottomView">
+        <!-- <view class="cu-bar bg-white tabbar border shop">
+            <button class="action" open-type="contact">
+                <view class="cuIcon-service text-green" style="height:32px">
+                    <view class="cu-tag badge"></view>
+                </view>
+                客服
+            </button>
+            <view class="action text-orange">
+                <view class="cuIcon-favorfill"></view>
+                已收藏
+            </view>
+            <view class="bg-red submit">立即订购</view>
+        </view> -->
         <view class="cu-bar bg-white tabbar border shop">
             <button class="action" open-type="contact">
-                <view class="cuIcon-service text-green">
+                <view class="cuIcon-service text-green" style="height:32px">
                     <view class="cu-tag badge"></view>
                 </view>
                 客服
             </button>
             <view class="action" bindtap="gotoOrderManage">
-                <view class="cuIcon-cart">
-                    <!-- <view class="cu-tag badge">99</view> -->
-                </view>
+                <view class="cuIcon-cart"></view>
                 订单
             </view>
             <view class="btn-group">
-                <!-- <button class="cu-btn bg-orange round shadow-blur">加入购物车</button> -->
-                <button class="cu-btn bg-themeColor round shadow-blur" bindtap="addOrder" data-goodid = "{{goodDetail.id}}">立即订购</button>
+                <button class="cu-btn bg-themeColor round shadow-blur" bindtap="addOrder" data-goodid="{{goodDetail.id}}">
+                    立即订购
+                </button>
             </view>
         </view>
     </view>

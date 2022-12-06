@@ -313,19 +313,13 @@ Page({
       //导航条加载动画
       wx.showNavigationBarLoading()
       //loading 提示框
-      wx.showLoading({
-        title: '加载中...',
-      })
+    //   wx.showLoading({
+    //     title: '加载中...',
+    //   })
       console.log("下拉刷新啦");
       this.getTopNews()
       this.getNewsList()
       this.getHotSearch()
-      setTimeout(function () {
-        wx.hideLoading();
-        wx.hideNavigationBarLoading();
-        //停止下拉刷新
-        wx.stopPullDownRefresh();
-      }, 2000)
     },
   
     /**

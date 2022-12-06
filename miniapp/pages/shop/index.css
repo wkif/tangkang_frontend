@@ -3,9 +3,22 @@
 }
 .app .topImg {
   width: 100%;
+  height: 70vh;
+}
+.app .topImg swiper {
+  height: 70vh;
 }
 .app .topImg image {
   width: 100%;
+}
+.app .searchView {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transform: translateY(-50%);
+  border-radius: 1rem;
+}
+.app .searchView .van-search {
+  border-radius: 0.6rem;
 }
 .app .VerticalNav.nav {
   width: 200rpx;

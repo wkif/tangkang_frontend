@@ -17,7 +17,8 @@ Page({
         ],
         TabCur: 0,
         scrollLeft: 0,
-        currentList: []
+        currentList: [],
+        marginTopview: app.globalData.navBarHeight,
     },
     tabSelect(e) {
         this.setData({
@@ -159,6 +160,14 @@ Page({
             }
         })
     },
+    commit(e){
+        let good_no = e.currentTarget.dataset.good_no
+        let order_id = e.currentTarget.dataset.order_id
+        console.log('good_no',good_no)
+        wx.navigateTo({
+          url:  "/pages/shop/orderManage/Comment/index?good_no="+good_no+"&order_id="+order_id,
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -177,7 +186,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.getMyOrderList()
     },
 
     /**
@@ -194,12 +203,26 @@ Page({
 
     },
 
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
+    onRefresh:function(){
+        //导航条加载动画
+        wx.showNavigationBarLoading()
+        //loading 提示框
+      //   wx.showLoading({
+      //     title: '加载中...',
+      //   })
+        console.log("下拉刷新啦");
+        this.getMyOrderList()
+        this.setData({
+            TabCur: 0,
+        })
+      },
+    
+      /**
+       * 页面相关事件处理函数--监听用户下拉动作
+       */
+      onPullDownRefresh: function () {
+        this.onRefresh();
+      },
 
     /**
      * 页面上拉触底事件的处理函数

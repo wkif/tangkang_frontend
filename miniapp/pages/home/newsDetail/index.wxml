@@ -18,8 +18,9 @@
       <view class="actionView">
         <van-icon name="good-job" wx:if="{{isLike}}" info="{{newsData.Number_of_likes}}" size="20px" bind:click="LikeOfNews" />
         <van-icon name="good-job-o" wx:else size="20px" info="{{newsData.Number_of_likes}}" bind:click="LikeOfNews" />
+        <van-icon name="eye" size="20px" info="{{newsData.Number_of_view}}"/>
         <van-icon name="chat-o" size="20px" bind:click="chat" />
-        <van-icon name="share-o" size="20px" bind:click="onSharClick" />
+        <van-icon name="share-o" size="20px" info="{{newsData.Number_of_share}}" bind:click="onSharClick" />
       </view>
       <view class="tool ">
         <view class="tool-item {{goTopFlag ? '':'hide'}}" bindtap="goTop">

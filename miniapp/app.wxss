@@ -1,7 +1,7 @@
 
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
-
+@import "animista.wxss";
 
 .van-picker-column__item--selected{
   font-size: 1rem;

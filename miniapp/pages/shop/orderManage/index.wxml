@@ -1,6 +1,6 @@
 <page-meta root-font-size="system"/>
 <van-nav-bar title="订单管理" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
-<view class="app">
+<view class="app" style="margin-top:{{marginTopview}}px;">
     <view class="tabView">
         <scroll-view scroll-x class="bg-white nav">
             <view class="flex text-center">
@@ -40,6 +40,7 @@
                     <view class="orderTime">下单时间：{{item.update_datetime}}</view>
                     <view class="trade_no" wx:if="{{TabCur>=2}}">快递单号：{{item.trade_no}}</view>
                 </view>
+               
                 <view class="buttonView">
                     <view class="button" wx:if="{{TabCur==0}}" bindtap="payOrder" data-id="{{item.id}}">
                         <button class="cu-btn bg-themeColor">付款</button>
@@ -53,8 +54,14 @@
                     <view class="button" wx:if="{{TabCur>=2 && TabCur!=5}}" bindtap="express" data-trade_no="{{item.trade_no}}">
                         <button class="cu-btn bg-grey">查看物流</button>
                     </view>
+                    <view class="button" wx:if="{{TabCur==3}}" bindtap="commit" data-good_no="{{item.good.id}}" data-order_id="{{item.id}}">
+                        <button class="cu-btn bg-themeColor">评论</button>
+                    </view>
                 </view>
+                 
             </view>
+            
         </view>
+        
     </view>
 </view>

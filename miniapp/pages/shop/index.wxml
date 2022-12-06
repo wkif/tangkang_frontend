@@ -1,6 +1,6 @@
 <page-meta root-font-size="system"/>
 <view class="app" style="margin-top:{{marginTopview}}px;">
-    <view class="topImg">
+    <view class="topImg swing-in-top-fwd">
         <!-- <image src="https://img.yzcdn.cn/vant/custom-empty-image.png" mode="widthFix" /> -->
         <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
             <swiper-item wx:for="{{topList}}" wx:key bindtap="gotoGoodDetail" data-id="{{item.id}}">
@@ -8,24 +8,24 @@
             </swiper-item>
         </swiper>
     </view>
-    <view class="searchView">
+    <view class="searchView ">
         <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
     </view>
     <view class="VerticalBox" wx:if="{{list.length}}">
         <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 375rpx)">
-            <view class="cu-item {{index==TabCur?'text-themeColor cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+            <view class="cu-item {{index==TabCur?'text-themeColor cur':''}} slide-in-left" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
                 {{item.name}}
             </view>
         </scroll-view>
         <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
-            <view class="padding-top padding-lr" wx:for="{{list}}" wx:key id="main-{{index}}">
-                <view class='cu-bar solid-bottom bg-white'>
+            <view class="padding-top padding-lr " wx:for="{{list}}" wx:key id="main-{{index}}">
+                <view class='cu-bar solid-bottom bg-white slide-in-bottom'>
                     <view class='action'>
                         <text class='cuIcon-title text-themeColor'></text>
                         {{item.name}}
                     </view>
                 </view>
-                <view class="goodsList">
+                <view class="goodsList slide-in-bottom">
                     <van-card wx:for="{{item.goods}}" wx:for-item="good" tag="{{good.brand}}" price="{{good.price}}" desc="{{good.detail}}" title="{{good.name}}" thumb="{{ good.image }}" bindtap="gotoGoodDetail" data-id="{{good.id}}">
                         <!-- <view slot="footer">
                             <van-button size="mini">按钮</van-button>

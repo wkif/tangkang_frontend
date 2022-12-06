@@ -1,0 +1,53 @@
+<page-meta root-font-size="system" />
+<van-nav-bar title="评论" left-text="返回" fixed left-arrow bind:click-left="onClickLeft" />
+<view class="app" style="margin-top:{{marginTopview}}px;">
+    <view class="order padding-xl radius shadow-warp bg-white margin-top" hover-class="none" hover-stop-propagation="false">
+        <view class="title">
+            <view class="name">{{order.good.name}}</view>
+            <view class="status">
+                <van-tag plain type="success">{{order.order_status}}</van-tag>
+            </view>
+        </view>
+        <view class="goodInfo">
+            <view class="goodImg">
+                <image class="img" src="{{order.good.image}}" mode="widthFix" />
+            </view>
+            <view class="goodIn">
+                <view class="detail">{{order.good.detail}}</view>
+                <view class="num">x{{order.total_count}}</view>
+                <view class="price">￥{{order.total_price}}</view>
+            </view>
+        </view>
+        <van-divider />
+        <view class="orderInfo">
+            <view class="addressInfo">
+                <view class="name">{{order.address.name}}</view>
+                <view class="phone">{{order.address.phone}}</view>
+            </view>
+            <view class="address">{{order.address.address}}</view>
+            <view class="orderNum">订单号：{{order.order_id}}</view>
+            <view class="orderTime">下单时间：{{order.update_datetime}}</view>
+            <view class="trade_no" wx:if="{{TabCur>=2}}">快递单号：{{order.trade_no}}</view>
+        </view>
+        <van-divider contentPosition="center" customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;">
+            评价
+        </van-divider>
+        <view class="commentView" hover-class="none" hover-stop-propagation="false">
+            <van-cell-group>
+                <van-field value="{{ content }}" label="评价内容" bind:change="inputContent" type="textarea" placeholder="请输入评价内容" autosize border />
+            </van-cell-group>
+            <!-- <view class="cu-form-group align-start">
+                <view class="title">评价内容</view>
+                <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="输入评价"></textarea>
+            </view> -->
+            <view class="rate" hover-class="none" hover-stop-propagation="false">
+                <van-rate value="{{ score }}" count="{{ 6 }}" bind:change="inputScore" />
+            </view>
+            <view class="buttonView">
+                <view class="button" bindtap="submit">
+                    <button class="cu-btn bg-themeColor">提交</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

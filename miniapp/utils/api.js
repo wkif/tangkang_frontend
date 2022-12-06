@@ -8,7 +8,7 @@ const DELETE = 'DELETE';
 let baseURL = ''
 
 
-const env = 1
+const env = 0
 // 1表示本地穿透
 // 0表示正式
 // 其余表示本地
@@ -24,6 +24,9 @@ if (env == 0) {
 
 
 function request(method, url, data) {
+    wx.showLoading({
+        title: '加载中...',
+      })
     return new Promise(function (resolve, reject) {
         let header = {
             'content-type': 'application/json',
@@ -38,10 +41,16 @@ function request(method, url, data) {
             header: header,
             success(res) {
                 //请求成功返回数据
+                wx.hideLoading();
+                wx.hideNavigationBarLoading();
+                wx.stopPullDownRefresh();
                 resolve(res.data);
             },
             fail(err) {
                 //请求失败
+                wx.hideLoading();
+                wx.hideNavigationBarLoading();
+                wx.stopPullDownRefresh();
                 reject(err)
             }
         })
@@ -102,6 +111,8 @@ const API = {
     payOrder: (data) => request(POST, `/miniapp/payment/`, data),
     confirmOrder: (data) => request(POST, `/miniapp/confirmOrder/`, data),
     cancelOrder: (data) => request(POST, `/miniapp/cancelOrder/`, data),
+    getOrderById: (data) => request(POST, `/miniapp/getOrderById/`, data),
+    addCommitById:(data)=> request(POST, `/miniapp/addCommitById/`, data),
 
     // 资讯
     getTopNews: () => request(GET, `/miniapp/getTopNews/`),
@@ -114,6 +125,8 @@ const API = {
     searchNews: (data) => request(POST, `/miniapp/searchNews/`, data),
     LikeOfNews: (data) => request(POST, `/miniapp/LikeOfNews/`, data),
     getStatusOfLike: (data) => request(POST, `/miniapp/getStatusOfLike/`, data),
+    addShareOfNews:(data)=> request(POST, `/miniapp/addShareOfNews/`, data),
+    addViewOfNews:(data)=> request(POST, `/miniapp/addView/`, data),    
     // 运动记录
     addSportsRecords: (data) => request(POST, `/miniapp/addSportsRecords/`, data),
     getSportsRecordsByid: (data) => request(POST, `/miniapp/getSportsRecordsByid/`, data),

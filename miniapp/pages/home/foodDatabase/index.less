@@ -9,12 +9,14 @@
                     margin-right: 10px;
                     display: flex;
                     flex-direction: row;
+
                     .foodImg {
                         display: flex;
                         flex-direction: column;
                         text-align: center;
-                        image{
-                            width:30vw
+
+                        image {
+                            width: 30vw
                         }
                     }
 
@@ -23,6 +25,34 @@
                         padding-top: 20px;
                         margin: 0 auto;
                         // display:flex ;
+                    }
+                }
+
+                .tool {
+                    position: fixed;
+                    // width: 42px;
+                    // height: 42px;
+                    bottom: 70px;
+                    right: 20px;
+                    z-index: 1;
+
+                    .tool-item {
+                        width: 42px;
+                        height: 42px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // background-color: #ffffff;
+                        border-radius: 50%;
+                        margin-bottom: 20px;
+
+                        image {
+                            height: 100%;
+                            width: 100%;
+                            font-size: 20px;
+                            // color: #000000;
+                            opacity: 0.4;
+                        }
                     }
                 }
             }

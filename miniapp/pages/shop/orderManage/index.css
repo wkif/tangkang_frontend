@@ -1,6 +1,3 @@
-.app {
-  margin-top: 11vh;
-}
 .app .orderList .order .title {
   display: flex;
   flex-direction: row;

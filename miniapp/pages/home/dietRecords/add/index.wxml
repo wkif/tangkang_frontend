@@ -26,7 +26,7 @@
     <van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:cancel="onCancelTime" bind:confirm="onConfirmTime" />
   </view>
 </van-action-sheet>
-<van-popup show="{{ show }}" position="bottom" bind:close="onClose">
+<van-popup show="{{ show }}" position="bottom" custom-style="height: 40%;" bind:close="onClose">
   <view class="Foodlist">
     <van-checkbox-group value="{{ result }}" bind:change="onChange">
       <!-- <van-checkbox name="{{index}}" icon-size="25px" wx:for="{{foodList}}">{{item.foodName}}</van-checkbox> -->

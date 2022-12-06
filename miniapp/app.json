@@ -32,7 +32,8 @@
     "pages/user/association/userinfo/index",
     "pages/user/association/index",
     "pages/nodata/index",
-    "pages/user/setting/fontsizeseeting/index"
+    "pages/user/setting/fontsizeseeting/index",
+    "pages/shop/orderManage/Comment/index"
   ],
   "window": {
     "navigationStyle": "custom",

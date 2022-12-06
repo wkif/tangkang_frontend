@@ -1,13 +1,10 @@
-.app {
-  margin-top: 11vh;
-}
 .app .orderList .order .title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 .app .orderList .order .title .name {
-  font-size: calc(16px + 0.5 * (1rem - 16px));
+  font-size: 16px;
   color: #333333;
 }
 .app .orderList .order .goodInfo {
@@ -30,7 +27,7 @@
   margin-bottom: 20px;
 }
 .app .orderList .order .goodInfo .goodIn .price {
-  font-size: calc(16px + 0.5 * (1rem - 16px));
+  font-size: 16px;
   color: #ff8b37;
   font-weight: bold;
 }

@@ -68,7 +68,7 @@ App({
     loginFlag: false,
     speedFlag: false,
     tabList: [],
-    version:'0.7.3',
+    version:'0.7.5',
     fontSet:'font-40'
   },
   //设置tabbar的选中 添加一个全局方法

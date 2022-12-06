@@ -78,6 +78,12 @@ Page({
 
   ononShareSelect(event) {
     // Toast(event.detail.name);
+    let data={
+      newsId:this.data.newsData.id
+    }
+    app.$api.addShareOfNews(data).then(res=>{
+      console.log(res)
+    })
     this.ononShareClose();
   },
   chat() {
