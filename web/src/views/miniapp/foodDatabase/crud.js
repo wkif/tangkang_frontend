@@ -126,6 +126,11 @@ export const crudOptions = (vm) => {
                 }
             },
             {
+                title: '图片',
+                key: 'img',
+                type: 'image-uploader',
+            },
+            {
                 title: '单位',
                 key: 'unit',
 
