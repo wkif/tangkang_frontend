@@ -1,4 +1,4 @@
-<page-meta root-font-size="system"/>
+<page-meta root-font-size="system" />
 <view class="app" style="margin-top:{{marginTopview}}px;">
     <view class="topImg swing-in-top-fwd">
         <!-- <image src="https://img.yzcdn.cn/vant/custom-empty-image.png" mode="widthFix" /> -->
@@ -9,7 +9,7 @@
         </swiper>
     </view>
     <view class="searchView ">
-        <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+        <van-search value="{{ goodName }}" input-align="center" placeholder="请输入搜索关键词" bind:change="onChange" bind:search="onSearch" />
     </view>
     <view class="VerticalBox" wx:if="{{list.length}}">
         <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 375rpx)">
@@ -26,7 +26,7 @@
                     </view>
                 </view>
                 <view class="goodsList slide-in-bottom">
-                    <van-card wx:for="{{item.goods}}" wx:for-item="good" tag="{{good.brand}}" price="{{good.price}}" desc="{{good.detail}}" title="{{good.name}}" thumb="{{ good.image }}" bindtap="gotoGoodDetail" data-id="{{good.id}}">
+                    <van-card wx:for="{{item.goods}}" wx:for-item="good" tag="{{SKUBrand[good.brand]}}" price="{{good.price}}" desc="{{good.detail}}" title="{{good.name}}" thumb="{{ good.image }}" bindtap="gotoGoodDetail" data-id="{{good.id}}">
                         <!-- <view slot="footer">
                             <van-button size="mini">按钮</van-button>
                             <van-button size="mini">按钮</van-button>
@@ -37,5 +37,22 @@
         </scroll-view>
     </view>
     <van-empty wx:else class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="暂无数据"></van-empty>
+    <!-- <van-popup show="{{ show }}" position="bottom" custom-style="height: 30%;" bind:close="onClose">
+        内容
+    </van-popup> -->
+      <van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%" lock-scroll closeable close-icon="close" bind:close="onClose">
+
+      <scroll-view class="resList" scroll-y="true" style="height: 100%">
+        
+        <van-cell-group inset>
+      
+          <van-cell wx:for="{{searchResList}}" value="详情" url="/pages/shop/goodDetail/index?goodId={{item.id}}" is-link>
+            <view slot="title">
+              <view class="van-cell-text">{{item.name}}</view>
+            </view>
+          </van-cell>
+        </van-cell-group>
+      </scroll-view>
    
+    </van-popup>
 </view>

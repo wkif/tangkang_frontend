@@ -128,7 +128,6 @@ Page({
     },
     getHotSearch() {
         app.$api.getHotSearch().then(res => {
-            console.log('getHotSearch', res)
             if (res.status == 200) {
                 this.setData({
                     searchHotValList: res.data,
@@ -144,9 +143,7 @@ Page({
                     topnotice: res.data
                 })
             }
-        }
-
-        )
+        })
 
     },
     gotoannouncement(e) {

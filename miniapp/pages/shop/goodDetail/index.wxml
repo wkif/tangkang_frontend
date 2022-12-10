@@ -12,7 +12,7 @@
                     <view class="name tracking-in-expand-fwd ">{{goodDetail.name}}</view>
                     <view class="caption tracking-in-expand-fwd ">{{goodDetail.caption}}</view>
                     <view class="brand tracking-in-expand-fwd ">
-                        <van-tag color="#ffe1e1" text-color="#ad0000">{{goodDetail.brand}}</van-tag>
+                        <van-tag color="#ffe1e1" text-color="#ad0000">{{SKUBrand[goodDetail.brand]}}</van-tag>
                     </view>
                 </view>
                 <view class="desc tracking-in-expand-fwd ">{{goodDetail.detail}}</view>
@@ -22,7 +22,7 @@
             <image wx:for="{{swiperList}}" src="{{item}}" mode="widthFix" />
         </view>
         <van-divider contentPosition="center">评论</van-divider>
-        <view class="commitList">
+        <view wx:if="{{goodDetail.comments.length>0}}" class="commitList">
             <view class="cu-list menu-avatar comment solids-top">
                 <view class="cu-item" wx:for="{{goodDetail.comments}}">
                     <view class="cu-avatar round" style="background-image:url({{item.user.avatar}});"></view>
@@ -41,21 +41,10 @@
                 </view>
             </view>
         </view>
+        <van-empty wx:else class="custom-image" image="https://kifimg.oss-cn-beijing.aliyuncs.com/img/202212101658325.png" description="暂无评论"></van-empty>
+   
     </view>
     <view class="bottomView">
-        <!-- <view class="cu-bar bg-white tabbar border shop">
-            <button class="action" open-type="contact">
-                <view class="cuIcon-service text-green" style="height:32px">
-                    <view class="cu-tag badge"></view>
-                </view>
-                客服
-            </button>
-            <view class="action text-orange">
-                <view class="cuIcon-favorfill"></view>
-                已收藏
-            </view>
-            <view class="bg-red submit">立即订购</view>
-        </view> -->
         <view class="cu-bar bg-white tabbar border shop">
             <button class="action" open-type="contact">
                 <view class="cuIcon-service text-green" style="height:32px">

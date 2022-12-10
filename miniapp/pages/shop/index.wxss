@@ -50,7 +50,11 @@
 }
 .app .VerticalBox {
   display: flex;
+  padding-bottom: 10vh;
 }
 .app .VerticalMain {
   background-color: #f1f1f1;
+}
+.app .resList {
+  padding-top: 2.5rem;
 }

@@ -6,7 +6,7 @@
     <van-search value="{{ searchValue }}" placeholder="{{searchHotVal.name}}" use-action-slot bind:change="onChange" bind:search="onSearch">
       <view slot="action" bind:tap="onSearch">搜索</view>
     </van-search>
-    <van-popup show="{{ show }}" round position="bottom" custom-style="height: 50%" lock-scroll closeable close-icon="close" bind:close="onClickHide">
+    <van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%" lock-scroll closeable close-icon="close" bind:close="onClickHide">
       <!-- {{[0].title}} -->
       <!-- <view class="resList"> -->
       <scroll-view class="resList" scroll-y="true" style="height: 100%">

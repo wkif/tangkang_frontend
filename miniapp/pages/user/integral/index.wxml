@@ -21,7 +21,7 @@
             <text class="history-time">{{item.time}}</text>
           </view>
         </view>
-        <text class="history-integral">{{item.integralType.integral}}</text>
+        <text class="history-integral">+ {{item.integralType.integral}}  {{item.integral==0?'':'-'+item.integral}}</text>
       </view>
     </van-transition>
   </view>

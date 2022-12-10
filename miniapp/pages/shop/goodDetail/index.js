@@ -9,6 +9,7 @@ Page({
         goodId: '',
         goodDetail: {},
         swiperList: [],
+        SKUBrand:[]
     },
     onClickLeft() {
         wx.navigateBack({
@@ -21,7 +22,8 @@ Page({
      */
     onLoad: function (options) {
         this.setData({
-            goodId: options.goodId
+            goodId: options.goodId,
+            SKUBrand:app.globalData.SKUBrand
         })
         this.getGoodDetail()
 

@@ -69,7 +69,8 @@ App({
     speedFlag: false,
     tabList: [],
     version:'0.7.5',
-    fontSet:'font-40'
+    fontSet:'font-40',
+    SKUBrand:[]
   },
   //设置tabbar的选中 添加一个全局方法
   setTabBarIndex(index) {

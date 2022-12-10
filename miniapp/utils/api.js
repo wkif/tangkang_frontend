@@ -113,6 +113,8 @@ const API = {
     cancelOrder: (data) => request(POST, `/miniapp/cancelOrder/`, data),
     getOrderById: (data) => request(POST, `/miniapp/getOrderById/`, data),
     addCommitById:(data)=> request(POST, `/miniapp/addCommitById/`, data),
+    getSKUBrand:()=> request(GET, `/shop/getSKUBrand/`),
+    searchGoods:(data)=> request(POST, `/miniapp/searchGoods/`, data),
 
     // 资讯
     getTopNews: () => request(GET, `/miniapp/getTopNews/`),
