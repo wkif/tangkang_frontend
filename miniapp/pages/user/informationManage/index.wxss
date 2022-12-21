@@ -2,6 +2,15 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+.app .avatar-wrapper {
+  width: 7rem;
+  height: 7rem;
+  margin-top: 10px;
+  padding: 0;
+}
+.app .avatar-wrapper .avatar {
+  width: 100%;
+}
 .app .buttonView {
   margin-top: 10vh;
 }

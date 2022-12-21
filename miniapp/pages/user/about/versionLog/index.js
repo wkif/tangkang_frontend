@@ -7,6 +7,13 @@ Page({
   data: {
     logList: [
       {
+        version: '0.7.6',
+        time: '2022-12-13 21:53',
+        content: [
+          "修复getUserProfile接口调整导致新用户注册失败的bug"
+        ]
+      },
+      {
         version: '0.7.5',
         time: '2022-12-7 3:53',
         content: [

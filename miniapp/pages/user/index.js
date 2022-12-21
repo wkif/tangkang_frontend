@@ -100,6 +100,7 @@ Page({
     wx.getUserProfile({
       desc: '编辑会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       complete: (res) => {
+        console.log('res',res)
         if (res.errMsg == "getUserProfile:ok") {
           console.log('成功了')
           //存储用户昵称和头像
@@ -259,18 +260,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (this.data.loginFlag &&!this.data.userInfo.mobile) {
-      wx.showToast({
-        title: '请完善信息',
-        icon: 'none',
-        duration: 1000
-      })
-      setTimeout(() => {
-        wx.navigateTo({
-          url: '/pages/user/informationManage/index',
-        })
-      }, 1000)
-    }
+    // if (this.data.loginFlag &&!this.data.userInfo.mobile) {
+    //   wx.showToast({
+    //     title: '请完善信息',
+    //     icon: 'none',
+    //     duration: 1000
+    //   })
+    //   setTimeout(() => {
+    //     wx.navigateTo({
+    //       url: '/pages/user/informationManage/index',
+    //     })
+    //   }, 1000)
+    // }
+    this.setData({
+      loginFlag: app.globalData.loginFlag,
+      userInfo: wx.getStorageSync('userInfo')
+    })
   },
 
   /**

@@ -1,20 +1,34 @@
 // pages/record/dailyRecord/add/index.js
 
-const app = getApp()
+const app = getApp();
+//引入插件：微信同声传译
+const plugin = requirePlugin("WechatSI");
+//获取全局唯一的语音识别管理器recordRecoManager
+const manager = plugin.getRecordRecognitionManager();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    bloodSugarType: '',
-    bloodSugarTypeValue: '',
+    bloodSugarType: "",
+    bloodSugarTypeValue: "",
     selectTypeShow: false,
-    typeColumns: ['空腹血糖', '早餐后2小时血糖', '午餐前血糖', '午餐后2小时血糖', '晚餐前血糖', '晚餐后2小时血糖', '睡前血糖', '任意时间血糖', '夜间2时血糖', '其他'],
+    typeColumns: [
+      "空腹血糖",
+      "早餐后2小时血糖",
+      "午餐前血糖",
+      "午餐后2小时血糖",
+      "晚餐前血糖",
+      "晚餐后2小时血糖",
+      "睡前血糖",
+      "任意时间血糖",
+      "夜间2时血糖",
+      "其他",
+    ],
     selectValueShow: false,
-    bloodSugarValue: '',
+    bloodSugarValue: "",
     valueColumns: [],
-    bloodSugarTime: '',
+    bloodSugarTime: "",
     selectTimeShow: false,
     timeColumns: [],
     minHour: 10,
@@ -22,197 +36,231 @@ Page({
     minDate: new Date(new Date() - 365 * 24 * 60 * 60 * 1000).getTime(),
     maxDate: new Date().getTime(),
     currentDate: new Date().getTime(),
-    marginTopview: app.globalData.navBarHeight
-
-
-
+    marginTopview: app.globalData.navBarHeight,
+    recordState: false, //录音状态
+    content: "", //内容
   },
-  noBomBox(Event) {
-    wx.hideKeyboard()
-    // document.activeElement.blur();
-  },
+  // noBomBox(Event) {
+  //   wx.hideKeyboard()
+  //   // document.activeElement.blur();
+  // },
   onClickLeft() {
     wx.navigateBack({
-      delta: 1
-    })
+      delta: 1,
+    });
   },
   selectType() {
-    
     this.setData({
-      selectTypeShow: true
-    })
-
+      selectTypeShow: true,
+    });
   },
   selectValue() {
+    // this.setData({
+    //   selectValueShow: true
+    // })
+  },
+  //识别语音 -- 初始化
+  initRecord: function () {
+    const that = this;
+    // 有新的识别内容返回，则会调用此事件
+    manager.onRecognize = function (res) {
+      console.log(res);
+    };
+    // 正常开始录音识别时会调用此事件
+    manager.onStart = function (res) {
+      console.log("成功开始录音识别", res);
+    };
+    // 识别错误事件
+    manager.onError = function (res) {
+      console.error("error msg", res);
+    };
+    //识别结束事件
+    manager.onStop = function (res) {
+      console.log("..............结束录音",res);
+      console.log("录音临时文件地址 -->" + res.tempFilePath);
+      console.log("录音总时长 -->" + res.duration + "ms");
+      console.log("文件大小 --> " + res.fileSize + "B");
+      console.log("语音内容 --> " + res.result);
+      if (res.result == "") {
+        wx.showModal({
+          title: "提示",
+          content: "听不清楚，请重新说一遍！",
+          showCancel: false,
+          success: function (res) {},
+        });
+        return;
+      }
+      var text = that.data.content + res.result;
+      that.setData({
+        content: text,
+      });
+    };
+  },
+  //语音  --按住说话
+  touchStart: function (e) {
     this.setData({
-      selectValueShow: true
-    })
+      recordState: true, //录音状态
+    });
+    // 语音开始识别
+    manager.start({
+      lang: "zh_CN", // 识别的语言，目前支持zh_CN en_US zh_HK sichuanhua
+    });
+  },
+  //语音  --松开结束
+  touchEnd: function (e) {
+    this.setData({
+      recordState: false,
+    });
+    // 语音结束识别
+    manager.stop();
   },
   selectTime() {
     this.setData({
-      selectTimeShow: true
-    })
+      selectTimeShow: true,
+    });
   },
   onTypeChange(event) {
-    console.log('event', event)
-    const {
-      picker,
-      value,
-      index
-    } = event.detail;
+    console.log("event", event);
+    const { picker, value, index } = event.detail;
     console.log(`当前值：${value}, 当前索引：${index}`);
     if (!value) {
       this.setData({
         currentDate: event.detail,
       });
-
     } else {
       if (app.globalData.speedFlag) {
-        app.$Text2Speech(value)
+        app.$Text2Speech(value);
       }
     }
   },
   onConfirmType(e) {
-    console.log(e)
+    console.log(e);
     this.setData({
       bloodSugarType: e.detail.index,
       bloodSugarTypeValue: e.detail.value,
-      selectTypeShow: false
-    })
+      selectTypeShow: false,
+    });
   },
   onCancelType() {
     this.setData({
-      selectTypeShow: false
-    })
+      selectTypeShow: false,
+    });
   },
   onConfirmValue(e) {
-    console.log(e)
+    console.log(e);
     this.setData({
       bloodSugarValue: e.detail.value,
-      selectValueShow: false
-    })
+      selectValueShow: false,
+    });
   },
   onCancelValue() {
     this.setData({
-      selectValueShow: false
-    })
+      selectValueShow: false,
+    });
   },
   onConfirmTime(e) {
-
     this.setData({
       currentDate: e.detail,
       bloodSugarTime: app.$formatTime(e.detail),
-      selectTimeShow: false
-    })
+      selectTimeShow: false,
+    });
     if (app.globalData.speedFlag) {
-      app.$Text2Speech(app.$formatTime(e.detail))
+      app.$Text2Speech(app.$formatTime(e.detail));
     }
   },
   onInput(event) {
-    console.log('event', event)
+    console.log("event", event);
     this.setData({
       currentDate: event.detail,
     });
   },
   onCancelTime() {
     this.setData({
-      selectTimeShow: false
-    })
+      selectTimeShow: false,
+    });
   },
   addRec() {
     let data = {
       bloodSugarLevel: this.data.bloodSugarValue,
       bloodSugarType: this.data.bloodSugarType,
       bloodSugarTime: this.data.bloodSugarTime,
-      userId: wx.getStorageSync('userInfo').id
-    }
-    app.$api.addBloodSugarData(data).then(res => {
-      console.log('res', res)
+      userId: wx.getStorageSync("userInfo").id,
+    };
+    app.$api.addBloodSugarData(data).then((res) => {
+      console.log("res", res);
       if (res.status == 200) {
         wx.showToast({
-          title: '添加成功',
-          icon: 'success',
-          duration: 2000
-        })
+          title: "添加成功",
+          icon: "success",
+          duration: 2000,
+        });
         setTimeout(() => {
           wx.navigateBack({
-            delta: 1
-          }), 2000
-        })
+            delta: 1,
+          }),
+            2000;
+        });
       } else {
         wx.showToast({
           title: res.data,
-          icon: 'none',
-          duration: 2000
-        })
+          icon: "none",
+          duration: 2000,
+        });
       }
-    })
+    });
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let valueColumns = []
+    let valueColumns = [];
     for (let i = 2.0; i <= 10.0; i += 0.1) {
-      valueColumns.push(i.toFixed(1))
+      valueColumns.push(i.toFixed(1));
     }
 
     this.setData({
-      valueColumns: valueColumns
-    })
-    let timeColumns = []
+      valueColumns: valueColumns,
+    });
+    let timeColumns = [];
     for (let i = 0; i < 24; i++) {
-      timeColumns.push(i + ':00')
+      timeColumns.push(i + ":00");
     }
+     //识别语音
+     this.initRecord();
   },
-
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  onShow: function () {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
+  onHide: function () {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
+  onUnload: function () {},
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
+  onPullDownRefresh: function () {},
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
+  onReachBottom: function () {},
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
-})
+  onShareAppMessage: function () {},
+});

@@ -6,6 +6,9 @@
 .van-picker-column__item--selected{
   font-size: 1rem;
 }
+.van-field__label .input-class{
+font-size: larger;
+}
 
 .svg_icon {
   display: inline-flex;

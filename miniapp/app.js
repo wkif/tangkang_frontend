@@ -68,7 +68,7 @@ App({
     loginFlag: false,
     speedFlag: false,
     tabList: [],
-    version:'0.7.5',
+    version:'0.7.6',
     fontSet:'font-40',
     SKUBrand:[]
   },

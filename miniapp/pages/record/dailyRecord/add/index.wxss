@@ -1,13 +1,19 @@
 .app {
-  margin-top: 12vh;
   padding-left: 20px;
   padding-right: 20px;
+  position: relative;
+  min-height: 88vh;
 }
 .app .buttonView {
   margin-top: 10px;
+  position: absolute;
+  bottom: 0.625rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.app .buttonView button {
-  margin-left: 50%;
-  width: 40vw;
+.app cover-image {
+  width: 100px;
+  left: 50%;
+  position: absolute;
   transform: translateX(-50%);
 }
